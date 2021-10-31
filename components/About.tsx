@@ -41,7 +41,6 @@ const Content = styled.div`
   @media (min-width: 0) and (max-width: 870px) {
     border: none;
     box-shadow: none;
-    width: 100vw;
     padding: 10px;
     display: flex;
     flex-direction: column;
