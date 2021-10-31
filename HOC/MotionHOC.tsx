@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FC } from "react";
 
 const withMotion = (Component: FC<{}>) => {
     return function HOC() {
@@ -14,7 +15,6 @@ const withMotion = (Component: FC<{}>) => {
                     transition: {
                         duration: 0.5,
                         type: "spring",
-                        ease: "easeInOut",
                     },
                 }}
             >

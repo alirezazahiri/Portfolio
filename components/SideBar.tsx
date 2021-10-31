@@ -69,7 +69,7 @@ interface Props {
 }
 
 const Button = styled.button`
-  background-color: #0f044c;
+  background-color: var(--dark-blue);
   border: none;
   width: 2.5rem;
   height: 2.5rem;
@@ -100,7 +100,7 @@ const Button = styled.button`
 `;
 
 const SidebarContainer = styled.div`
-  background-color: #0f044c;
+  background-color: var(--dark-blue);
   width: 3.5rem;
   height: 67.8vh;
   margin-top: 1rem;
@@ -114,12 +114,12 @@ const SidebarContainer = styled.div`
 `;
 
 const SlickBar = styled.ul`
-  color: #787a91;
+  color: var(--grey);
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #0f044c;
+  background-color: var(--dark-blue);
   padding: 2rem 0;
   position: absolute;
   top: 6rem;
@@ -138,10 +138,10 @@ const Item = styled.div`
   a{
     padding: 1rem 0;
     display: flex;
-    color: #787a91;
+    color: var(--grey);
     &:hover {
-      border-right: 4px solid #f9f9f9;
-      color: #f9f9f9;
+      border-right: 4px solid var(--white);
+      color: var(--white);
     }
     img {
       width: 1.2rem;
@@ -161,14 +161,14 @@ const SocialLinks = styled.div`
   width: ${(props: Props) => (props.clicked ? "14rem" : "3rem")};
   height: 3rem;
   padding: 0.5rem 1rem;
-  border: ${(props: Props) => (props.clicked ? "2px solid #1E5F74" : "none")};
+  border: ${(props: Props) => (props.clicked ? "2px solid var(--link-icon-color)" : "none")};
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: ${(props: Props) => (props.clicked ? "9rem" : "0")};
   background-color: var(--black);
-  color: ${(props: Props) => (!props.clicked ? "var(--white) " : "#1E5F74")};
+  color: ${(props: Props) => (!props.clicked ? "var(--white) " : "var(--link-icon-color)")};
   transition: all 0.3s ease;
   img {
     width: 2.5rem;
@@ -197,23 +197,23 @@ const ButtonContainer = styled.div`
     background: none;
     border: none;
     outline: none;
-    color: #1e5f74;
+    color: var(--link-icon-color);
     &:hover {
       outline: none;
       cursor: pointer;
     }
   }
   .github:hover {
-    color: white;
-    box-shadow: white;
+    color: var(--github);
+    box-shadow: var(--github);
   }
   .linked-in:hover {
-    color: #0a66c2;
-    box-shadow: #0a66c2;
+    color: var(--linked-in);
+    box-shadow: var(--linked-in);
   }
   .twitter:hover {
-    color: #1da1f2;
-    box-shadow: #833ab4;
+    color: var(--twitter);
+    box-shadow: var(--twitter);
   }
 `;
 

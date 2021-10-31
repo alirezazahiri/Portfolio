@@ -3,7 +3,10 @@ import type { NextPage } from 'next'
 // next deps 
 import Head from 'next/head'
 
-const Home: NextPage = () => {
+// component
+import Home from "../components/Home"
+
+const Page: NextPage = () => {
   return (
     <div>
       <Head>
@@ -11,8 +14,9 @@ const Home: NextPage = () => {
         <meta name="description" content="Portfolio, Alireza Zahiri" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Home />
     </div>
   )
 }
 
-export default Home
+export default Page
