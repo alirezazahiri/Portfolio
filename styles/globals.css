@@ -29,6 +29,9 @@
     --badged-hover-bg-color: #061444;
     --badged-hover-bg-color-2: #19294b;
     --cyan: #3AE7AB;
+    
+    /* Certificate Cards*/
+    --company-color: rgb(37, 99, 235);
 }
 
 html {

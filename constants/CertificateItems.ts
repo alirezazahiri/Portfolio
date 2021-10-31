@@ -7,7 +7,7 @@ import git from "../assets/skills/topics/git.png";
 import django from "../assets/skills/topics/django.svg";
 import react from "../assets/skills/topics/react.png"
 
-type Item = {
+export type CertificateItem = {
   id: string,
   language: string,
   date: string,
@@ -17,7 +17,7 @@ type Item = {
   feed: string
 }
 
-const items: Item[] = [
+const items: CertificateItem[] = [
   {
     id: "1",
     language: "Django",
