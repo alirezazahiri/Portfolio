@@ -61,10 +61,6 @@ const ImageContainer = styled.div`
     background: none;
     padding: 10px;
     border-radius: 14px;
-    @media (min-width: 481px) and (max-width: 870px) {
-        padding: 7.5px 30px;
-        width: 60px;
-    }
 `
 
 const Info = styled.div`
