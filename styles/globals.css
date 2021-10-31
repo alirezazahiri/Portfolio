@@ -1,16 +1,35 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+
+:root {
+    /* Colors */
+    --black: #040714;
+    --grey: #a4b2bc;
+    --white: #f9f9f9;
+    --background: #040714;
+    --background-alt: #334756;
+}
+
+html {
+    overflow: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: var(--background);
+    background-position: relative;
+    font-family: "Roboto", sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+    color: #f9f9f9;
+    text-decoration: none;
 }
