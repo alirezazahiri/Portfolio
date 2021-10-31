@@ -5,7 +5,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 type Item = {
-    id: string,
+    id?: string,
     icon: any,
     link: string,
     description: string,

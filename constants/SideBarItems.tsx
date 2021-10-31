@@ -7,7 +7,7 @@ import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined"; /
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined"; // Contact
 
 type Item = {
-  id: string,
+  id?: string,
   icon: any,
   title: string,
   path: string

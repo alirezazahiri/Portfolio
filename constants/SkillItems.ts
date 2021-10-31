@@ -1,5 +1,5 @@
 export type SkillItem = {
-  id: string, 
+  id?: string, 
   title: string,
   value: number,
   gotBadge: boolean

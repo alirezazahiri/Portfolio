@@ -4,7 +4,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 type Item = {
-    id: string;
+    id?: string;
     feed: string;
     className: string;
     icon: any;

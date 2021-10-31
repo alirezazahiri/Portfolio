@@ -8,7 +8,7 @@ import django from "../assets/skills/topics/django.svg";
 import react from "../assets/skills/topics/react.png"
 
 export type CertificateItem = {
-  id: string,
+  id?: string,
   language: string,
   date: string,
   company: string,

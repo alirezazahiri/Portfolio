@@ -22,15 +22,15 @@ import tesla from "../assets/projects/tesla/1.png"
 // WetheaReact
 import weather from "../assets/projects/weathereact/1.png"
 
-type Item = {
-  id: string,
+export type ProjectItem = {
+  id?: string,
   image: any,
   title: string,
   link: string,
   description: string
 }
 
-const items: Item[] = [
+const items: ProjectItem[] = [
   {
     id: "1",
     image: mafia,

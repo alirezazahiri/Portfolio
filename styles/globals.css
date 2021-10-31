@@ -5,6 +5,7 @@
     --black: #040714;
     --grey: #787a91;
     --grey-second: #d8b9c3;
+    --grey-second-medium: #d8b9c388;
     --grey-second-dark: #d8b9c344;
     --white: #f9f9f9;
     --background: #040714;
@@ -20,6 +21,7 @@
 
     /* sidebar sociallinks icon color */
     --link-icon-color: #1E5F74;
+    --link-icon-color-dark: #1E5F7477;
     
 
     /* Skill Cards */

@@ -42,12 +42,9 @@ const Content = styled.div`
     border: none;
     box-shadow: none;
     width: 100vw;
+    padding: 10px;
     display: flex;
-    padding: 50px;
     flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 30px;
   }
 `;
 
