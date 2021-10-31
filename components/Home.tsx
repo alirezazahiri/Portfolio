@@ -38,14 +38,14 @@ const Home = () => {
 
 const Container = styled.div`
   padding: 65px 40px 0 80px;
-  color: #6e85b2;
+  color: var(--grayish-blue);
   z-index: -1;
 `
 
 const Content = styled.div`
   padding: 50px;
-  border: 1px solid #1e5f74;
-  box-shadow: 0 0 20px #1e5f74;
+  border: 1px solid var(--link-icon-color);
+  box-shadow: 0 0 20px var(--link-icon-color);
   border-radius: 12px;
   text-align: center;
   @media (min-width: 0) and (max-width: 870px) {
@@ -62,7 +62,7 @@ const ImageContainer = styled.div`
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 20px #d8b9c344;
+    box-shadow: 0 0 20px var(--grey-second-dark);
     border: none;
     @media (min-width: 0) and (max-width: 480px) {
         width: 125px;
@@ -82,7 +82,7 @@ const NameContainer = styled.div`
     margin-right: 5px;
   }
   h1 {
-    color: #d8b9c3;
+    color: var(--grey-second);
   }
   @media (min-width: 0) and (max-width: 870px) {
     h1 {
@@ -95,21 +95,21 @@ const Description = styled.p`
   margin-top: 10px;
   font-size: 1.1rem;
   code {
-    color: #d8b9c3;
+    color: var(--grey-second);
   }
 `;
 
 const Resume = styled.div`
-  background: #1e5f74;
+  background: var(--link-icon-color);
   font-size: 16px;
   font-weight: 500;
   text-align: center;
   padding: 5px;
   border-radius: 14px;
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 40px #0f044c;
+  box-shadow: 0 0 40px var(--dark-blue);
   align-items: center;
-  color: #0f044c;
+  color: var(--dark-blue);
   border-radius: 10px;
   margin-top: 2.5rem;
   transition: all 0.5s ease;
@@ -121,8 +121,8 @@ const Resume = styled.div`
   }
   &:hover {
     cursor: pointer;
-    background: #6e85b2;
-    box-shadow: 0 0 20px #d8b9c388;
+    background: var(--grayish-blue);
+    box-shadow: 0 0 20px var(--grey-second)88;
   }
 `;
 

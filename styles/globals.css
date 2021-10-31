@@ -4,16 +4,20 @@
     /* Colors */
     --black: #040714;
     --grey: #787a91;
+    --grey-second: #d8b9c3;
+    --grey-second-dark: #d8b9c344;
     --white: #f9f9f9;
     --background: #040714;
     --background-alt: #334756;
     --dark-blue: #0f044c;
+    --grayish-blue: #6e85b2;
     
     /* Social Icons Colors */
     --github: white;
     --linked-in: #0a66c2;
     --twitter: #1da1f2;
 
+    /* sidebar sociallinks icon color */
     --link-icon-color: #1E5F74;
 }
 
