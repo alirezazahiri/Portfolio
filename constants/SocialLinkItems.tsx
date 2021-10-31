@@ -15,19 +15,19 @@ const social_items = [
         id: "1",
         feed: "https://www.linkedin.com/in/alireza-zahiri-a2956020a/",
         className: "linked-in",
-        icon: LinkedInIcon,
+        icon: <LinkedInIcon/>,
     },
     {
         id: "2",
         feed: "https://github.com/alirezazahiri",
         className: "github",
-        icon: GitHubIcon,
+        icon: <GitHubIcon/>,
     },
     {
         id: "3",
         feed: "https://twitter.com/alirezaaa_zr",
         className: "twitter",
-        icon: TwitterIcon,
+        icon: <TwitterIcon/>,
     },
 ];
 

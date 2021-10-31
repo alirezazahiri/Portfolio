@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const withMotion = (Component: JSX.Element) => {
+const withMotion = (Component: FC<{}>) => {
     return function HOC() {
         return (
             <motion.div

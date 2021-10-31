@@ -16,37 +16,37 @@ type Item = {
 const items: Item[] = [
   {
     id: "1",
-    icon: HomeOutlinedIcon,
+    icon: <HomeOutlinedIcon/>,
     title: "HOME",
     path: "/",
   },
   {
     id: "2",
-    icon: PersonOutlineIcon,
+    icon: <PersonOutlineIcon/>,
     title: "ABOUT",
     path: "/about",
   },
   {
     id: "3",
-    icon: CodeIcon,
+    icon: <CodeIcon/>,
     title: "SKILLS",
     path: "/skills",
   },
   {
     id: "4",
-    icon: VerifiedOutlinedIcon,
+    icon: <VerifiedOutlinedIcon/>,
     title: "CERTIFICATES",
     path: "/certificates",
   },
   {
     id: "5",
-    icon: WorkOutlineOutlinedIcon,
+    icon: <WorkOutlineOutlinedIcon/>,
     title: "PROJECTS",
     path: "/projects",
   },
   {
     id: "6",
-    icon: LocalPhoneOutlinedIcon,
+    icon: <LocalPhoneOutlinedIcon/>,
     title: "CONTACT",
     path: "/contact",
   },
