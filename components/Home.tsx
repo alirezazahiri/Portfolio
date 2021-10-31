@@ -21,11 +21,11 @@ const Home = () => {
                 </ImageContainer>
                 <Welcome>Hey There!</Welcome>
                 <NameContainer>
-                    <h3>I'M</h3>
+                    <h3>I&apos;M</h3>
                     <h1>ALIREZA ZAHIRI</h1>
                 </NameContainer>
                 <Description>
-                    and I'm a <code>Front-End Developer</code>
+                    and I&apos;m a <code>Front-End Developer</code>
                 </Description>
                 <Resume onClick={() => window.open("/assets/Resume/Alireza-Zahiri.pdf")}>
                     <MenuBookIcon />
