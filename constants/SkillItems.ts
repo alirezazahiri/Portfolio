@@ -1,11 +1,11 @@
-type Item = {
+export type SkillItem = {
   id: string, 
   title: string,
   value: number,
   gotBadge: boolean
 }
 
-const items: Item[] = [
+const items: SkillItem[] = [
   {
     id: "1",
     title: "HTML5",

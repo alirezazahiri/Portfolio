@@ -10,6 +10,7 @@
     --background: #040714;
     --background-alt: #334756;
     --dark-blue: #0f044c;
+    --midnight-blue: #16213e;
     --grayish-blue: #6e85b2;
     
     /* Social Icons Colors */
@@ -19,10 +20,18 @@
 
     /* sidebar sociallinks icon color */
     --link-icon-color: #1E5F74;
+    
+
+    /* Skill Cards */
+    --gradient-dark-green: #194B45;
+    --prog-bar-light-green: #00917C;
+    --prog-bar-light-blue: #1976d2;
+    --badged-hover-bg-color: #061444;
+    --badged-hover-bg-color-2: #19294b;
+    --cyan: #3AE7AB;
 }
 
 html {
-    overflow: hidden;
     scroll-behavior: smooth;
     position: relative;
 }
