@@ -2,6 +2,7 @@ import Image from "next/image"
 import React from "react";
 import withMotion from "../HOC/MotionHOC";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 // assets
 import me from "../assets/me.jpg";
@@ -9,11 +10,9 @@ import me from "../assets/me.jpg";
 // Icons
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 
-
-// Resume PDF
-
 const Home = () => {
-    return (
+  const router = useRouter()
+  return (
         <Container>
             <Content>
                 <ImageContainer>
@@ -27,7 +26,7 @@ const Home = () => {
                 <Description>
                     and I&apos;m a <code>Front-End Developer</code>
                 </Description>
-                <Resume onClick={() => window.open("/assets/Resume/Alireza-Zahiri.pdf")}>
+                <Resume onClick={() => router.push("/alireza-zahiri")}>
                     <MenuBookIcon />
                     <span>RESUME</span>
                 </Resume>

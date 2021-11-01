@@ -20,7 +20,7 @@ const SideBar: FC = () => {
   const handleLinksClick = () => setLinksClick(!linksClick);
 
   const router = useRouter()
-
+  console.log(router)
   return (
     <Container>
       <Button clicked={click} onClick={() => handleClick()} />
@@ -143,6 +143,7 @@ const Item = styled.div`
     transition: all 0.2s ease-in-out;
     padding: 1rem 0;
     display: flex;
+    align-items: center;
     color: var(--grey);
     &:hover {
       border-right: 4px solid var(--white);
@@ -159,7 +160,7 @@ const Item = styled.div`
       a {
         border-right: 4px solid var(--white);
       }
-      svg {
+      svg, span {
         color: var(--white);
       }
       `
