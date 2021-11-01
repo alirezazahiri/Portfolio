@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router"
 import React, { FC, useState } from "react";
 
 // sidebar items 
@@ -17,6 +18,8 @@ const SideBar: FC = () => {
 
   const [linksClick, setLinksClick] = useState(false);
   const handleLinksClick = () => setLinksClick(!linksClick);
+
+  const router = useRouter()
 
   return (
     <Container>
@@ -46,6 +49,7 @@ const SideBar: FC = () => {
             return (
               <Item key={id}
                 onClick={() => setClick(false)}
+                isActive={router.asPath === path}
               >
                 <Link
                   href={path}
@@ -65,7 +69,8 @@ const SideBar: FC = () => {
 };
 
 interface Props {
-  clicked?: boolean
+  clicked?: boolean,
+  isActive?: boolean
 }
 
 const Button = styled.button`
@@ -134,8 +139,8 @@ const Item = styled.div`
   text-decoration: none;
   width: 100%;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
   a{
+    transition: all 0.2s ease-in-out;
     padding: 1rem 0;
     display: flex;
     color: var(--grey);
@@ -147,6 +152,17 @@ const Item = styled.div`
       width: 1.2rem;
       height: auto;
     }
+  }
+  
+  ${(props: Props) => props.isActive && 
+      `
+      a {
+        border-right: 4px solid var(--white);
+      }
+      svg {
+        color: var(--white);
+      }
+      `
   }
 `;
 
