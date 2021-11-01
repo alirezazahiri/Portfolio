@@ -20,7 +20,7 @@ const SideBar: FC = () => {
   const handleLinksClick = () => setLinksClick(!linksClick);
 
   const router = useRouter()
-  console.log(router)
+
   return (
     <Container>
       <Button clicked={click} onClick={() => handleClick()} />

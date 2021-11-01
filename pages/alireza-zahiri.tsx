@@ -1,9 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const MyResume = () => {
-  return (
-    <embed src="alireza-zahiri.pdf" width="100vh" height="100vh" />
-  );
+  return <Embed src="alireza-zahiri.pdf" />
 }
+
+const Embed = styled.embed`
+    width: 100vw;
+    height: 100vh;
+`
 
 export default MyResume
