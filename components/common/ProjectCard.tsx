@@ -19,7 +19,7 @@ const ProjectCard: FC<Props> = ({ title, description, image, link, tBadges }) =>
       </Info>
       <Description>{description}</Description>
       <TechBadges>
-        {tBadges.map(badge => <div>{badge}</div>)}
+        {tBadges.map(badge => <div key={badge}>{badge}</div>)}
       </TechBadges>
     </Container>
   );
