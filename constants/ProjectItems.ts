@@ -1,5 +1,5 @@
-// Mafia
-import mafia from "../assets/projects/mafia/1.jpg";
+// Werewolf
+import werewolf from "../assets/projects/werewolf/1.jpg";
 
 // Disney
 import disney from "../assets/projects/disney/1.jpg";
@@ -33,9 +33,9 @@ export type ProjectItem = {
 const items: ProjectItem[] = [
   {
     id: "1",
-    image: mafia,
-    title: "Mafia",
-    link: "https://mafia-rho.vercel.app/",
+    image: werewolf,
+    title: "Werewolf",
+    link: "https://were-wolf.vercel.app/",
     description:
       "A React App For Managing Mafia Games Easier, supporting two languages (English & Persian), Click on See Project to jump in!",
   },
