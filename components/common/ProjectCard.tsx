@@ -7,10 +7,10 @@ import { ProjectItem } from '../../constants/ProjectItems';
 
 type Props = ProjectItem
 
-const ProjectCard: FC<Props> = ({ title, description, image, link }) => {
+const ProjectCard: FC<Props> = ({ title, description, image, link, tBadges }) => {
   return (
     <Container>
-      <Image src={image} alt={title} onClick={() => window.open(link)}/>
+      <Image src={image} alt={title} onClick={() => window.open(link)} />
       <Info>
         <Title>{title}</Title>
         <ProjectLink onClick={() => window.open(link)}>
@@ -18,6 +18,9 @@ const ProjectCard: FC<Props> = ({ title, description, image, link }) => {
         </ProjectLink>
       </Info>
       <Description>{description}</Description>
+      <TechBadges>
+        {tBadges.map(badge => <div>{badge}</div>)}
+      </TechBadges>
     </Container>
   );
 };
@@ -93,5 +96,25 @@ const ProjectLink = styled.button`
     color: var(--grey-second);
   }
 `;
+
+const TechBadges = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+  div {
+    margin-left: 2px;
+    background-color: var(--tech-badge-bg);
+    color: var(--tech-badge-text);
+    width: fit-content;
+    padding: 3px 5px;
+    border-radius: 20px;
+    font-size: 12px;
+    &:hover {
+      cursor: pointer;
+      color: var(--white);
+      background-color: var(--tech-badge-text);
+    }
+  }
+`
 
 export default ProjectCard;

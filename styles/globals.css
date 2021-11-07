@@ -13,7 +13,7 @@
     --dark-blue: #0f044c;
     --midnight-blue: #16213e;
     --grayish-blue: #6e85b2;
-    
+
     /* Social Icons Colors */
     --github: white;
     --linked-in: #0a66c2;
@@ -22,7 +22,7 @@
     /* sidebar sociallinks icon color */
     --link-icon-color: #1E5F74;
     --link-icon-color-dark: #1E5F7477;
-    
+
 
     /* Skill Cards */
     --gradient-dark-green: #194B45;
@@ -31,9 +31,13 @@
     --badged-hover-bg-color: #061444;
     --badged-hover-bg-color-2: #19294b;
     --cyan: #3AE7AB;
-    
+
     /* Certificate Cards*/
     --company-color: rgb(37, 99, 235);
+
+    /* Tech Badges */
+    --tech-badge-bg: #388bfd26;
+    --tech-badge-text: #58a6ff;
 }
 
 html {

@@ -11,13 +11,14 @@ const Projects = () => {
   return (
     <Container>
       <Content>
-        {items.map(({ id, title, description, link, image }) => {
+        {items.map(({ id, title, description, link, image, tBadges }) => {
           return <ProjectCard
             key={id}
             title={title}
             description={description}
             image={image}
             link={link}
+            tBadges={tBadges}
           />
         })}
       </Content>
