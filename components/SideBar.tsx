@@ -11,6 +11,7 @@ import styled from "styled-components";
 
 // Icons
 import LinkIcon from "@mui/icons-material/Link";
+import BackIcon from '@mui/icons-material/ArrowBack';
 
 const SideBar: FC = () => {
   const [click, setClick] = useState(false);
@@ -20,6 +21,9 @@ const SideBar: FC = () => {
   const handleLinksClick = () => setLinksClick(!linksClick);
 
   const router = useRouter()
+
+  if (router.asPath === "/alireza-zahiri")
+    return <Link href="/"><BackToHome title="back"><BackIcon /></BackToHome></Link>
 
   return (
     <Container>
@@ -104,6 +108,17 @@ const Button = styled.button`
   }
 `;
 
+const BackToHome = styled.a`
+  background-color: var(--dark-blue);
+  width: fit-content;
+  padding: 10px 12px;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+`
+
 const SidebarContainer = styled.div`
   background-color: var(--dark-blue);
   width: 3.5rem;
@@ -155,8 +170,8 @@ const Item = styled.div`
     }
   }
   
-  ${(props: Props) => props.isActive && 
-      `
+  ${(props: Props) => props.isActive &&
+    `
       a {
         border-right: 4px solid var(--white);
       }

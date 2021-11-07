@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "webpack.config.js", "pages/alireza-zahiri.tsx"  ],
   "exclude": [
     "node_modules"
   ]

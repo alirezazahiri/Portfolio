@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MyResume = () => {
-  return <Embed src="alireza-zahiri.pdf" />
+  return <Iframe src="alireza-zahiri.pdf" />
 }
 
-const Embed = styled.embed`
-    width: 100vw;
+const Iframe = styled.iframe`
+    width: 100%;
     height: 100vh;
+    overflow-y: hidden;
 `
 
 export default MyResume
