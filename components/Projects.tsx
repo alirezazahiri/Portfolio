@@ -1,11 +1,11 @@
 import React from "react";
-import withMotion from "../HOC/MotionHOC";
+import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 
 import ProjectCard from "./common/ProjectCard";
 
 // Items
-import items from "../constants/ProjectItems";
+import items from "@/constants/ProjectItems";
 
 const Projects = () => {
   return (

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image"
 
 // type
-import { CertificateItem } from '../../constants/CertificateItems';
+import { CertificateItem } from '@/constants/CertificateItems';
 
 type Props = CertificateItem
 

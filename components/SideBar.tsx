@@ -3,8 +3,8 @@ import { useRouter } from "next/router"
 import React, { FC, useState } from "react";
 
 // sidebar items 
-import items from "../constants/SideBarItems";
-import social_items from "../constants/SocialLinkItems";
+import items from "@/constants/SideBarItems";
+import social_items from "@/constants/SocialLinkItems";
 
 // styled
 import styled from "styled-components";

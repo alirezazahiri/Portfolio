@@ -1,10 +1,10 @@
 import React from "react";
-import withMotion from "../HOC/MotionHOC";
+import withMotion from "@/HOC/MotionHOC";
 import CertificateCard from "./common/CertificateCard";
 import styled from "styled-components";
 
 // items
-import items from "../constants/CertificateItems";
+import items from "@/constants/CertificateItems";
 
 const Certificates = () => {
   return (

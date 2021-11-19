@@ -6,7 +6,7 @@ import LinearProgress from "@mui/material/LinearProgress";
 import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined"; // badged ones
 
 // type
-import { SkillItem } from '../../constants/SkillItems';
+import { SkillItem } from '@/constants/SkillItems';
 
 type Props = {
     item: SkillItem

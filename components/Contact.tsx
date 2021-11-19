@@ -1,11 +1,11 @@
 import React from "react";
-import withMotion from "../HOC/MotionHOC";
+import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 
 import ContactCard from "./common/ContactCard";
 
 // Common
-import items from "../constants/ContactItems";
+import items from "@/constants/ContactItems";
 
 const Contact = () => {
     return (

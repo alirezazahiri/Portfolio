@@ -1,7 +1,7 @@
 import React from "react";
-import withMotion from "../HOC/MotionHOC";
+import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
-import items from "../constants/SkillItems";
+import items from "@/constants/SkillItems";
 
 // Common
 import SkillCard from "./common/SkillCard";

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image"
 
 // type 
-import { ProjectItem } from '../../constants/ProjectItems';
+import { ProjectItem } from '@/constants/ProjectItems';
 
 type Props = ProjectItem
 

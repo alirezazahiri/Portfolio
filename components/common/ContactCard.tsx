@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 // type
-import { ContactItem } from '../../constants/ContactItems';
+import { ContactItem } from '@/constants/ContactItems';
 
 type Props = ContactItem
 

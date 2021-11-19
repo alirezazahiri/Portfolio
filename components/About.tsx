@@ -1,5 +1,5 @@
 import React from "react";
-import withMotion from "../HOC/MotionHOC";
+import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 
 const About = () => {

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import React from "react";
-import withMotion from "../HOC/MotionHOC";
+import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
