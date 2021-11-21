@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import Head from "next/head"
 
 // component
-import Projects from "../components/Projects";
+import Projects from "@/components/Projects";
 
 const Page: NextPage = () => {
     return <div>

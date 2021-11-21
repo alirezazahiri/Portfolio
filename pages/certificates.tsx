@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import Head from "next/head"
 
 // component
-import Certificates from '../components/Certificates';
+import Certificates from '@/components/Certificates';
 
 const Page: NextPage = () => {
     return <div>

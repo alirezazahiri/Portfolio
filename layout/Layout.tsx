@@ -4,7 +4,7 @@ import React from 'react';
 import { AnimatePresence } from "framer-motion";
 
 // components
-import SideBar from '../components/SideBar';
+import SideBar from '@/components/SideBar';
 
 interface Props {
     children: JSX.Element

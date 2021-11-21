@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 // component
-import Skills from "../components/Skills";
+import Skills from "@/components/Skills";
 
 const Page: NextPage = () => {
     return <div>

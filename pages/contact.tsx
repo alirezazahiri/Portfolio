@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import Head from "next/head"
 
 // component
-import Contact from '../components/Contact';
+import Contact from '@/components/Contact';
 
 const Page: NextPage = () => {
     return <div>
