@@ -17,7 +17,7 @@ const items: ContactItem[] = [
     {
         id: "1",
         icon: <TelegramIcon />,
-        link: "https://t.me/i_ali_zr",
+        link: "https://t.me/alirezza_zr",
         description: "Message Me On Telegram!",
         color: "#0088cc",
     },
