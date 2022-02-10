@@ -10,7 +10,7 @@ const Skills = () => {
   return (
     <Container>
       <SkillsContainer>
-        {items.map(item => <SkillCard key={item.id} item={item} />)}
+        {items.sort((a, b) => b.value - a.value).map(item => <SkillCard key={item.id} item={item} />)}
       </SkillsContainer>
     </Container>
   );

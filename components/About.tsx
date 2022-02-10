@@ -7,11 +7,14 @@ const About = () => {
     <Container>
       <Content>
         <p>
-          I started programming since i came to university, and then i tried
-          different <code>Programming Languages </code>
-          and figured out that i like Front-End developement the most. until now
-          i have a <code>2 years</code> coding experience in
-          <code> HTML5, CSS3, Javascript</code> & <code>ReactJS</code>
+          Welcome to my <code>Portfolio</code>,<br/>
+          Where i tell more about myself and my work,<br/>
+          I started programming, since i entered University,<br/>
+          After 3 months i started exploring different programming languages (like <code>Java, C++, Python</code>),<br/>
+          And after all i found myself more attracted to <code>Web Programming</code> than other stuff,<br/>
+          And now here i am, with most of my experience in <code>Front-End development</code>,<br/>
+          Working on my skills and always <code>improving</code> my knowledge, <code>passionate</code> about learning stuff, and <code>caring</code>,<br/>
+          Feel free to take a look at rest of my website.
         </p>
       </Content>
     </Container>
@@ -19,7 +22,7 @@ const About = () => {
 };
 
 const Container = styled.div`
-  padding: 65px 40px 0 80px;
+  padding: 20px 40px 0 80px;
   color: var(--grayish-blue);
   z-index: -1;
 `
@@ -29,7 +32,7 @@ const Content = styled.div`
   border: 1px solid var(--link-icon-color);
   box-shadow: 0 0 20px var(--link-icon-color);
   border-radius: 12px;
-  padding: 100px 50px;
+  padding: 60px 50px;
   text-align: center;
   p {
     font-size: 24px;

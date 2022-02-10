@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100&display=swap');
 
 :root {
     /* Colors */
@@ -56,7 +57,7 @@ html {
 body {
     background-color: var(--background);
     background-position: relative;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -66,4 +67,9 @@ h1 {
 a {
     color: #f9f9f9;
     text-decoration: none;
+}
+
+code {
+    font-family: 'Encode Sans SC', sans-serif;
+    letter-spacing: 1px;
 }

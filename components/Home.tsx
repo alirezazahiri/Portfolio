@@ -17,7 +17,7 @@ const Home = () => {
         <Container>
             <Content>
                 <ImageContainer>
-                    <Image src={me} alt="my photo" aria-hidden="true" role="presentation" />
+                    <Image src={me} layout="intrinsic" alt="my photo"/>
                 </ImageContainer>
                 <Welcome>Hey There!</Welcome>
                 <NameContainer>
@@ -58,14 +58,16 @@ const Content = styled.div`
 
 const ImageContainer = styled.div`
     box-sizing: border-box;
-    width: 250px;
-    margin: 0 auto;
+    width: 240px;
+    height: 240px;
+    margin: auto;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 20px var(--grey-second-dark);
     border: none;
     @media (min-width: 0) and (max-width: 480px) {
-        width: 125px;
+        width: 120px;
+        height: 120px;
     }
 `;
 

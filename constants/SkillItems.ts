@@ -51,37 +51,37 @@ const items: SkillItem[] = [
   {
     id: "12",
     title: "NextJS",
-    value: 45,
+    value: 60,
     gotBadge: false
   },
   {
     id: "13",
     title: "TypeScript",
-    value: 40,
+    value: 60,
     gotBadge: false
   },
   {
     id: "8",
     title: "Python",
-    value: 40,
+    value: 50,
     gotBadge: true
   },
   {
     id: "9",
     title: "Django",
-    value: 40,
+    value: 20,
     gotBadge: false
   },
   {
     id: "10",
     title: "Java",
-    value: 40,
+    value: 20,
     gotBadge: false
   },
   {
     id: "11",
     title: "C++",
-    value: 40,
+    value: 50,
     gotBadge: false
   },
 ];

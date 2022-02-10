@@ -6,39 +6,39 @@ import LinearProgress from "@mui/material/LinearProgress";
 import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined"; // badged ones
 
 // type
-import { SkillItem } from '@/constants/SkillItems';
+import { SkillItem } from "@/constants/SkillItems";
 
 type Props = {
-    item: SkillItem
-}
+  item: SkillItem;
+};
 
 const SkillCard: FC<Props> = ({ item }) => {
-    return (
-        <ProgressContainer gotBadge={item.gotBadge}>
-            <Title gotBadge={item.gotBadge}>
-                <h4>
-                    <code>{item.title}</code>
-                    {item.gotBadge && <VerifiedOutlinedIcon />}
-                </h4>
-                <h4 className="precentage">
-                    <code>{item.value}</code>%
-                </h4>
-            </Title>
-            <LinearProgress
-                variant="determinate"
-                value={item.value}
-                style={{ width: "100%", height: "6px", borderRadius: "12px" }}
-                color="primary"
-            />
-            {item.gotBadge && (
-                <p className="badged-text">Got Linked-In Assesment Badge</p>
-            )}
-        </ProgressContainer>
-    );
+  return (
+    <ProgressContainer gotBadge={item.gotBadge}>
+      <Title gotBadge={item.gotBadge}>
+        <h4>
+          <code>{item.title}</code>
+          {item.gotBadge && <VerifiedOutlinedIcon />}
+        </h4>
+        <h4 className="precentage">
+          <code>{item.value}</code>%
+        </h4>
+      </Title>
+      <LinearProgress
+        variant="determinate"
+        value={item.value}
+        style={{ width: "100%", height: "6px", borderRadius: "12px" }}
+        color="primary"
+      />
+      {item.gotBadge && (
+        <p className="badged-text">Got Linked-In Assesment Badge</p>
+      )}
+    </ProgressContainer>
+  );
 };
 
 interface IProps {
-    gotBadge?: boolean
+  gotBadge?: boolean;
 }
 
 const ProgressContainer = styled.div`
@@ -47,14 +47,24 @@ const ProgressContainer = styled.div`
   text-align: center;
   padding: 10px;
   border-radius: 12px;
-  box-shadow: 0 0 12px ${(props: IProps) => (props.gotBadge ? "var(--gradient-dark-green)" : "var(--link-icon-color)")};
-  background: linear-gradient(to right, var(--background) 30%, var(--midnight-blue) 100%);
-  border: 1px solid ${(props: IProps) => (props.gotBadge ? "var(--gradient-dark-green)" : "var(--link-icon-color)")};
-  transition: all 0.2s;
+  box-shadow: 0 0 12px
+    ${(props: IProps) =>
+      props.gotBadge ? "var(--gradient-dark-green)" : "var(--link-icon-color)"};
+  background: linear-gradient(
+    to right,
+    var(--background) 30%,
+    var(--midnight-blue) 100%
+  );
+  border: 1px solid
+    ${(props: IProps) =>
+      props.gotBadge ? "var(--gradient-dark-green)" : "var(--link-icon-color)"};
   margin-bottom: 30px;
   .MuiLinearProgress-root {
     .MuiLinearProgress-bar {
-      background-color: ${(props: IProps) => (props.gotBadge ? "var(--prog-bar-light-green)" : "var(--prog-bar-light-blue)")};
+      background-color: ${(props: IProps) =>
+        props.gotBadge
+          ? "var(--prog-bar-light-green)"
+          : "var(--prog-bar-light-blue)"};
     }
   }
   .badged-text {
@@ -67,8 +77,8 @@ const ProgressContainer = styled.div`
   }
   &:hover {
     ${(props: IProps) =>
-        props.gotBadge &&
-        `
+      props.gotBadge &&
+      `
         background: linear-gradient(to right, var(--badged-hover-bg-color) 30%, var(--badged-hover-bg-color-2) 100%);
         display: flex;
         flex-direction: column;
@@ -95,7 +105,8 @@ const Title = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  color: ${(props: IProps) => (props.gotBadge ? "var(--cyan)" : "var(--grey-second)")};
+  color: ${(props: IProps) =>
+    props.gotBadge ? "var(--cyan)" : "var(--grey-second)"};
   h4 {
     font-weight: 400;
     letter-spacing: 1px;
