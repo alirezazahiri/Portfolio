@@ -1,25 +1,35 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import Image from "next/image"
+import Image from "next/image";
 
-// type 
-import { ProjectItem } from '@/constants/ProjectItems';
+// type
+import { ProjectItem } from "@/constants/ProjectItems";
 
-type Props = ProjectItem
+type Props = ProjectItem;
 
-const ProjectCard: FC<Props> = ({ title, description, image, link, tBadges }) => {
+const ProjectCard: FC<Props> = ({
+  title,
+  description,
+  image,
+  link,
+  tBadges,
+}) => {
   return (
     <Container>
       <Image src={image} alt={title} onClick={() => window.open(link)} />
       <Info>
-        <Title>{title}</Title>
+        <Title>
+          <code>{title}</code>
+        </Title>
         <ProjectLink onClick={() => window.open(link)}>
           See Project &rarr;
         </ProjectLink>
       </Info>
       <Description>{description}</Description>
       <TechBadges>
-        {tBadges.map(badge => <div key={badge}>{badge}</div>)}
+        {tBadges.map((badge) => (
+          <div key={badge}>{badge}</div>
+        ))}
       </TechBadges>
     </Container>
   );
@@ -37,7 +47,11 @@ const Container = styled.div`
       cursor: pointer;
     }
   }
-  background: linear-gradient(to left, var(--background) 30%, var(--midnight-blue) 100%);
+  background: linear-gradient(
+    to left,
+    var(--background) 30%,
+    var(--midnight-blue) 100%
+  );
   border: 1px solid var(--link-icon-color);
   box-shadow: 0 0 20px var(--link-icon-color-dark);
   padding: 8px;
@@ -95,6 +109,29 @@ const ProjectLink = styled.button`
     cursor: pointer;
     color: var(--grey-second);
   }
+
+  animation-name: left-right;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  @keyframes left-right {
+    0% {
+      transform: translateX(0);
+    }
+    
+    50% {
+      transform: translateX(-2px);
+    }
+    
+    75% {
+      transform: translateX(2px);
+    }
+    
+    100% {
+      transform: translateX(1px);
+    }
+  }
 `;
 
 const TechBadges = styled.div`
@@ -115,6 +152,6 @@ const TechBadges = styled.div`
       background-color: var(--tech-badge-text);
     }
   }
-`
+`;
 
 export default ProjectCard;
