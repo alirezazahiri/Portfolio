@@ -122,7 +122,7 @@ const BackToHome = styled.a`
 const SidebarContainer = styled.div`
   background-color: var(--dark-blue);
   width: 3.5rem;
-  height: 67.8vh;
+  height: 100vh;
   margin-top: 1rem;
   border-radius: 0 30px 30px 0;
   padding: 1rem 0;
@@ -144,6 +144,7 @@ const SlickBar = styled.ul`
   position: absolute;
   top: 6rem;
   left: 0;
+  bottom: 0;
   width: ${(props: Props) => (props.clicked ? "12rem" : "3.5rem")};
   transition: all 0.3s ease;
   border-radius: 0 30px 30px 0;
