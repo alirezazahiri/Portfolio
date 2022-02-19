@@ -32,7 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     "webpack.config.js",
-    "pages/alireza-zahiri.tsx"
+    "pages/cv.tsx"
   ],
   "exclude": [
     "node_modules"

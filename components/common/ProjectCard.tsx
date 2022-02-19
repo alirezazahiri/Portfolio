@@ -117,19 +117,13 @@ const ProjectLink = styled.button`
 
   @keyframes left-right {
     0% {
-      transform: translateX(0);
+        transform: translateX(2px);
     }
-    
     50% {
-      transform: translateX(-2px);
+        transform: translateX(-4px);
     }
-    
-    75% {
-      transform: translateX(2px);
-    }
-    
     100% {
-      transform: translateX(1px);
+        transform: translateX(2px);
     }
   }
 `;

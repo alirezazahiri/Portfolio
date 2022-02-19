@@ -22,7 +22,7 @@ const SideBar: FC = () => {
 
   const router = useRouter()
 
-  if (router.asPath === "/alireza-zahiri")
+  if (router.asPath === "/cv")
     return <Link href="/"><BackToHome title="back"><BackIcon /></BackToHome></Link>
 
   return (
