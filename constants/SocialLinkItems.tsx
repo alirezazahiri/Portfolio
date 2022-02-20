@@ -10,7 +10,7 @@ type Item = {
     icon: any;
 };
 
-const social_items = [
+const social_items: Item[] = [
     {
         id: "1",
         feed: "https://www.linkedin.com/in/alireza-zahiri-a2956020a/",

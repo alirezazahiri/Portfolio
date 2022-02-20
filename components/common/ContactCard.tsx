@@ -2,40 +2,42 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 // type
-import { ContactItem } from '@/constants/ContactItems';
+import { ContactItem } from "@/constants/ContactItems";
 
-type Props = ContactItem
+type Props = ContactItem;
 
 const ContactCard: FC<Props> = ({ type, icon, link, description, color }) => {
-    const titleLink = () => {
-        return type === "mail" ? link.split("@")[0] : link.split("/").reverse()[0];
-    };
-    const clickHandler = () => (type === "mail" ? window.open(`mailto:${link}`) : window.open(link));
-    return (
-        <Container onClick={clickHandler}>
-            <LinkContainer>
-                <Icon color={color}>
-                    {icon}
-                </Icon>
-                <ContactLink
-                    color={color}
-                    target="_blank"
-                >
-                    @{titleLink()}
-                </ContactLink>
-            </LinkContainer>
-            <Description>{description}</Description>
-        </Container>
-    );
+  const titleLink = () => {
+    return type === "mail"
+      ? link.split("@")[0]
+      : link.split("/").reverse()[0].substring(0, 14);
+  };
+  const clickHandler = () =>
+    type === "mail" ? window.open(`mailto:${link}`) : window.open(link);
+  return (
+    <Container onClick={clickHandler}>
+      <LinkContainer>
+        <Icon color={color}>{icon}</Icon>
+        <ContactLink color={color} target="_blank">
+          @{titleLink()}
+        </ContactLink>
+      </LinkContainer>
+      <Description>{description}</Description>
+    </Container>
+  );
 };
 
 interface IProps {
-    color: string
+  color: string;
 }
 
 const Container = styled.div`
   width: 100%;
-  background: linear-gradient(to left, var(--background) 30%, var(--midnight-blue) 100%);
+  background: linear-gradient(
+    to left,
+    var(--background) 30%,
+    var(--midnight-blue) 100%
+  );
   border: 1px solid var(--link-icon-color);
   box-shadow: 0 0 20px var(--link-icon-color-dark);
   padding: 30px;
