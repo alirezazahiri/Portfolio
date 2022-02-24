@@ -1,75 +1,146 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100&display=swap");
 
 :root {
-    /* Colors */
-    --black: #040714;
-    --grey: #787a91;
-    --grey-second: #d8b9c3;
-    --grey-second-medium: #d8b9c388;
-    --grey-second-dark: #d8b9c344;
-    --white: #f9f9f9;
-    --background: #040714;
-    --background-alt: #334756;
-    --dark-blue: #0f044c;
-    --midnight-blue: #16213e;
-    --grayish-blue: #6e85b2;
+  /* Colors */
+  --black: #040714;
+  --grey: #787a91;
+  --grey-second: #d8b9c3;
+  --grey-second-medium: #d8b9c388;
+  --grey-second-dark: #d8b9c344;
+  --white: #f9f9f9;
+  --background: #040714;
+  --background-alt: #334756;
+  --dark-blue: #0f044c;
+  --midnight-blue: #16213e;
+  --grayish-blue: #6e85b2;
 
-    /* Social Icons Colors */
-    --github: white;
-    --linked-in: #0a66c2;
-    --twitter: #1da1f2;
+  /* Social Icons Colors */
+  --github: white;
+  --linked-in: #0a66c2;
+  --twitter: #1da1f2;
 
-    /* sidebar sociallinks icon color */
-    --link-icon-color: #1E5F74;
-    --link-icon-color-dark: #1E5F7477;
+  /* sidebar sociallinks icon color */
+  --link-icon-color: #1e5f74;
+  --link-icon-color-dark: #1e5f7477;
 
+  /* Skill Cards */
+  --gradient-dark-green: #194b45;
+  --prog-bar-light-green: #00917c;
+  --prog-bar-light-blue: #1976d2;
+  --badged-hover-bg-color: #061444;
+  --badged-hover-bg-color-2: #19294b;
+  --cyan: #3ae7ab;
 
-    /* Skill Cards */
-    --gradient-dark-green: #194B45;
-    --prog-bar-light-green: #00917C;
-    --prog-bar-light-blue: #1976d2;
-    --badged-hover-bg-color: #061444;
-    --badged-hover-bg-color-2: #19294b;
-    --cyan: #3AE7AB;
+  /* Certificate Cards*/
+  --company-color: rgb(37, 99, 235);
 
-    /* Certificate Cards*/
-    --company-color: rgb(37, 99, 235);
-
-    /* Tech Badges */
-    --tech-badge-bg: #388bfd26;
-    --tech-badge-text: #58a6ff;
+  /* Tech Badges */
+  --tech-badge-bg: #388bfd26;
+  --tech-badge-text: #58a6ff;
 }
 
 html {
-    scroll-behavior: smooth;
-    position: relative;
+  scroll-behavior: smooth;
+  position: relative;
 }
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--background);
-    background-position: relative;
-    font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  background-position: relative;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
-    color: white;
+  color: white;
 }
 
 a {
-    color: #f9f9f9;
-    text-decoration: none;
+  color: #f9f9f9;
+  text-decoration: none;
 }
 
 code {
-    font-family: 'Encode Sans SC', sans-serif;
-    letter-spacing: 1px;
+  font-family: "Encode Sans SC", sans-serif;
+  letter-spacing: 1px;
+}
+
+@keyframes width-change {
+  0% {
+    width: fit-content;
+  }
+  10% {
+    width: fit-content;
+  }
+  20% {
+    width: fit-content;
+  }
+  30% {
+    width: fit-content;
+  }
+  40% {
+    width: 40%;
+  }
+  50% {
+    width: 50%;
+  }
+  60% {
+    width: 60%;
+  }
+  70% {
+    width: 70%;
+  }
+  80% {
+    width: 80%;
+  }
+  90% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes width-change-reverse {
+  0% {
+    width: 100%;
+  }
+  10% {
+    width: 90%;
+  }
+  20% {
+    width: 80%;
+  }
+  30% {
+    width: 70%;
+  }
+  40% {
+    width: 60%;
+  }
+  50% {
+    width: 50%;
+  }
+  60% {
+    width: 40%;
+  }
+  70% {
+    width: fit-content;
+  }
+  80% {
+    width: fit-content;
+  }
+  90% {
+    width: fit-content;
+  }
+  100% {
+    width: fit-content;
+  }
 }

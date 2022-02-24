@@ -19,6 +19,7 @@ const Home = () => {
         <Content>
           <ImageContainer>
             <Image src={me} layout="intrinsic" alt="my photo" />
+            <Status></Status>
           </ImageContainer>
           <Welcome>Hey There!</Welcome>
           <NameContainer>
@@ -69,12 +70,15 @@ const Content = styled.div`
 
 const ImageContainer = styled.div`
   box-sizing: border-box;
+  margin: auto;
+  position: relative;
   width: 240px;
   height: 240px;
-  margin: auto;
-  border-radius: 50%;
-  overflow: hidden;
   box-shadow: 0 0 20px var(--grey-second-dark);
+  border-radius: 50%;
+  img {
+    border-radius: 50%;
+  }
   border: none;
   @media (min-width: 0) and (max-width: 480px) {
     width: 120px;
@@ -147,76 +151,27 @@ const Resume = styled.div`
       padding-right: 5px;
     }
   }
+`;
 
-  @keyframes width-change {
-    0% {
-      width: fit-content;
-    }
-    10% {
-      width: 10%;
-    }
-    20% {
-      width: 20%;
-    }
-    30% {
-      width: 30%;
-    }
-    40% {
-      width: 40%;
-    }
-    50% {
-      width: 50%;
-    }
-    60% {
-      width: 60%;
-    }
-    70% {
-      width: 70%;
-    }
-    80% {
-      width: 80%;
-    }
-    90% {
-      width: 90%;
-    }
-    100% {
-      width: 100%;
-    }
+const Status = styled.div`
+  position: absolute;
+  left: 70%;
+  bottom: 0;
+  width: fit-content;
+  background-color: #000;
+  padding: 5px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  border: 1px solid var(--midnight-blue);
+  cursor: pointer;
+  transition: all 0.3s;
+  &:before {
+    content: "💎";
   }
-
-  @keyframes width-change-reverse {
-    0% {
-      width: 100%;
-    }
-    10% {
-      width: 90%;
-    }
-    20% {
-      width: 80%;
-    }
-    30% {
-      width: 70%;
-    }
-    40% {
-      width: 60%;
-    }
-    50% {
-      width: 50%;
-    }
-    60% {
-      width: 40%;
-    }
-    70% {
-      width: 30%;
-    }
-    80% {
-      width: 20%;
-    }
-    90% {
-      width: 10%;
-    }
-    100% {
-      width: fit-content;
+  &:hover {
+    padding: 5px 9px 6px 5px;
+    &:after {
+      content: " Focusing...";
     }
   }
 `;
