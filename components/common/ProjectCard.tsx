@@ -117,7 +117,7 @@ const ImageContainer = styled.div`
     background-color: rgba(0, 0, 0, 0.75);
     cursor: pointer;
     .content {
-      color: var(--star-color);
+      color: var(--background-alt);
       font-size: 20px;
       position: absolute;
       display: flex;
@@ -133,6 +133,10 @@ const ImageContainer = styled.div`
         display: flex;
         align-items: center;
         letter-spacing: 10px;
+        transition: all 0.5s;
+        &:hover {
+          color: var(--grayish-blue);
+        }
       }
       .bottom {
         button {
@@ -141,16 +145,17 @@ const ImageContainer = styled.div`
           letter-spacing: 1px;
           background: none;
           outline: none;
-          border: 1px solid var(--star-color-dark);
+          border: 1px solid var(--midnight-blue);
           margin-top: 5px;
           padding: 5px;
-          color: var(--star-color);
+          color: var(--background-alt);
           text-transform: uppercase;
           cursor: pointer; 
           transition: all 0.5s;
           &:hover {
-            background-color: var(--star-color-dark);
-            color: var(--black);
+            border: 1px solid var(--grayish-blue);
+            background-color: var(--background);
+            color: var(--grayish-blue);
           }
         }
       }
