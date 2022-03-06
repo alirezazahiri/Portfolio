@@ -1,39 +1,24 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
 // type
 import { ProjectItem } from "@/constants/ProjectItems";
 
-// services
-import { getRepoDetails } from "../../services/repo-request";
-
 // MUI
 import StarIcon from "@mui/icons-material/Star";
 
-type Props = ProjectItem;
+type Props = ProjectItem & { stars: number; topics: string[], homepage: string };
 
 const ProjectCard: FC<Props> = ({
   title,
   description,
   image,
-  link,
+  homepage,
   repoName,
+  stars,
+  topics
 }) => {
-  const [details, setDetails] = useState<{ stars: number; topics: string[] }>({
-    stars: 0,
-    topics: [],
-  });
-
-  useEffect(() => {
-    const setStars = async () => {
-      const { data } = await getRepoDetails(repoName);
-      setDetails({ ...data });
-    };
-
-    setStars();
-  }, []);
-
   return (
     <Container>
       <ImageContainer>
@@ -41,7 +26,7 @@ const ProjectCard: FC<Props> = ({
         <div className="overlay">
           <div className="content">
             <div className="top">
-              <h3>{details.stars}</h3>
+              <h3>{stars}</h3>
               <StarIcon />
             </div>
             <div className="bottom">
@@ -60,13 +45,13 @@ const ProjectCard: FC<Props> = ({
         <Title>
           <code>{title}</code>
         </Title>
-        <ProjectLink onClick={() => window.open(link)}>
+        <ProjectLink onClick={() => window.open(homepage)}>
           See Project &rarr;
         </ProjectLink>
       </Info>
       <Description>{description}</Description>
       <TechBadges>
-        {details.topics.map((badge) => (
+        {topics.map((badge) => (
           <div key={badge}>{badge}</div>
         ))}
       </TechBadges>
@@ -114,7 +99,7 @@ const ImageContainer = styled.div`
     width: calc(100%-16px);
     opacity: 0;
     transition: 0.5s ease;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.9);
     cursor: pointer;
     .content {
       color: var(--background-alt);
