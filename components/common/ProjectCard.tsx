@@ -8,7 +8,8 @@ import { ProjectItem } from "@/constants/ProjectItems";
 // MUI
 import StarIcon from "@mui/icons-material/Star";
 
-import { RepoDetailsType } from 'next-env';
+// types
+import { RepoDetailsType } from "@/types/common";
 
 type Props = ProjectItem & RepoDetailsType;
 

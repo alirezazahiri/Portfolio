@@ -8,6 +8,7 @@
       "@/styles/*": ["styles/*"],
       "@/layout/*": ["layout/*"],
       "@/components/*": ["components/*"],
+      "@/types/*": ["types/*"],
     },
     "lib": [
       "dom",

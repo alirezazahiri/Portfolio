@@ -1,4 +1,5 @@
-import { RepoDetailsType } from "../next-env";
+import { RepoDetailsType } from "@/types/common";
+
 const requestOptions = {
   method: "GET",
 };

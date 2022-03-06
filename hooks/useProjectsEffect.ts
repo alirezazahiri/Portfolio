@@ -1,5 +1,5 @@
 import { ProjectItem } from "@/constants/ProjectItems";
-import { RepoDetailsType } from "next-env";
+import { RepoDetailsType } from "@/types/common";
 import { useEffect, useState } from "react";
 import { getRepoDetails } from "services/repo-request";
 
