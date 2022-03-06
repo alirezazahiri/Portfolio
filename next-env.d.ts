@@ -4,10 +4,9 @@
 
 // NOTE: This file should not be edited
 // see https://nextjs.org/docs/basic-features/typescript for more information.
-
 export type RepoDetailsType = {
-  stars: number;
-  topics: string[];
   homepage: string;
   description: string;
+  stars: number;
+  topics: string[];
 };

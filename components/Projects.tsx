@@ -22,10 +22,10 @@ const Projects = () => {
             ({
               id,
               title,
-              description,
               image,
-              homepage,
               repoName,
+              homepage,
+              description,
               stars,
               topics,
             }) => (
