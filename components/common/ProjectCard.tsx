@@ -39,10 +39,19 @@ const ProjectCard: FC<Props> = ({
       <ImageContainer>
         <Image src={image} alt={title} />
         <div className="overlay">
-          <div className="text">
+          <div className="content">
             <div className="top">
               <h3>{details.stars}</h3>
               <StarIcon />
+            </div>
+            <div className="bottom">
+              <button
+                onClick={() =>
+                  window.open(`https://github.com/alirezazahiri/${repoName}`)
+                }
+              >
+                View Repository
+              </button>
             </div>
           </div>
         </div>
@@ -107,10 +116,13 @@ const ImageContainer = styled.div`
     transition: 0.5s ease;
     background-color: rgba(0, 0, 0, 0.75);
     cursor: pointer;
-    .text {
+    .content {
       color: var(--star-color);
       font-size: 20px;
       position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       top: 50%;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
@@ -121,6 +133,26 @@ const ImageContainer = styled.div`
         display: flex;
         align-items: center;
         letter-spacing: 10px;
+      }
+      .bottom {
+        button {
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          background: none;
+          outline: none;
+          border: 1px solid var(--star-color-dark);
+          margin-top: 5px;
+          padding: 5px;
+          color: var(--star-color);
+          text-transform: uppercase;
+          cursor: pointer; 
+          transition: all 0.5s;
+          &:hover {
+            background-color: var(--star-color-dark);
+            color: var(--black);
+          }
+        }
       }
     }
   }

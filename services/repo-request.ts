@@ -14,7 +14,10 @@ export const getRepoDetails = async (repoName: string) => {
   await fetch(`${REPO_URI}/${repoName}`, requestOptions)
     .then((response) => response.json())
     .then((data) => {
-      response.data = { stars: data.stargazers_count, topics: data.topics };
+      response.data = {
+        stars: data["stargazers_count"],
+        topics: data["topics"],
+      };
     })
     .catch((error) => {
       response.error = error;
