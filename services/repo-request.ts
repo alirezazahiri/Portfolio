@@ -1,3 +1,4 @@
+import { RepoDetailsType } from "../next-env";
 const requestOptions = {
   method: "GET",
 };
@@ -6,10 +7,10 @@ const REPO_URI = "https://api.github.com/repos/alirezazahiri";
 
 export const getRepoDetails = async (repoName: string) => {
   const response: {
-    data: { stars: number; topics: string[]; homepage: string };
+    data: RepoDetailsType;
     error: string;
   } = {
-    data: { stars: 0, topics: [], homepage: "" },
+    data: { stars: 0, topics: [], homepage: "", description: "" },
     error: "",
   };
 
@@ -20,6 +21,7 @@ export const getRepoDetails = async (repoName: string) => {
         stars: data["stargazers_count"],
         topics: data["topics"],
         homepage: data["homepage"],
+        description: data["description"],
       };
     })
     .catch((error) => {

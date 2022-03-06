@@ -8,7 +8,9 @@ import { ProjectItem } from "@/constants/ProjectItems";
 // MUI
 import StarIcon from "@mui/icons-material/Star";
 
-type Props = ProjectItem & { stars: number; topics: string[], homepage: string };
+import { RepoDetailsType } from 'next-env';
+
+type Props = ProjectItem & RepoDetailsType;
 
 const ProjectCard: FC<Props> = ({
   title,

@@ -5,49 +5,13 @@ import styled from "styled-components";
 import ProjectCard from "./common/ProjectCard";
 
 // Items
-import items, { ProjectItem } from "@/constants/ProjectItems";
+import items from "@/constants/ProjectItems";
 
 // services
-import { getRepoDetails } from "../services/repo-request";
+import useProjectsEffect from "hooks/useProjectsEffect";
 
 const Projects = () => {
-  const [items_, setItems_] = useState<
-    (ProjectItem & { stars: number; topics: string[]; homepage: string })[]
-  >([]);
-
-  useEffect(() => {
-    const setDetails = async () => {
-      const promises = items.map(async (item) => {
-        const newItem: ProjectItem & {
-          stars: number;
-          topics: string[];
-          homepage: string;
-        } = {
-          ...item,
-          stars: 0,
-          topics: [],
-          homepage: "",
-        };
-
-        const getDetails = async () => {
-          const { data } = await getRepoDetails(item.repoName);
-          newItem.stars = data.stars;
-          newItem.topics = data.topics;
-          newItem.homepage = data.homepage;
-
-          return newItem
-        };
-
-        return getDetails();
-      });
-
-      const result = await Promise.all(promises);
-
-      setItems_(result);
-    };
-
-    setDetails();
-  }, []);
+  const [items_] = useProjectsEffect(items);
 
   return (
     <Container>
