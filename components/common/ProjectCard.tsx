@@ -1,9 +1,15 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
 // type
 import { ProjectItem } from "@/constants/ProjectItems";
+
+// services
+import { getRepoDetails } from "../../services/repo-request";
+
+// MUI
+import StarIcon from "@mui/icons-material/Star";
 
 type Props = ProjectItem;
 
@@ -12,11 +18,35 @@ const ProjectCard: FC<Props> = ({
   description,
   image,
   link,
-  tBadges,
+  repoName,
 }) => {
+  const [details, setDetails] = useState<{ stars: number; topics: string[] }>({
+    stars: 0,
+    topics: [],
+  });
+
+  useEffect(() => {
+    const setStars = async () => {
+      const { data } = await getRepoDetails(repoName);
+      setDetails({ ...data });
+    };
+
+    setStars();
+  }, []);
+
   return (
     <Container>
-      <Image src={image} alt={title} onClick={() => window.open(link)} />
+      <ImageContainer>
+        <Image src={image} alt={title} />
+        <div className="overlay">
+          <div className="text">
+            <div className="top">
+              <h3>{details.stars}</h3>
+              <StarIcon />
+            </div>
+          </div>
+        </div>
+      </ImageContainer>
       <Info>
         <Title>
           <code>{title}</code>
@@ -27,7 +57,7 @@ const ProjectCard: FC<Props> = ({
       </Info>
       <Description>{description}</Description>
       <TechBadges>
-        {tBadges.map((badge) => (
+        {details.topics.map((badge) => (
           <div key={badge}>{badge}</div>
         ))}
       </TechBadges>
@@ -37,16 +67,10 @@ const ProjectCard: FC<Props> = ({
 
 const Container = styled.div`
   width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  img {
-    width: 100%;
-    border-radius: 12px;
-    &:hover {
-      cursor: pointer;
-    }
-  }
   background: linear-gradient(
     to left,
     var(--background) 30%,
@@ -56,6 +80,56 @@ const Container = styled.div`
   box-shadow: 0 0 20px var(--link-icon-color-dark);
   padding: 8px;
   border-radius: 12px;
+`;
+
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 225px !important;
+  img {
+    width: 100vw !important;
+    height: 225px !important;
+    border-radius: 12px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .overlay {
+    border-radius: 12px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    bottom: 0;
+    right: 8px;
+    height: 225px;
+    width: calc(100%-16px);
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    .text {
+      color: var(--star-color);
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+      .top {
+        display: flex;
+        align-items: center;
+        letter-spacing: 10px;
+      }
+    }
+  }
+
+  &:hover {
+    .overlay {
+      opacity: 1;
+    }
+  }
 `;
 
 const Info = styled.div`
@@ -117,13 +191,13 @@ const ProjectLink = styled.button`
 
   @keyframes left-right {
     0% {
-        transform: translateX(2px);
+      transform: translateX(2px);
     }
     50% {
-        transform: translateX(-4px);
+      transform: translateX(-4px);
     }
     100% {
-        transform: translateX(2px);
+      transform: translateX(2px);
     }
   }
 `;

@@ -38,6 +38,10 @@
   /* Tech Badges */
   --tech-badge-bg: #388bfd26;
   --tech-badge-text: #58a6ff;
+
+  /* star color */
+  --star-color: #ffc300;
+  --star-color-dark: #b18700;
 }
 
 html {
