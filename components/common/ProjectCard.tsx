@@ -10,55 +10,90 @@ import StarIcon from "@mui/icons-material/Star";
 
 // types
 import { RepoDetailsType } from "@/types/common";
+import { Skeleton } from "@mui/material";
 
-type Props = ProjectItem & RepoDetailsType;
+type Props = ProjectItem & RepoDetailsType & { skeleton?: boolean };
 
-const ProjectCard: FC<Props> = ({
+const ProjectCard: FC<Partial<Props>> = ({
   title,
   description,
   image,
   homepage,
   repoName,
   stars,
-  topics
+  topics,
+  skeleton,
 }) => {
   return (
-    <Container>
-      <ImageContainer>
-        <Image src={image} alt={title} />
-        <div className="overlay">
-          <div className="content">
-            <div className="top">
-              <h3>{stars}</h3>
-              <StarIcon />
+    <>
+      {skeleton ? (
+        <Container>
+          <ImageContainer>
+            <Skeleton variant="rectangular" width="100%" height="225px" />
+          </ImageContainer>
+          <Info>
+            {[1, 2].map((_) => (
+              <Skeleton key={_} animation="wave" height={30} width="100%" />
+            ))}
+          </Info>
+          <Description>
+            {[1, 2].map((_) => (
+              <Skeleton key={_} animation="wave" height={20} width="100%" />
+            ))}
+          </Description>
+          <TechBadges>
+            {[1, 2, 3].map((_) => (
+              <Skeleton
+                key={_}
+                animation="wave"
+                height={50}
+                width="60px"
+                sx={{ marginLeft: "4px" }}
+              />
+            ))}
+          </TechBadges>
+        </Container>
+      ) : (
+        <Container>
+          <ImageContainer>
+            <Image src={image} alt={title} />
+            <div className="overlay">
+              <div className="content">
+                <div className="top">
+                  <h3>{stars}</h3>
+                  <StarIcon />
+                </div>
+                <div className="bottom">
+                  <button
+                    onClick={() =>
+                      window.open(
+                        `https://github.com/alirezazahiri/${repoName}`
+                      )
+                    }
+                  >
+                    View Repository
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="bottom">
-              <button
-                onClick={() =>
-                  window.open(`https://github.com/alirezazahiri/${repoName}`)
-                }
-              >
-                View Repository
-              </button>
-            </div>
-          </div>
-        </div>
-      </ImageContainer>
-      <Info>
-        <Title>
-          <code>{title}</code>
-        </Title>
-        <ProjectLink onClick={() => window.open(homepage)}>
-          See Project &rarr;
-        </ProjectLink>
-      </Info>
-      <Description>{description}</Description>
-      <TechBadges>
-        {topics.map((badge) => (
-          <div key={badge}>{badge}</div>
-        ))}
-      </TechBadges>
-    </Container>
+          </ImageContainer>
+          <Info>
+            <Title>
+              <code>{title}</code>
+            </Title>
+            <ProjectLink onClick={() => window.open(homepage)}>
+              See Project &rarr;
+            </ProjectLink>
+          </Info>
+          <Description>{description}</Description>
+          <TechBadges>
+            {topics?.map((badge) => (
+              <div key={badge}>{badge}</div>
+            ))}
+          </TechBadges>
+        </Container>
+      )}
+    </>
   );
 };
 
@@ -138,7 +173,7 @@ const ImageContainer = styled.div`
           padding: 5px;
           color: var(--background-alt);
           text-transform: uppercase;
-          cursor: pointer; 
+          cursor: pointer;
           transition: all 0.5s;
           &:hover {
             border: 1px solid var(--grayish-blue);

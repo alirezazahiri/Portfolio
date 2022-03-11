@@ -12,35 +12,36 @@ import useProjectsEffect from "hooks/useProjectsEffect";
 
 const Projects = () => {
   const [items_] = useProjectsEffect(items);
-
   return (
     <Container>
       <Content>
-        {items_
-          .sort((a, b) => b.stars - a.stars)
-          .map(
-            ({
-              id,
-              title,
-              image,
-              repoName,
-              homepage,
-              description,
-              stars,
-              topics,
-            }) => (
-              <ProjectCard
-                key={id}
-                title={title}
-                description={description}
-                image={image}
-                homepage={homepage}
-                repoName={repoName}
-                stars={stars}
-                topics={topics}
-              />
-            )
-          )}
+        {items_.length
+          ? items_
+              .sort((a, b) => b.stars - a.stars)
+              .map(
+                ({
+                  id,
+                  title,
+                  image,
+                  repoName,
+                  homepage,
+                  description,
+                  stars,
+                  topics,
+                }) => (
+                  <ProjectCard
+                    key={id}
+                    title={title}
+                    description={description}
+                    image={image}
+                    homepage={homepage}
+                    repoName={repoName}
+                    stars={stars}
+                    topics={topics}
+                  />
+                )
+              )
+          : items.map((item) => <ProjectCard key={item.id} skeleton={true} />)}
       </Content>
     </Container>
   );
