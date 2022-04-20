@@ -84,6 +84,24 @@ const items: SkillItem[] = [
     value: 50,
     gotBadge: false
   },
+  {
+    id: "12",
+    title: "NodeJS",
+    value: 60,
+    gotBadge: false
+  },
+  {
+    id: "12",
+    title: "Express",
+    value: 60,
+    gotBadge: false
+  },
+  {
+    id: "12",
+    title: "MongoDB",
+    value: 60,
+    gotBadge: false
+  },
 ];
 
 export default items;
