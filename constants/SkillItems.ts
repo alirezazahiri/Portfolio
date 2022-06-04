@@ -81,7 +81,7 @@ const items: SkillItem[] = [
   {
     id: "11",
     title: "C++",
-    value: 50,
+    value: 20,
     gotBadge: false
   },
   {
