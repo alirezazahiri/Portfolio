@@ -15,3 +15,12 @@ export type CertificateItem = {
   feed: string;
   isLoading?: boolean;
 };
+
+export type ContactItem = {
+  id?: string;
+  iconKey: string;
+  link: string;
+  description: string;
+  color: string;
+  type?: "mail";
+};

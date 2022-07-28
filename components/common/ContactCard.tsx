@@ -3,23 +3,43 @@ import styled from "styled-components";
 
 // type
 import { ContactItem } from "@/constants/ContactItems";
+import { titleLink } from "utils/titleLink";
+import { getIconFromKey } from "utils/getIconFromKey";
+import { Skeleton } from "@mui/material";
 
 type Props = ContactItem;
 
-const ContactCard: FC<Props> = ({ type, icon, link, description, color }) => {
-  const titleLink = () => {
-    return type === "mail"
-      ? link.split("@")[0]
-      : link.split("/").reverse()[0].substring(0, 14);
-  };
+const ContactCard: FC<Props> = ({
+  type,
+  iconKey,
+  link,
+  description,
+  color,
+  isLoading,
+}) => {
   const clickHandler = () =>
     type === "mail" ? window.open(`mailto:${link}`) : window.open(link);
-  return (
+  return isLoading ? (
+    <Container>
+      <LinkContainer>
+        <Icon color={color}>
+          <Skeleton variant="rectangular" width="20px" height="20px" />
+        </Icon>
+        <ContactLink color={color} target="_blank" style={{ display: "flex" }}>
+          <p>@</p>
+          <Skeleton variant="rectangular" width="60px" height="20px" />
+        </ContactLink>
+      </LinkContainer>
+      <Description>
+        <Skeleton variant="rectangular" width="100%" height="20px" />
+      </Description>
+    </Container>
+  ) : (
     <Container onClick={clickHandler}>
       <LinkContainer>
-        <Icon color={color}>{icon}</Icon>
+        <Icon color={color}>{getIconFromKey(iconKey)}</Icon>
         <ContactLink color={color} target="_blank">
-          @{titleLink()}
+          @{titleLink(type, link)}
         </ContactLink>
       </LinkContainer>
       <Description>{description}</Description>

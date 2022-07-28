@@ -17,3 +17,16 @@ export const GET_CERTIFICATES = gql`
     }
   }
 `;
+
+export const GET_CONTACTS = gql`
+  query {
+    contacts {
+      color
+      description
+      id
+      link
+      iconKey
+      type
+    }
+  }
+`;
