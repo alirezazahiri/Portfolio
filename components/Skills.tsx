@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 import items from "@/constants/SkillItems";
@@ -6,21 +6,46 @@ import items from "@/constants/SkillItems";
 // Common
 import SkillCard from "./common/SkillCard";
 
-const Skills = () => {
+interface ISkills {
+  isLoading: boolean;
+  skills: {
+    id: string;
+    name: string;
+    progress: number;
+    gotBadge: boolean;
+  }[];
+  error: string;
+}
+
+const Skills: FC<ISkills> = ({ isLoading, skills, error }) => {
   return (
     <Container>
       <SkillsContainer>
-        {items.sort((a, b) => b.value - a.value).map(item => <SkillCard key={item.id} item={item} />)}
+        {isLoading &&
+          [1, 2, 3, 4].map((_) => (
+            <SkillCard
+              key={_}
+              item={{ id: "", name: "", progress: 0, gotBadge: false }}
+              isLoading={true}
+            />
+          ))}
+        {!isLoading &&
+          skills &&
+          [...skills]
+            .sort((a, b) => b.progress - a.progress)
+            .map((item) => (
+              <SkillCard key={item.id} item={item} />
+            ))}
       </SkillsContainer>
     </Container>
   );
 };
 
 const Container = styled.div`
-    padding: 65px 40px 0 80px;
-    color: var(--grayish-blue);
-    z-index: -1;
-`
+  padding: 65px 40px 0 80px;
+  color: var(--grayish-blue);
+  z-index: -1;
+`;
 
 const SkillsContainer = styled.div`
   display: grid;

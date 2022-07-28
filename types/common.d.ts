@@ -24,3 +24,10 @@ export type ContactItem = {
   color: string;
   type?: "mail";
 };
+
+export type SkillItem = {
+  id: string;
+  name: string;
+  progress: number;
+  gotBadge: boolean;
+}

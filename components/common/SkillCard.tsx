@@ -6,27 +6,46 @@ import LinearProgress from "@mui/material/LinearProgress";
 import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined"; // badged ones
 
 // type
-import { SkillItem } from "@/constants/SkillItems";
+import { SkillItem } from "@/types/common";
+import { Skeleton } from "@mui/material";
 
 type Props = {
   item: SkillItem;
+  isLoading?: boolean;
 };
 
-const SkillCard: FC<Props> = ({ item }) => {
-  return (
+const SkillCard: FC<Props> = ({ isLoading, item }) => {
+  return isLoading ? (
+    <ProgressContainer>
+      <Title>
+        <h4>
+          <code>
+            <Skeleton variant="rectangular" width="80px" height="20px" />
+          </code>
+        </h4>
+        <h4 className="precentage">
+          <code>
+            <Skeleton variant="rectangular" width="40px" height="20px" />
+          </code>
+          %
+        </h4>
+      </Title>
+      <Skeleton variant="rectangular" width="100%" height="10px" />
+    </ProgressContainer>
+  ) : (
     <ProgressContainer gotBadge={item.gotBadge}>
       <Title gotBadge={item.gotBadge}>
         <h4>
-          <code>{item.title}</code>
+          <code>{item.name}</code>
           {item.gotBadge && <VerifiedOutlinedIcon />}
         </h4>
         <h4 className="precentage">
-          <code>{item.value}</code>%
+          <code>{item.progress}</code>%
         </h4>
       </Title>
       <LinearProgress
         variant="determinate"
-        value={item.value}
+        value={item.progress}
         style={{ width: "100%", height: "6px", borderRadius: "12px" }}
         color="primary"
       />

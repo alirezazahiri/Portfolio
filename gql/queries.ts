@@ -30,3 +30,14 @@ export const GET_CONTACTS = gql`
     }
   }
 `;
+
+export const GET_SKILLS = gql`
+  query {
+    skills {
+      name
+      progress
+      id
+      gotBadge
+    }
+  }
+`;
