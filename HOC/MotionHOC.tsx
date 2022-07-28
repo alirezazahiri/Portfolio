@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { FC } from "react";
 
-const withMotion = (Component: FC<{}>) => {
-    return function HOC() {
+const withMotion = (Component: FC<any>) => {
+    return function HOC(props: any) {
         return (
             <motion.div
                 initial={{ y: 500 }}
@@ -18,7 +18,7 @@ const withMotion = (Component: FC<{}>) => {
                     },
                 }}
             >
-                <Component />
+                <Component {...props}/>
             </motion.div>
         );
     };

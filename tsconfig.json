@@ -9,6 +9,7 @@
       "@/layout/*": ["layout/*"],
       "@/components/*": ["components/*"],
       "@/types/*": ["types/*"],
+      "@/utils/*": ["utils/*"],
     },
     "lib": [
       "dom",

@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-    reactStrictMode: true,
+  reactStrictMode: false,
+  images: {
+    domains: ["media.graphassets.com"],
+  },
 };

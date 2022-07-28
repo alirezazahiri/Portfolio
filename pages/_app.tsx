@@ -1,14 +1,22 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
-import Layout from '@/layout/Layout'
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import Layout from "@/layout/Layout";
+
+const client = new ApolloClient({
+  uri: "https://api-us-west-2.hygraph.com/v2/cl64zbv668lze01t306uq3fb9/master",
+  cache: new InMemoryCache(),
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const TempComponent = Component as any 
+  const TempComponent = Component as any;
   return (
-    <Layout>
-      <TempComponent {...pageProps} />
-   </Layout>
-  )
+    <ApolloProvider client={client}>
+      <Layout>
+        <TempComponent {...pageProps} />
+      </Layout>
+    </ApolloProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
