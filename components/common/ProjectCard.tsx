@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 // type
-import { ProjectItem } from "@/constants/ProjectItems";
+import { ProjectItem } from "@/types/common";
 
 // MUI
 import StarIcon from "@mui/icons-material/Star";
@@ -14,7 +14,7 @@ import { Skeleton } from "@mui/material";
 
 type Props = ProjectItem & RepoDetailsType & { skeleton?: boolean };
 
-const ProjectCard: FC<Partial<Props>> = ({
+const ProjectCard: FC<Props> = ({
   title,
   description,
   image,
@@ -33,7 +33,7 @@ const ProjectCard: FC<Partial<Props>> = ({
               animation="wave"
               variant="rectangular"
               width="100%"
-              height="300px"
+              height="100%"
               sx={{ bgcolor: "rgba(0, 30, 60, 20%)", borderRadius: "12px" }}
             />
           </ImageContainer>
@@ -74,7 +74,7 @@ const ProjectCard: FC<Partial<Props>> = ({
       ) : (
         <Container>
           <ImageContainer>
-            <Image src={image} alt={title} />
+            <Image src={image.url} alt={title} width="100%" height="100%"/>
             <div className="overlay">
               <div className="content">
                 <div className="top">

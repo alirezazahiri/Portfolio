@@ -5,6 +5,7 @@ import styled from "styled-components";
 // Common
 import SkillCard from "./common/SkillCard";
 import UpdateIcon from "@mui/icons-material/Update";
+import { SKILLS_SLICE } from "@/constants/common.constants";
 
 interface ISkills {
   isLoading: boolean;
@@ -23,7 +24,7 @@ const Skills: FC<ISkills> = ({ isLoading, skills, error, fetchMore }) => {
   const [loading, setLoading] = useState(isLoading);
 
   const clickHandler = () => {
-    if (skills.length % 9 === 0) {
+    if (skills.length % SKILLS_SLICE === 0) {
       setLoading(true);
       fetchMore({
         variables: {
@@ -35,7 +36,7 @@ const Skills: FC<ISkills> = ({ isLoading, skills, error, fetchMore }) => {
 
   useEffect(() => {
     setLoading(isLoading);
-    if (skills.length % 9) setHasNext(false);
+    if (skills.length % SKILLS_SLICE) setHasNext(false);
   }, [skills.length]);
 
   return (

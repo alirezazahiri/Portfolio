@@ -32,3 +32,12 @@ export type SkillItem = {
   progress: number;
   gotBadge: boolean;
 }
+
+export type ProjectItem = {
+  id?: string;
+  title: string;
+  repoName: string;
+  image: {
+    url: string
+  };
+};
