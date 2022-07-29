@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 
@@ -30,7 +30,9 @@ const Projects: FC<IProjects> = ({ fetchMore, isLoading, projects, error }) => {
         {items &&
           items
             .sort((a, b) => b.stars - a.stars)
-            .map((item) => <ProjectCard key={item.id} {...item} skeleton={false} />)}
+            .map((item) => (
+              <ProjectCard key={item.id} {...item} skeleton={false} />
+            ))}
         {loading &&
           "1 2 3"
             .split(" ")
@@ -47,25 +49,26 @@ const Projects: FC<IProjects> = ({ fetchMore, isLoading, projects, error }) => {
                 skeleton={true}
               />
             ))}
-        {hasNext && (
-          <LoadMoreButton onClick={clickHandler}>
-            <p>Load More...</p>
-            <UpdateIcon />
-          </LoadMoreButton>
-        )}
       </Content>
+      {hasNext && !loading && (
+        <LoadMoreButton onClick={clickHandler}>
+          <p>Load More...</p>
+          <UpdateIcon />
+        </LoadMoreButton>
+      )}
     </Container>
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 80px 40px 80px 80px;
+`;
 
 const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   gap: 30px;
-  padding: 80px 40px 80px 80px;
   @media (min-width: 0) and (max-width: 870px) {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -76,6 +79,7 @@ const Content = styled.div`
 
 const LoadMoreButton = styled.div`
   border: 1px solid var(--link-icon-color);
+  margin-top: 30px;
   padding: 10px;
   display: flex;
   color: var(--grayish-blue);

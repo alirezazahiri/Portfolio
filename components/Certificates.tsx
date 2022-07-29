@@ -3,9 +3,6 @@ import withMotion from "@/HOC/MotionHOC";
 import CertificateCard from "./common/CertificateCard";
 import styled from "styled-components";
 
-// items
-// import items from "@/constants/CertificateItems";
-
 interface ICertificates {
   isLoading: boolean;
   certificates: {
