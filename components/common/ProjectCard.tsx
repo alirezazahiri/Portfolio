@@ -73,8 +73,7 @@ const ProjectCard: FC<Props> = ({
         </Container>
       ) : (
         <Container>
-          <ImageContainer>
-            <Image src={image.url} alt={title} width="100%" height="100%"/>
+          <ImageContainer image={image.url}>
             <div className="overlay">
               <div className="content">
                 <div className="top">
@@ -135,14 +134,9 @@ const Container = styled.div`
 const ImageContainer = styled.div`
   width: 100%;
   height: 300px !important;
-  img {
-    width: 100vw !important;
-    height: 300px !important;
-    border-radius: 12px;
-    &:hover {
-      cursor: pointer;
-    }
-  }
+  background: url(${(props: { image?: string }) =>props?.image ? props.image : ""});
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .overlay {
     border-radius: 12px;
