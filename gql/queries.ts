@@ -78,3 +78,13 @@ export const GET_PROJECTS = gql`
     }
   }
 `;
+
+export const GET_CV = gql`
+  query {
+    resume(where: { id: "cl66qtuxj69n10bn79wr8u0pj" }) {
+      cv {
+        url
+      }
+    }
+  }
+`;

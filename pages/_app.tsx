@@ -30,11 +30,11 @@ const client = new ApolloClient({
 function MyApp({ Component, pageProps }: AppProps) {
   const TempComponent = Component as any;
   return (
-    <ApolloProvider client={client}>
-      <Layout>
-        <TempComponent {...pageProps} />
-      </Layout>
-    </ApolloProvider>
+      <ApolloProvider client={client}>
+        <Layout>
+          <TempComponent {...pageProps} />
+        </Layout>
+      </ApolloProvider>
   );
 }
 
