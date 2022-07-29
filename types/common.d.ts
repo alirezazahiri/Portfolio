@@ -23,6 +23,7 @@ export type ContactItem = {
   description: string;
   color: string;
   type?: "mail";
+  isLoading?: boolean
 };
 
 export type SkillItem = {

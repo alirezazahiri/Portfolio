@@ -2,10 +2,10 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 // type
-import { ContactItem } from "@/constants/ContactItems";
 import { titleLink } from "utils/titleLink";
 import { getIconFromKey } from "utils/getIconFromKey";
 import { Skeleton } from "@mui/material";
+import { ContactItem } from "@/types/common";
 
 type Props = ContactItem;
 
