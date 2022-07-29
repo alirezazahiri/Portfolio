@@ -22,7 +22,7 @@ export type ContactItem = {
   link: string;
   description: string;
   color: string;
-  type?: "mail";
+  type?: "mail" | null;
   isLoading?: boolean
 };
 
