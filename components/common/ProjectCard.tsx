@@ -29,16 +29,16 @@ const ProjectCard: FC<Partial<Props>> = ({
       {skeleton ? (
         <Container>
           <ImageContainer>
-            <Skeleton variant="rectangular" width="100%" height="225px" />
+            <Skeleton variant="rectangular" width="100%" height="300px" />
           </ImageContainer>
           <Info>
             {[1, 2].map((_) => (
-              <Skeleton key={_} animation="wave" height={30} width="100%" />
+              <Skeleton key={_} animation="wave" height={25} width="100%" />
             ))}
           </Info>
           <Description>
             {[1, 2].map((_) => (
-              <Skeleton key={_} animation="wave" height={20} width="100%" />
+              <Skeleton key={_} animation="wave" height={15} width="100%" />
             ))}
           </Description>
           <TechBadges>
@@ -46,7 +46,7 @@ const ProjectCard: FC<Partial<Props>> = ({
               <Skeleton
                 key={_}
                 animation="wave"
-                height={50}
+                height={40}
                 width="60px"
                 sx={{ marginLeft: "4px" }}
               />
@@ -116,10 +116,10 @@ const Container = styled.div`
 
 const ImageContainer = styled.div`
   width: 100%;
-  height: 225px !important;
+  height: 300px !important;
   img {
     width: 100vw !important;
-    height: 225px !important;
+    height: 300px !important;
     border-radius: 12px;
     &:hover {
       cursor: pointer;
@@ -133,7 +133,7 @@ const ImageContainer = styled.div`
     left: 8px;
     bottom: 0;
     right: 8px;
-    height: 225px;
+    height: 300px;
     width: calc(100%-16px);
     opacity: 0;
     transition: 0.5s ease;
@@ -265,6 +265,7 @@ const ProjectLink = styled.button`
 const TechBadges = styled.div`
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   margin-top: 5px;
   div {
     margin-left: 2px;

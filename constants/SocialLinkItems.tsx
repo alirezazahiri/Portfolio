@@ -13,7 +13,7 @@ type Item = {
 const social_items: Item[] = [
     {
         id: "1",
-        feed: "https://www.linkedin.com/in/alireza-zahiri-a2956020a/",
+        feed: "https://www.linkedin.com/in/alireza-zahiri",
         className: "linked-in",
         icon: <LinkedInIcon/>,
     },

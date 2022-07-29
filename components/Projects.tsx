@@ -38,10 +38,13 @@ const Projects = () => {
                     repoName={repoName}
                     stars={stars}
                     topics={topics}
+                    skeleton={false}
                   />
                 )
               )
-          : items.map((item) => <ProjectCard key={item.id} skeleton={true} />)}
+          : "1 2 3 4 5 6"
+              .split(" ")
+              .map((_) => <ProjectCard key={_} skeleton={true} />)}
       </Content>
     </Container>
   );

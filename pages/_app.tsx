@@ -5,7 +5,20 @@ import Layout from "@/layout/Layout";
 
 const client = new ApolloClient({
   uri: "https://api-us-west-2.hygraph.com/v2/cl64zbv668lze01t306uq3fb9/master",
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          skills: {
+            keyArgs: false,
+            merge(existing = [], incoming) {
+              return [...existing, ...incoming];
+            },
+          },
+        },
+      },
+    },
+  }),
 });
 
 function MyApp({ Component, pageProps }: AppProps) {

@@ -32,8 +32,8 @@ export const GET_CONTACTS = gql`
 `;
 
 export const GET_SKILLS = gql`
-  query {
-    skills {
+  query getSkills($after: String) {
+    skills(orderBy: progress_DESC, first: 9, after: $after) {
       name
       progress
       id

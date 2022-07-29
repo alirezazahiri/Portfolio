@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
-import items from "@/constants/SkillItems";
 
 // Common
 import SkillCard from "./common/SkillCard";
+import UpdateIcon from "@mui/icons-material/Update";
 
 interface ISkills {
   isLoading: boolean;
@@ -15,28 +15,52 @@ interface ISkills {
     gotBadge: boolean;
   }[];
   error: string;
+  fetchMore: any;
 }
 
-const Skills: FC<ISkills> = ({ isLoading, skills, error }) => {
+const Skills: FC<ISkills> = ({isLoading, skills, error, fetchMore}) => {
+  const [hasNext, setHasNext] = useState(true);
+  const [loading, setLoading] = useState(isLoading);
+
+  const clickHandler = () => {
+    if (skills.length % 9 === 0) {
+      setLoading(true);
+      fetchMore({
+        variables: {
+          after: skills.length ? skills[skills.length - 1].id : null,
+        },
+      });
+    } else setHasNext(false);
+  };
+
+  useEffect(() => {
+    setLoading(isLoading);
+  }, [skills.length]);
+
   return (
     <Container>
       <SkillsContainer>
-        {isLoading &&
-          [1, 2, 3, 4].map((_) => (
-            <SkillCard
-              key={_}
-              item={{ id: "", name: "", progress: 0, gotBadge: false }}
-              isLoading={true}
-            />
-          ))}
-        {!isLoading &&
-          skills &&
+        {skills &&
           [...skills]
             .sort((a, b) => b.progress - a.progress)
-            .map((item) => (
-              <SkillCard key={item.id} item={item} />
+            .map((item) => <SkillCard key={item.id} item={item} />)}
+        {loading &&
+          "1 2 3 4 5 6 7 8 9"
+            .split(" ")
+            .map((_) => (
+              <SkillCard
+                key={_}
+                item={{ id: "", name: "", progress: 0, gotBadge: false }}
+                isLoading={true}
+              />
             ))}
       </SkillsContainer>
+      {hasNext && (
+        <LoadMoreButton onClick={clickHandler}>
+          <p>Load More...</p>
+          <UpdateIcon />
+        </LoadMoreButton>
+      )}
     </Container>
   );
 };
@@ -58,6 +82,30 @@ const SkillsContainer = styled.div`
   }
   @media (min-width: 870px) and (max-width: 1280px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
+const LoadMoreButton = styled.div`
+  border: 1px solid var(--link-icon-color);
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 0 12px var(--link-icon-color);
+  background: linear-gradient(
+    to right,
+    var(--background) 30%,
+    var(--midnight-blue) 100%
+  );
+  border-radius: 12px;
+  transition: background 0.3s !important;
+  &:hover {
+    background: linear-gradient(
+      to right,
+      var(--badged-hover-bg-color) 30%,
+      var(--badged-hover-bg-color-2) 100%
+    );
+    cursor: pointer;
   }
 `;
 

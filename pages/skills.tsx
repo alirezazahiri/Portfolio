@@ -9,7 +9,11 @@ import { useQuery } from "@apollo/client";
 import { GET_SKILLS } from "gql/queries";
 
 const Page: NextPage = () => {
-  const { loading, data, error } = useQuery(GET_SKILLS);
+  const { loading, data, error, fetchMore } = useQuery(GET_SKILLS, {
+    variables: {
+      after: null,
+    },
+  });
   const { skills = [] } = { skills: [], ...data };
 
   return (
@@ -19,7 +23,7 @@ const Page: NextPage = () => {
         <meta name="description" content="Skills, Alireza Zahiri" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Skills isLoading={loading} skills={skills} error={error} />
+      <Skills isLoading={loading} skills={skills} error={error} fetchMore={fetchMore} />
     </div>
   );
 };
