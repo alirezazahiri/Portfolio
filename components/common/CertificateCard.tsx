@@ -22,23 +22,50 @@ const CertificateCard: FC<Props> = ({
   return isLoading ? (
     <Container>
       <ImageContainer>
-        <Skeleton variant="rectangular" width="100%" height="100px" />
+        <Skeleton
+          animation="wave"
+          variant="circular"
+          width="100%"
+          height="90px"
+          sx={{ bgcolor: "rgba(0, 30, 60, 50%)" }}
+        />
       </ImageContainer>
       <Info>
         <Language>
-          <Skeleton animation="wave" height={30} width="60px" />
+          <Skeleton
+            animation="wave"
+            height={30}
+            width="80px"
+            sx={{ bgcolor: "rgba(0, 30, 60, 50%)" }}
+          />
         </Language>
         <div>
           <Date>
-            <Skeleton animation="wave" height={30} width="60px" />
+            <Skeleton
+              animation="wave"
+              height={30}
+              width="80px"
+              sx={{ bgcolor: "rgba(0, 30, 60, 50%)" }}
+            />
           </Date>
           <Button>
-            <Skeleton animation="wave" height={30} width="60px" />
+            <Skeleton
+              animation="wave"
+              height={30}
+              width="80px"
+              sx={{ bgcolor: "rgba(0, 30, 60, 50%)" }}
+            />
           </Button>
         </div>
       </Info>
       <ImageContainer>
-        <Skeleton variant="rectangular" width="100%" height="100px" />
+        <Skeleton
+          animation="wave"
+          variant="circular"
+          width="100%"
+          height="90px"
+          sx={{ bgcolor: "rgba(0, 30, 60, 50%)" }}
+        />
       </ImageContainer>
     </Container>
   ) : (

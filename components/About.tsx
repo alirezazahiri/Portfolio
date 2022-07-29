@@ -1,30 +1,38 @@
-import React from "react";
+import React, { FC } from "react";
 import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
+import sanitize from "sanitize-html";
+import { Skeleton } from "@mui/material";
 
-const About = () => {
+interface IAbout {
+  isLoading?: boolean;
+  content: {
+    text: string;
+  };
+  error: string;
+}
+
+const About: FC<IAbout> = ({ isLoading, content, error }) => {
   return (
     <Container>
       <Content>
-        <p>
-          Welcome to my <code>Portfolio</code>,<br />
-          Where i tell more about myself and my work,
-          <br />
-          I started programming, since i entered University,
-          <br />
-          After 3 months i started exploring different programming languages
-          (like <code>Java, C++, Python</code>),
-          <br />
-          And after all i found myself more attracted to{" "}
-          <code>Web Programming</code> than other stuff,
-          <br />
-          And now here i am, with most of my experience in{" "}
-          <code>Front-End development</code>,<br />
-          Working on my skills and always <code>improving</code> my knowledge,{" "}
-          <code>passionate</code> about learning stuff, and <code>caring</code>,
-          <br />
-          Feel free to take a look at rest of my website.
-        </p>
+        {isLoading &&
+          [30, 50, 60, 80, 40, 20, 70, 55, 65, 75].map((_) => (
+            <Skeleton
+              key={_}
+              variant="rectangular"
+              width={`${_}%`}
+              height={16}
+              sx={{ margin: "10px auto", borderRadius: 4, bgcolor: "rgba(0, 30, 60, 50%)" }}
+            />
+          ))}
+        {!isLoading && !error && (
+          <p
+            dangerouslySetInnerHTML={{
+              __html: sanitize(content.text.replaceAll("\\n", "")),
+            }}
+          ></p>
+        )}
       </Content>
     </Container>
   );

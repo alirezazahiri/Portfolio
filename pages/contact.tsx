@@ -6,7 +6,7 @@ import Head from "next/head";
 // component
 import Contact from "@/components/Contact";
 import { useQuery } from "@apollo/client";
-import { GET_CONTACTS } from "gql/queries";
+import { GET_CONTACTS } from "@/gql/queries";
 
 const Page: NextPage = () => {
   const { loading, data, error } = useQuery(GET_CONTACTS);

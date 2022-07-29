@@ -29,26 +29,44 @@ const ProjectCard: FC<Partial<Props>> = ({
       {skeleton ? (
         <Container>
           <ImageContainer>
-            <Skeleton variant="rectangular" width="100%" height="300px" />
+            <Skeleton
+              animation="wave"
+              variant="rectangular"
+              width="100%"
+              height="300px"
+              sx={{ bgcolor: "rgba(0, 30, 60, 20%)", borderRadius: "12px" }}
+            />
           </ImageContainer>
           <Info>
-            {[1, 2].map((_) => (
-              <Skeleton key={_} animation="wave" height={25} width="100%" />
+            {[60, 25].map((_) => (
+              <Skeleton
+                animation="wave"
+                key={_}
+                height={25}
+                width={`${_}%`}
+                sx={{ bgcolor: "rgba(0, 30, 60, 20%)" }}
+              />
             ))}
           </Info>
           <Description>
             {[1, 2].map((_) => (
-              <Skeleton key={_} animation="wave" height={15} width="100%" />
+              <Skeleton
+                animation="wave"
+                key={_}
+                height={15}
+                width="100%"
+                sx={{ bgcolor: "rgba(0, 30, 60, 20%)" }}
+              />
             ))}
           </Description>
           <TechBadges>
             {[1, 2, 3].map((_) => (
               <Skeleton
-                key={_}
                 animation="wave"
-                height={40}
+                key={_}
+                height={35}
                 width="60px"
-                sx={{ marginLeft: "4px" }}
+                sx={{ marginLeft: "6px", bgcolor: "rgba(0, 30, 60, 20%)" }}
               />
             ))}
           </TechBadges>
@@ -106,7 +124,7 @@ const Container = styled.div`
   background: linear-gradient(
     to left,
     var(--background) 30%,
-    var(--midnight-blue) 100%
+    var(--background) 100%
   );
   border: 1px solid var(--link-icon-color);
   box-shadow: 0 0 20px var(--link-icon-color-dark);
@@ -219,11 +237,11 @@ const Title = styled.h1`
 
 const Description = styled.div`
   margin-top: 10px;
+  margin-left: 5px;
   line-break: break;
   color: var(--grey-second-medium);
   font-size: 17px;
   font-weight: 400;
-  padding: 0 10px 5px;
   @media (max-width: 870px) {
     font-size: 16px;
   }

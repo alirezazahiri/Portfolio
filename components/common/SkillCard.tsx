@@ -20,17 +20,35 @@ const SkillCard: FC<Props> = ({ isLoading, item }) => {
       <Title>
         <h4>
           <code>
-            <Skeleton variant="rectangular" width="80px" height="20px" />
+            <Skeleton
+              animation="wave"
+              variant="rectangular"
+              width="80px"
+              height="20px"
+              sx={{ bgcolor: "rgba(0, 30, 60, 50%)", borderRadius: 4 }}
+            />
           </code>
         </h4>
         <h4 className="precentage">
           <code>
-            <Skeleton variant="rectangular" width="40px" height="20px" />
+            <Skeleton
+              animation="wave"
+              variant="rectangular"
+              width="40px"
+              height="20px"
+              sx={{ bgcolor: "rgba(0, 30, 60, 50%)", borderRadius: 4 }}
+            />
           </code>
           %
         </h4>
       </Title>
-      <Skeleton variant="rectangular" width="100%" height="10px" />
+      <Skeleton
+        animation="wave"
+        variant="rectangular"
+        width="100%"
+        height="10px"
+        sx={{ bgcolor: "rgba(0, 30, 60, 50%)", borderRadius: 4 }}
+      />
     </ProgressContainer>
   ) : (
     <ProgressContainer gotBadge={item.gotBadge}>

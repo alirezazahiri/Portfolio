@@ -18,7 +18,7 @@ interface ISkills {
   fetchMore: any;
 }
 
-const Skills: FC<ISkills> = ({isLoading, skills, error, fetchMore}) => {
+const Skills: FC<ISkills> = ({ isLoading, skills, error, fetchMore }) => {
   const [hasNext, setHasNext] = useState(true);
   const [loading, setLoading] = useState(isLoading);
 
@@ -35,6 +35,7 @@ const Skills: FC<ISkills> = ({isLoading, skills, error, fetchMore}) => {
 
   useEffect(() => {
     setLoading(isLoading);
+    if (skills.length % 9) setHasNext(false);
   }, [skills.length]);
 
   return (
@@ -55,7 +56,7 @@ const Skills: FC<ISkills> = ({isLoading, skills, error, fetchMore}) => {
               />
             ))}
       </SkillsContainer>
-      {hasNext && (
+      {hasNext && !loading && (
         <LoadMoreButton onClick={clickHandler}>
           <p>Load More...</p>
           <UpdateIcon />

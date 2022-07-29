@@ -1,12 +1,17 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-// next deps 
-import Head from 'next/head'
+// next deps
+import Head from "next/head";
 
 // component
-import Home from "@/components/Home"
+import Home from "@/components/Home";
+import { useQuery } from "@apollo/client";
+import { GET_PROFILE } from "@/gql/queries";
 
 const Page: NextPage = () => {
+  const { loading, data, error } = useQuery(GET_PROFILE);
+  const { profile = {} } = { profile: [], ...data };
+
   return (
     <div>
       <Head>
@@ -14,9 +19,9 @@ const Page: NextPage = () => {
         <meta name="description" content="Portfolio, Alireza Zahiri" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Home />
+      <Home isLoading={loading} profile={profile} error={error} />
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

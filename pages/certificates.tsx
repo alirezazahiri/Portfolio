@@ -6,7 +6,7 @@ import Head from "next/head";
 // component
 import Certificates from "@/components/Certificates";
 import { useQuery } from "@apollo/client";
-import { GET_CERTIFICATES } from "gql/queries";
+import { GET_CERTIFICATES } from "@/gql/queries";
 
 const Page: NextPage = () => {
   const { loading, data, error } = useQuery(GET_CERTIFICATES);

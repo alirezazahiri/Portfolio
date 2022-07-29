@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const GET_CERTIFICATES = gql`
   {
-    certificates {
+    certificates(orderBy: date_ASC) {
       id
       name
       date
@@ -38,6 +38,29 @@ export const GET_SKILLS = gql`
       progress
       id
       gotBadge
+    }
+  }
+`;
+
+export const GET_PROFILE = gql`
+  query {
+    profile(where: { id: "cl66aj52prtna0cn7w27wma2e" }) {
+      emojie
+      statusText
+      profileImage {
+        url
+      }
+    }
+  }
+`;
+
+export const GET_ABOUT = gql`
+  query {
+    about(where: { id: "cl66c2menwvy60bn72bsijbme" }) {
+      id
+      text {
+        text
+      }
     }
   }
 `;

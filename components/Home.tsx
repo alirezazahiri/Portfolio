@@ -1,16 +1,26 @@
 import Image from "next/image";
-import React from "react";
+import React, { FC } from "react";
 import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
-// assets
-import me from "../assets/me.jpg";
-
 // Icons
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import { Skeleton } from "@mui/material";
 
-const Home = () => {
+interface IHome {
+  isLoading?: boolean;
+  profile: {
+    emojie: string;
+    statusText: string;
+    profileImage: {
+      url: string;
+    };
+  };
+  error: string;
+}
+
+const Home: FC<IHome> = ({ isLoading, profile, error }) => {
   const router = useRouter();
 
   return (
@@ -18,8 +28,30 @@ const Home = () => {
       <Container>
         <Content>
           <ImageContainer>
-            <Image src={me} layout="intrinsic" alt="my photo" />
-            <Status></Status>
+            {isLoading && (
+              <>
+                <Skeleton
+                  animation="wave"
+                  variant="circular"
+                  width="100%"
+                  height="100%"
+                  sx={{ bgcolor: "rgba(0, 30, 60, 30%)" }}
+                />
+              </>
+            )}
+            {!isLoading && !error && (
+              <>
+                <Image
+                  src={profile.profileImage.url}
+                  layout="fill"
+                  alt="my photo"
+                />
+                <Status
+                  emojie={profile.emojie}
+                  statusText={profile.statusText}
+                ></Status>
+              </>
+            )}
           </ImageContainer>
           <Welcome>Hey There!</Welcome>
           <NameContainer>
@@ -78,6 +110,8 @@ const ImageContainer = styled.div`
   border-radius: 50%;
   img {
     border-radius: 50%;
+    width: 100%;
+    height: 100%;
   }
   border: none;
   @media (min-width: 0) and (max-width: 480px) {
@@ -97,6 +131,7 @@ const NameContainer = styled.div`
   align-items: baseline;
   h3 {
     margin-right: 5px;
+    margin-bottom: 5px;
   }
   h1 {
     color: var(--grey-second);
@@ -153,6 +188,11 @@ const Resume = styled.div`
   }
 `;
 
+interface IStatus {
+  emojie: string;
+  statusText: string;
+}
+
 const Status = styled.div`
   position: absolute;
   left: 70%;
@@ -166,12 +206,12 @@ const Status = styled.div`
   cursor: pointer;
   transition: all 0.3s;
   &:before {
-    content: "💎";
+    content: "${(props: IStatus) => props.emojie}";
   }
   &:hover {
     padding: 5px 9px 6px 5px;
     &:after {
-      content: " Focusing...";
+      content: "${(props: IStatus) => " " + props.statusText}";
     }
   }
 `;

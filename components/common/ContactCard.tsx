@@ -23,15 +23,33 @@ const ContactCard: FC<Props> = ({
     <Container>
       <LinkContainer>
         <Icon color={color}>
-          <Skeleton variant="rectangular" width="20px" height="20px" />
+          <Skeleton
+            animation="wave"
+            variant="rectangular"
+            width="20px"
+            height="20px"
+            sx={{ bgcolor: "rgba(0, 30, 60, 50%)", borderRadius: 4 }}
+          />
         </Icon>
         <ContactLink color={color} target="_blank" style={{ display: "flex" }}>
           <p>@</p>
-          <Skeleton variant="rectangular" width="60px" height="20px" />
+          <Skeleton
+            animation="wave"
+            variant="rectangular"
+            width="60px"
+            height="20px"
+            sx={{ bgcolor: "rgba(0, 30, 60, 50%)", borderRadius: 4 }}
+          />
         </ContactLink>
       </LinkContainer>
       <Description>
-        <Skeleton variant="rectangular" width="100%" height="20px" />
+        <Skeleton
+          animation="wave"
+          variant="rectangular"
+          width="100%"
+          height="20px"
+          sx={{ bgcolor: "rgba(0, 30, 60, 50%)", borderRadius: 4 }}
+        />
       </Description>
     </Container>
   ) : (

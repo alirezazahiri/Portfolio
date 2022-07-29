@@ -6,7 +6,7 @@ import Head from "next/head";
 // component
 import Skills from "@/components/Skills";
 import { useQuery } from "@apollo/client";
-import { GET_SKILLS } from "gql/queries";
+import { GET_SKILLS } from "@/gql/queries";
 
 const Page: NextPage = () => {
   const { loading, data, error, fetchMore } = useQuery(GET_SKILLS, {
