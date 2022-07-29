@@ -26,15 +26,13 @@ const useProjectsEffect = (
 
   useEffect(() => {
     if (projects.length % PROJECTS_SLICE) setHasNext(false);
-    if (projects.length)
+    if (projects.length) {
+      setLoading(true);
       (async () => {
         /**
          * @returns the mapped list with the data given from API
          */
-        setLoading(true);
-        const promises = [
-          ...projects.slice(items_.length, items_.length + 3),
-        ].map(async (project) => {
+        const promises = [...projects].map(async (project) => {
           return (async () => {
             const { data } = await getRepoDetails(project.repoName);
             return { ...data, ...project };
@@ -43,9 +41,10 @@ const useProjectsEffect = (
 
         const result = await Promise.all(promises);
 
-        setItems_((prev) => [...prev, ...result]);
+        setItems_(result);
         setLoading(false);
       })(); // set the data to state
+    }
   }, [projects.length]);
 
   return { items: items_, loading, hasNext, error, clickHandler }; // return the new data
