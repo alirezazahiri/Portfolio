@@ -12,13 +12,13 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => {
     return (
-        <div>
+        <>
             {/* <Header /> */}
             <SideBar />
             <AnimatePresence exitBeforeEnter>
                 {children}
             </AnimatePresence>
-        </div>
+        </>
     );
 };
 

@@ -23,7 +23,11 @@ const About: FC<IAbout> = ({ isLoading, content, error }) => {
               variant="rectangular"
               width={`${_}%`}
               height={16}
-              sx={{ margin: "10px auto", borderRadius: 4, bgcolor: "rgba(0, 30, 60, 50%)" }}
+              sx={{
+                margin: "10px auto",
+                borderRadius: 4,
+                bgcolor: "rgba(0, 30, 60, 50%)",
+              }}
             />
           ))}
         {!isLoading && !error && (
@@ -66,12 +70,11 @@ const Content = styled.div`
       color: var(--grey-second);
     }
   }
-  @media (min-width: 0) and (max-width: 870px) {
-    border: none;
-    box-shadow: none;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+  @media (min-width: 0) and (max-width: 480px) {
+    p {
+      font-size: 16px;
+      font-weight: 300;
+    }
   }
 `;
 

@@ -134,9 +134,9 @@ const Container = styled.div`
 const ImageContainer = styled.div`
   width: 100%;
   height: 300px !important;
-  background: url(${(props: { image?: string }) =>props?.image ? props.image : ""});
+  background-image: url(${(props: { image?: string }) => props?.image ? props.image : ""});
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   border-radius: 12px;
 
   .overlay {

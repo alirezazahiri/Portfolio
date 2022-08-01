@@ -36,8 +36,7 @@ const MyResume = () => {
 
 const Iframe = styled.iframe`
     width: 100%;
-    height: 100vh;
-    overflow-y: hidden;
+    height: calc(100vh - 4px);
 `
 
 export default MyResume;

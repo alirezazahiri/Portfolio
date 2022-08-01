@@ -92,12 +92,6 @@ const Content = styled.div`
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  @media (min-width: 0) and (max-width: 870px) {
-    border: none;
-    box-shadow: none;
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 const ImageContainer = styled.div`
@@ -115,8 +109,8 @@ const ImageContainer = styled.div`
   }
   border: none;
   @media (min-width: 0) and (max-width: 480px) {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
   }
 `;
 
