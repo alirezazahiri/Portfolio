@@ -13,14 +13,18 @@ const useProjectsEffect = (
   const [loading, setLoading] = useState(isLoading);
   const [hasNext, setHasNext] = useState(true);
 
-  const clickHandler = () => {
+  const clickHandler = async () => {
     if (projects.length % PROJECTS_SLICE === 0) {
       setLoading(true);
-      fetchMore({
+      const { data } = await fetchMore({
         variables: {
           after: projects.length ? projects[projects.length - 1].id : null,
         },
       });
+      if (data.projects.length == 0) {
+        setLoading(false);
+        setHasNext(false);
+      }
     } else setHasNext(false);
   };
 

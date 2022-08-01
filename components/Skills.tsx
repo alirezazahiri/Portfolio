@@ -23,14 +23,18 @@ const Skills: FC<ISkills> = ({ isLoading, skills, error, fetchMore }) => {
   const [hasNext, setHasNext] = useState(true);
   const [loading, setLoading] = useState(isLoading);
 
-  const clickHandler = () => {
+  const clickHandler = async () => {
     if (skills.length % SKILLS_SLICE === 0) {
       setLoading(true);
-      fetchMore({
+      const { data } = await fetchMore({
         variables: {
           after: skills.length ? skills[skills.length - 1].id : null,
         },
       });
+      if (data.skills.length == 0) {
+        setHasNext(false);
+        setLoading(false);
+      }
     } else setHasNext(false);
   };
 
