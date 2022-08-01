@@ -45,7 +45,7 @@ export const GET_SKILLS = gql`
 
 export const GET_PROFILE = gql`
   query {
-    profile(where: { id: "cl66aj52prtna0cn7w27wma2e" }) {
+    profile(where: { id: "${process.env.NEXT_APP_PROFILE_ID}" }) {
       emojie
       statusText
       profileImage {
@@ -57,7 +57,7 @@ export const GET_PROFILE = gql`
 
 export const GET_ABOUT = gql`
   query {
-    about(where: { id: "cl66c2menwvy60bn72bsijbme" }) {
+    about(where: { id: "${process.env.NEXT_APP_ABOUT_ID}" }) {
       id
       text {
         text
@@ -81,7 +81,7 @@ export const GET_PROJECTS = gql`
 
 export const GET_CV = gql`
   query {
-    resume(where: { id: "cl66qtuxj69n10bn79wr8u0pj" }) {
+    resume(where: { id: "${process.env.NEXT_APP_CV_ID}" }) {
       cv {
         url
       }
