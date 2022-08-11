@@ -11,4 +11,7 @@ module.exports = {
     NEXT_APP_ABOUT_ID: "cl66c2menwvy60bn72bsijbme",
     NEXT_APP_CV_ID: "cl66qtuxj69n10bn79wr8u0pj",
   },
+  experimental: {
+    styledComponents: true,
+  },
 };
