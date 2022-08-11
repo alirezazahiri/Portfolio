@@ -199,11 +199,13 @@ const Status = styled.div`
   border: 1px solid var(--midnight-blue);
   cursor: pointer;
   transition: all 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   &:before {
     content: "${(props: IStatus) => props.emojie}";
   }
   &:hover {
-    padding: 5px 9px 6px 5px;
     &:after {
       content: "${(props: IStatus) => " " + props.statusText}";
     }
