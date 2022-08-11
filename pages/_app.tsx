@@ -2,6 +2,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "@/layout/Layout";
+import "react-toastify/dist/ReactToastify.css";
 
 const client = new ApolloClient({
   uri: process.env.NEXT_APP_HYGRAPH_URI,
@@ -28,7 +29,7 @@ const client = new ApolloClient({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const TempComponent = Component as any 
+  const TempComponent = Component as any;
   return (
     <ApolloProvider client={client}>
       <Layout>
