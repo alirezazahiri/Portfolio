@@ -29,7 +29,6 @@ const Message = () => {
   const changeHandler = (e: any) => {
     const { name, value } = e.target;
     if (name === "email") {
-      console.log(EMAIL_REGEX.test(value), value);
       setFormData((prev: any) => ({
         ...prev,
         email: {
