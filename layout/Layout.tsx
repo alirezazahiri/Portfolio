@@ -1,25 +1,29 @@
-import React from 'react';
+import React from "react";
 
-// navigation animation 
+// navigation animation
 import { AnimatePresence } from "framer-motion";
 
 // components
-import SideBar from '@/components/SideBar';
+import SideBar from "@/components/SideBar";
+import { createTheme, ThemeProvider } from "@mui/material";
 
 interface Props {
-    children: JSX.Element
+  children: JSX.Element;
 }
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 
 const Layout: React.FC<Props> = ({ children }) => {
-    return (
-        <>
-            {/* <Header /> */}
-            <SideBar />
-            <AnimatePresence exitBeforeEnter>
-                {children}
-            </AnimatePresence>
-        </>
-    );
+  return (
+    <ThemeProvider theme={darkTheme}>
+      {/* <Header /> */}
+      <SideBar />
+      <AnimatePresence exitBeforeEnter>{children}</AnimatePresence>
+    </ThemeProvider>
+  );
 };
 
 export default Layout;

@@ -5,6 +5,7 @@ import CodeIcon from "@mui/icons-material/Code"; // Skills
 import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined"; // Certifications
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined"; // Projects
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined"; // Contact
+import MessageRoundedIcon from '@mui/icons-material/MessageRounded'; // Message Me 
 
 type Item = {
   id?: string,
@@ -49,6 +50,12 @@ const items: Item[] = [
     icon: <LocalPhoneOutlinedIcon/>,
     title: "CONTACT",
     path: "/contact",
+  },
+  {
+    id: "7",
+    icon: <MessageRoundedIcon/>,
+    title: "MESSAGE",
+    path: "/message",
   },
 ];
 
