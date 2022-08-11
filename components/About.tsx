@@ -21,6 +21,7 @@ const About: FC<IAbout> = ({ isLoading, content, error }) => {
             <Skeleton
               key={_}
               variant="rectangular"
+              animation="wave"
               width={`${_}%`}
               height={16}
               sx={{

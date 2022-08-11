@@ -7,6 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { CHARACTER_LIMIT, EMAIL_REGEX } from "@/constants/common.constants";
+import withMotion from "@/HOC/MotionHOC";
 
 const Message = () => {
   const [formData, setFormData] = useState({
@@ -138,6 +139,7 @@ const Message = () => {
         loadingPosition="end"
         variant="contained"
         sx={{ mt: 1 }}
+        color="primary"
       >
         Send
       </LoadingButton>
@@ -150,4 +152,4 @@ const Container = styled.div`
   padding: 10% 40px 40px 80px;
 `;
 
-export default Message;
+export default withMotion(Message);
