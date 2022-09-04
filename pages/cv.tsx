@@ -1,7 +1,7 @@
 import { GET_CV } from "@/gql/queries";
 import { useQuery } from "@apollo/client";
 import { Box, CircularProgress } from "@mui/material";
-import styled from "styled-components"
+import styled from "styled-components";
 import React from "react";
 
 const MyResume = () => {
@@ -29,14 +29,12 @@ const MyResume = () => {
     },
   } = data;
 
-  return (
-    <Iframe src={url} />
-  );
+  return <Embed src={url} type="application/pdf" />;
 };
 
-const Iframe = styled.iframe`
-    width: 100%;
-    height: calc(100vh - 4px);
-`
+const Embed = styled.embed`
+  width: 100%;
+  height: calc(100vh - 4px);
+`;
 
 export default MyResume;
