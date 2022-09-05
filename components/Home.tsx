@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { FC } from "react";
 import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
-import { useRouter } from "next/router";
 
 // Icons
 import MenuBookIcon from "@mui/icons-material/MenuBook";
@@ -21,8 +20,6 @@ interface IHome {
 }
 
 const Home: FC<IHome> = ({ isLoading, profile, error }) => {
-  const router = useRouter();
-
   return (
     <>
       <Container>
@@ -61,7 +58,7 @@ const Home: FC<IHome> = ({ isLoading, profile, error }) => {
           <Description>
             and I&apos;m a <code>Front-End Developer</code>
           </Description>
-          <Resume onClick={() => router.push("/cv")}>
+          <Resume onClick={() => window.open("/cv")}>
             <MenuBookIcon />
             <span>RESUME</span>
           </Resume>

@@ -42,6 +42,10 @@
   /* star color */
   --star-color: #ffc300;
   --star-color-dark: #b18700;
+
+  /* resume colors */
+  --light-grey: #c0c0c0;
+  --light-grey-2: #e0e0e0;
 }
 
 html {
@@ -55,6 +59,11 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.normalize {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 body {

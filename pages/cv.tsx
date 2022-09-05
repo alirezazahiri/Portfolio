@@ -1,40 +1,30 @@
-import { GET_CV } from "@/gql/queries";
-import { useQuery } from "@apollo/client";
-import { Box, CircularProgress } from "@mui/material";
-import styled from "styled-components";
+import Resume from "@/components/Resume";
+import type { NextPage } from "next";
+
+// next deps
+import Head from "next/head";
+
 import React from "react";
 
-const MyResume = () => {
-  const { loading, data, error } = useQuery(GET_CV);
-
-  if (loading)
-    return (
-      <Box
-        sx={{
-          display: "flex",
-          height: "100vh",
-          justifyContent: "space-around",
-          alignItems: "center",
-        }}
-      >
-        <CircularProgress size={100} />
-      </Box>
-    );
-
-  if (error) return <h1>404 - NOT FOUND</h1>;
-
-  const {
-    resume: {
-      cv: { url },
-    },
-  } = data;
-
-  return <Embed src={url} type="application/pdf" />;
+const MyResume: NextPage = (props) => {
+  return (
+    <div>
+      <Head>
+        <title>My Resume | Alireza Zahiri</title>
+        <meta name="description" content="Contact, Alireza Zahiri" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Resume />
+    </div>
+  );
 };
 
-const Embed = styled.embed`
-  width: 100%;
-  height: calc(100vh - 4px);
-`;
+export function getServerSideProps() {
+  return {
+    props: {
+      resume: true
+    }
+  }
+}
 
 export default MyResume;

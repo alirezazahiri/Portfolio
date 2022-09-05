@@ -11,7 +11,6 @@ import styled from "styled-components";
 
 // Icons
 import LinkIcon from "@mui/icons-material/Link";
-import BackIcon from '@mui/icons-material/ArrowBack';
 
 const SideBar: FC = () => {
   const [click, setClick] = useState(false);
@@ -21,9 +20,6 @@ const SideBar: FC = () => {
   const handleLinksClick = () => setLinksClick(!linksClick);
 
   const router = useRouter()
-
-  if (router.asPath === "/cv")
-    return <Link href="/"><BackToHome title="back"><BackIcon /></BackToHome></Link>
 
   return (
     <Container>
