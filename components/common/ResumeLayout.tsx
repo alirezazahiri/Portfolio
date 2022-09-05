@@ -16,10 +16,6 @@ import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-interface Props {
-  children: JSX.Element;
-}
-
 const Header: FC = () => {
   return (
     <AppBar
@@ -39,10 +35,10 @@ const Header: FC = () => {
         className="normalize"
       >
         <Toolbar>
-          <Grid container alignItems="center" xs={12}>
+          <Grid container alignItems="center">
             <Avatar
               alt="Alireza Zahiri"
-              sx={{ mt: 1, mr: 1, width: 128, height: 128 }}
+              sx={{ mr: 1, width: 128, height: 128 }}
             />
             <Grid item xs={6} sm container ml={2}>
               <Grid item xs container direction="column" spacing={1}>
@@ -64,7 +60,8 @@ const Header: FC = () => {
                 </Typography>
                 <Typography
                   fontWeight={400}
-                  lineHeight={1}
+                  lineHeight={2}
+                  ml="-4px"
                   color="var(--light-grey)"
                 >
                   21 years old
@@ -156,16 +153,22 @@ const Footer = () => {
   );
 };
 
+interface Props {
+  children: JSX.Element;
+}
+
 const ResumeLayout: FC<Props> = ({ children }) => {
   return (
     <Container
       maxWidth="lg"
-      xs={12}
       sx={{ bgcolor: "var(--background-alt)", height: "100vh" }}
       className="normalize"
+      component="div"
     >
       <Header />
-      <main>{children}</main>
+      <main style={{ backgroundColor: "white", padding: "4px" }}>
+        {children}
+      </main>
       <Footer />
     </Container>
   );
