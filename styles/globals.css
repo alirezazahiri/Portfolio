@@ -45,7 +45,9 @@
 
   /* resume colors */
   --light-grey: #c0c0c0;
-  --light-grey-2: #e0e0e0;
+  --light-grey-2: #f0f0f0;
+  --dark-grey-caption: #404040;
+  --jet-black: #000;
 }
 
 html {
