@@ -62,7 +62,7 @@ const Header: FC<IHeaderProps> = ({
     <AppBar
       sx={{
         bgcolor: "var(--midnight-blue)",
-        height: 200,
+        height: 240,
         display: "flex",
         justifyContent: "center",
         flexWrap: "wrap",
@@ -80,12 +80,12 @@ const Header: FC<IHeaderProps> = ({
             <Avatar
               alt="Alireza Zahiri"
               src={profileImage.url}
-              sx={{ mr: 1, width: 128, height: 128 }}
+              sx={{ mr: 1, width: 100, height: 100 }}
             />
             <Grid item xs={6} sm container ml={2}>
               <Grid item xs container direction="column" spacing={1}>
                 <Typography
-                  fontWeight={900}
+                  fontWeight={700}
                   fontSize="18px"
                   letterSpacing="2px"
                   ml="-4px"
@@ -180,9 +180,9 @@ const Footer: FC<IFooterProps> = ({ caption }) => {
       <Typography
         bgcolor="var(--midnight-blue)"
         color="primary"
-        padding="10px"
+        padding="24px 16px"
         textAlign="center"
-        fontSize="12px"
+        fontSize="14px"
         fontWeight={300}
         sx={{
           borderTop: "1px solid var(--prog-bar-light-blue)",
@@ -208,7 +208,7 @@ const ResumeLayout: FC<Props> = ({ children, ...rest }) => {
         component="div"
       >
         <Header {...rest} />
-        <main style={{ backgroundColor: "var(--light-grey-2)" }}>
+        <main style={{ backgroundColor: "var(--light-grey-2)", padding: "0 16px" }}>
           {children}
         </main>
         <Footer caption={rest.caption} />

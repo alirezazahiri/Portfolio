@@ -4,10 +4,14 @@ import { Badges, Caption, Title, UnorderedList } from "./common/Resume.Common";
 import interests from "@/constants/Interests";
 import CircularProgress from "@mui/material/CircularProgress";
 import { ApolloError } from "@apollo/client";
-import ResumeLayout, { IFooterProps, IHeaderProps } from "@/layout/ResumeLayout";
+import ResumeLayout, {
+  IFooterProps,
+  IHeaderProps,
+} from "@/layout/ResumeLayout";
+import { capitalize } from "@/utils/capitalize";
 
 const StoryBook = (text: string) => (
-  <Grid item xs={6}>
+  <Grid item xs={12} md={6}>
     <Title size="lg" text="Story Book" />
     <Caption color="var(--dark-grey-caption)" text={text} />
   </Grid>
@@ -23,7 +27,7 @@ const RecentExperiences = (
     description: string;
   }[]
 ) => (
-  <Grid item xs={6}>
+  <Grid item xs={12} md={6}>
     <Title size="lg" text="Recent Experiences" />
     {items.map((item) => (
       <React.Fragment key={item.jobCompany}>
@@ -59,11 +63,16 @@ const RecentExperiences = (
 const TechnicalSkills = (
   items: { id: string; topic: string; description: string; mention: string }[]
 ) => (
-  <Grid item xs={6} height="fit-content">
+  <Grid item xs={12} md={6} height="fit-content">
     <Title size="lg" text="Technical Skills" mention="(in order)" />
     {items.map((item) => (
       <React.Fragment key={item.topic}>
-        <Title size="md" pt={2} text={item.topic} mention={item?.mention} />
+        <Title
+          size="md"
+          pt={2}
+          text={capitalize(item.topic)}
+          mention={item?.mention}
+        />
         <Caption
           pt={1}
           color="var(--dark-grey-caption)"
@@ -84,7 +93,7 @@ const Education = (
     description: string;
   }[]
 ) => (
-  <Grid item xs={6}>
+  <Grid item xs={12} md={6}>
     <Title size="lg" text="Education" />
     {items.map((item) => (
       <React.Fragment key={item.collegeName}>
@@ -118,37 +127,28 @@ const Education = (
 );
 
 const BooksAndCourses = (items: { id: string; title: string }[]) => (
-  <Grid item xs={6}>
+  <Grid item xs={12} md={6}>
     <Title size="lg" text="Books and Courses" />
     <UnorderedList items={items} />
   </Grid>
 );
 
 const SoftSkills = (items: { id: string; title: string }[]) => {
-  <Grid item xs={6}>
+  <Grid item xs={12} md={6}>
     <Title size="lg" text="Soft Skills" />
     <Badges badges={items} />
   </Grid>;
 };
 
 const Interests = (items: { id: string; name: keyof typeof interests }[]) => (
-  <Grid item xs={6}>
+  <Grid item xs={12} md={6}>
     <Title size="lg" text="Interests" />
     <Grid container spacing={2} px={0} py={0}>
       {items.map((item) => (
         <Grid key={item.id} item display="flex" alignItems="center" xs={6}>
           {interests[item.name]}
           <Caption
-            text={
-              item.name[0].toUpperCase() +
-              item.name
-                .split("")
-                .map((char, index) => {
-                  if (index === 0) return "";
-                  return char.toLowerCase();
-                })
-                .join("")
-            }
+            text={capitalize(item.name)}
             color="var(--dark-grey-caption)"
           />
         </Grid>
@@ -218,7 +218,7 @@ const Resume: FC<IResume> = ({
       </Box>
     );
   if (error) return <h1>{error.toString()}</h1>;
-  
+
   return (
     <ResumeLayout {...profile}>
       <Grid container spacing={2} px={1} py={2}>

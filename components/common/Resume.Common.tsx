@@ -18,7 +18,7 @@ export const Title: FC<ITitleProps> = (props) => {
       }}
     >
       <Typography
-        variant={props.size === "lg" ? "h5" : "body2"}
+        variant={props.size === "lg" ? "h5" : "body1"}
         fontWeight={900}
         letterSpacing={1}
         component="h5"
