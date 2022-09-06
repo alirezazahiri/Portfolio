@@ -88,3 +88,62 @@ export const GET_CV = gql`
     }
   }
 `;
+
+
+export const GET_CV_DETAILS = gql`
+query {
+  booksAndCourses {
+    title
+    id
+  }
+  softSkills {
+    title
+    id
+  }
+  educations {
+    id
+    level
+    location
+    time
+    collegeName
+    description
+  }
+  technicalSkills {
+    id
+    topic
+    description
+    mention
+  }
+  interests {
+    id
+    name
+  }
+  recentExperiences {
+    id
+    jobTitle
+    jobCompany
+    time
+    location
+    description
+  }
+  storyBook(where: {id: "${process.env.NEXT_APP_CV_STORYBOOK_ID}"}) {
+    id
+    text
+  }
+  profile(where: {id: "${process.env.NEXT_APP_PROFILE_ID}"}) {
+    id
+    birthdate
+    email
+    field
+    name
+    location
+    linkedin
+    phoneNumber
+    caption 
+    profileImage {
+      url
+    }
+  }
+}
+
+`

@@ -34,9 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       {pageProps.resume ? (
-        <ResumeLayout>
-          <TempComponent {...pageProps} />
-        </ResumeLayout>
+        <TempComponent {...pageProps} />
       ) : (
         <Layout>
           <TempComponent {...pageProps} />
