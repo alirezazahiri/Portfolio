@@ -36,7 +36,7 @@ const RecentExperiences = (
           pt={2 / 8}
           pb={0}
           color="var(--dark-grey-caption)"
-          text={item.jobTitle}
+          text={item.jobCompany}
         />
         <Caption
           pt={2 / 8}

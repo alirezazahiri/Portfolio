@@ -55,7 +55,7 @@ export const Caption: FC<ICaptionProps> = (props) => (
     variant="caption"
     fontWeight={400}
     component="p"
-    lineHeight="1"
+    lineHeight="1.2"
     fontSize="14px"
     color={props.color}
     sx={{
