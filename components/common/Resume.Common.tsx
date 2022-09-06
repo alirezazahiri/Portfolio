@@ -59,7 +59,7 @@ export const Caption: FC<ICaptionProps> = (props) => (
     color={props.color}
     sx={{
       py: typeof props.py === "number" ? `${props.py * 8}px` : 2,
-      pr: 4,
+      pr: 1,
       pt: typeof props.pt === "number" ? `${props.pt * 8}px` : 2,
       pb: typeof props.pb === "number" ? `${props.pb * 8}px` : 2,
     }}

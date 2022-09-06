@@ -10,6 +10,7 @@ import {
   Grid,
   createTheme,
   ThemeProvider,
+  Button,
 } from "@mui/material";
 
 // icons
@@ -18,6 +19,7 @@ import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { getAge } from "@/utils/getAge";
+import { printWindow } from "../utils/print";
 
 const theme = createTheme({
   typography: {
@@ -65,24 +67,19 @@ const Header: FC<IHeaderProps> = ({
         height: 240,
         display: "flex",
         justifyContent: "center",
-        flexWrap: "wrap",
         borderBottom: "1px solid var(--prog-bar-light-blue)",
       }}
       position="relative"
     >
-      <Container
-        maxWidth="md"
-        sx={{ minHeight: "fit-content" }}
-        className="normalize"
-      >
+      <Container sx={{ minHeight: "fit-content" }} className="normalize">
         <Toolbar>
           <Grid container alignItems="center">
             <Avatar
-              alt="Alireza Zahiri"
+              alt={name}
               src={profileImage.url}
               sx={{ mr: 1, width: 100, height: 100 }}
             />
-            <Grid item xs={6} sm container ml={2}>
+            <Grid item xs={12} sm container ml={2}>
               <Grid item xs container direction="column" spacing={1}>
                 <Typography
                   fontWeight={700}
@@ -190,6 +187,9 @@ const Footer: FC<IFooterProps> = ({ caption }) => {
       >
         {caption}
       </Typography>
+      <Button variant="outlined" onClick={printWindow()} sx={{ width: "100%" }} className="no-print">
+        Download
+      </Button>
     </footer>
   );
 };
@@ -198,23 +198,25 @@ interface Props extends IHeaderProps, IFooterProps {
   children: JSX.Element;
 }
 
-const ResumeLayout: FC<Props> = ({ children, ...rest }) => {
+function ResumeLayout({ children, ...rest }: Props) {
   return (
     <ThemeProvider theme={theme}>
       <Container
         maxWidth="md"
         sx={{ bgcolor: "var(--background-alt)", height: "100vh" }}
-        className="normalize"
+        className="normalize scale-fix"
         component="div"
       >
         <Header {...rest} />
-        <main style={{ backgroundColor: "var(--light-grey-2)", padding: "0 16px" }}>
+        <main
+          style={{ backgroundColor: "var(--light-grey-2)", padding: "0 16px" }}
+        >
           {children}
         </main>
         <Footer caption={rest.caption} />
       </Container>
     </ThemeProvider>
   );
-};
+}
 
 export default ResumeLayout;

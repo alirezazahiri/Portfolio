@@ -17,6 +17,7 @@ const Page: NextPage = () => {
       <Head>
         <title>Alireza Zahiri</title>
         <meta name="description" content="Portfolio, Alireza Zahiri" />
+        <meta name="viewport" content="width=device-width"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Home isLoading={loading} profile={profile} error={error} />
