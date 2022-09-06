@@ -12,7 +12,7 @@ import { capitalize } from "@/utils/capitalize";
 
 const StoryBook = (text: string) => (
   <Grid item xs={6}>
-    <Title size="lg" text="Story Book" />
+    <Title size="lg" text="Story Book" className="lg-font-size-fix"/>
     <Caption color="var(--dark-grey-caption)" text={text} />
   </Grid>
 );

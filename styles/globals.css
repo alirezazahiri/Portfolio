@@ -57,17 +57,17 @@ html {
 
 ::-webkit-scrollbar {
   width: 8px;
-  position: fixed !important; 
+  position: fixed !important;
   right: 0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(80, 80, 80, 0.6); 
+  background: rgba(80, 80, 80, 0.6);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 100, 100, 0.8);  
+  background: rgba(100, 100, 100, 0.8);
 }
 *,
 *::before,
@@ -174,10 +174,49 @@ code {
   }
 }
 
-@media print
-{    
-    .no-print, .no-print *
-    {
-        display: none !important;
-    }
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+}
+
+.scale-fix {
+  width: 900px !important;
+}
+
+@media screen and (min-width: 0) and (max-width: 600px) {
+  .scale-fix {
+    zoom: 1 !important;
+    width: 100% !important;
+  }
+  .lg-font-size-fix {
+    font-size: 16px !important;
+  }
+  .lg-font-size-fix2 {
+    font-size: 13px !important;
+  }
+  .md-font-size-fix {
+    font-size: 10px !important;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .scale-fix {
+    zoom: 1 !important;
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .scale-fix {
+    zoom: 0.8 !important;
+    width: 900px !important;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1536px) {
+  .scale-fix {
+    zoom: 1 !important;
+  }
 }

@@ -66,18 +66,21 @@ const Header: FC<IHeaderProps> = ({
         bgcolor: "var(--midnight-blue)",
         height: 240,
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        alignItems: "center",
+        justifyContent: "space-between",
         borderBottom: "1px solid var(--prog-bar-light-blue)",
       }}
       position="relative"
     >
       <Container sx={{ minHeight: "fit-content" }} className="normalize">
         <Toolbar>
-          <Grid container alignItems="center">
+          <Grid container alignItems="center" flexWrap="nowrap">
             <Avatar
               alt={name}
               src={profileImage.url}
-              sx={{ mr: 1, width: 100, height: 100 }}
+              sx={{ mr: 1, width: 90, height: 90 }}
             />
             <Grid item xs={12} sm container ml={2}>
               <Grid item xs container direction="column" spacing={1}>
@@ -87,6 +90,7 @@ const Header: FC<IHeaderProps> = ({
                   letterSpacing="2px"
                   ml="-4px"
                   lineHeight={2}
+                  className="lg-font-size-fix"
                 >
                   {name}
                 </Typography>
@@ -94,6 +98,7 @@ const Header: FC<IHeaderProps> = ({
                   fontWeight={400}
                   lineHeight={2}
                   color="var(--light-grey)"
+                  className="md-font-size-fix"
                 >
                   {field}
                 </Typography>
@@ -102,6 +107,7 @@ const Header: FC<IHeaderProps> = ({
                   lineHeight={2}
                   ml="-4px"
                   color="var(--light-grey)"
+                  className="md-font-size-fix"
                 >
                   {getAge(birthdate)} years old
                 </Typography>
@@ -115,7 +121,12 @@ const Header: FC<IHeaderProps> = ({
                   justifyContent="flex-end"
                   alignItems="center"
                 >
-                  <Typography fontWeight={300} lineHeight={2} fontSize="14px">
+                  <Typography
+                    fontWeight={300}
+                    lineHeight={2}
+                    fontSize="14px"
+                    className="md-font-size-fix"
+                  >
                     <a href={`mailto:${email}`}>{email}</a>
                   </Typography>
                   <EmailOutlinedIcon
@@ -128,7 +139,12 @@ const Header: FC<IHeaderProps> = ({
                   justifyContent="flex-end"
                   alignItems="center"
                 >
-                  <Typography fontWeight={300} lineHeight={2} fontSize="14px">
+                  <Typography
+                    fontWeight={300}
+                    lineHeight={2}
+                    fontSize="14px"
+                    className="md-font-size-fix"
+                  >
                     {phoneNumber}
                   </Typography>
                   <PhoneInTalkOutlinedIcon
@@ -141,7 +157,12 @@ const Header: FC<IHeaderProps> = ({
                   justifyContent="flex-end"
                   alignItems="center"
                 >
-                  <Typography fontWeight={300} lineHeight={2} fontSize="14px">
+                  <Typography
+                    fontWeight={300}
+                    lineHeight={2}
+                    fontSize="14px"
+                    className="md-font-size-fix"
+                  >
                     {location}
                   </Typography>
                   <LocationOnOutlinedIcon
@@ -154,7 +175,12 @@ const Header: FC<IHeaderProps> = ({
                   justifyContent="flex-end"
                   alignItems="center"
                 >
-                  <Typography fontWeight={300} lineHeight={2} fontSize="14px">
+                  <Typography
+                    fontWeight={300}
+                    lineHeight={2}
+                    fontSize="14px"
+                    className="md-font-size-fix"
+                  >
                     <a href={linkedin}>My Linkedin</a>
                   </Typography>
                   <LinkedInIcon sx={{ color: "var(--light-grey-2)", ml: 1 }} />
@@ -187,8 +213,13 @@ const Footer: FC<IFooterProps> = ({ caption }) => {
       >
         {caption}
       </Typography>
-      <Button variant="outlined" onClick={printWindow()} sx={{ width: "100%" }} className="no-print">
-        Download
+      <Button
+        variant="outlined"
+        onClick={printWindow()}
+        sx={{ width: "100%" }}
+        className="no-print"
+      >
+        print
       </Button>
     </footer>
   );
@@ -202,8 +233,11 @@ function ResumeLayout({ children, ...rest }: Props) {
   return (
     <ThemeProvider theme={theme}>
       <Container
-        maxWidth="md"
-        sx={{ bgcolor: "var(--background-alt)", height: "100vh" }}
+        sx={{
+          bgcolor: "var(--background-alt)",
+          height: "100vh",
+          maxWidth: "900px",
+        }}
         className="normalize scale-fix"
         component="div"
       >

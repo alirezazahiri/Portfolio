@@ -29,6 +29,7 @@ export const Title: FC<ITitleProps> = (props) => {
             props.size === "lg" ? "2px solid var(--midnight-blue)" : "none",
           width: "fit-content",
         }}
+        className={props.size === "lg" ? "lg-font-size-fix" : "lg-font-size-fix2"}
       >
         {props.text}
       </Typography>
@@ -63,6 +64,7 @@ export const Caption: FC<ICaptionProps> = (props) => (
       pt: typeof props.pt === "number" ? `${props.pt * 8}px` : 2,
       pb: typeof props.pb === "number" ? `${props.pb * 8}px` : 2,
     }}
+    className="md-font-size-fix"
   >
     {props.text}
   </Typography>
