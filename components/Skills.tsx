@@ -41,7 +41,7 @@ const Skills: FC<ISkills> = ({ isLoading, skills, error, fetchMore }) => {
   useEffect(() => {
     setLoading(isLoading);
     if (skills.length % SKILLS_SLICE) setHasNext(false);
-  }, [skills.length]);
+  }, [skills.length, isLoading]);
 
   return (
     <Container>

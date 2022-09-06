@@ -1,7 +1,10 @@
-import React from "react";
-import { Grid, Typography } from "@mui/material";
+import React, { FC } from "react";
+import { Grid, Box } from "@mui/material";
 import { Badges, Caption, Title, UnorderedList } from "./common/Resume.Common";
 import interests from "@/constants/Interests";
+import CircularProgress from "@mui/material/CircularProgress";
+import { ApolloError } from "@apollo/client";
+import ResumeLayout, { IFooterProps, IHeaderProps } from "@/layout/ResumeLayout";
 
 const StoryBook = (text: string) => (
   <Grid item xs={6}>
@@ -12,6 +15,7 @@ const StoryBook = (text: string) => (
 
 const RecentExperiences = (
   items: {
+    id: string;
     jobTitle: string;
     jobCompany: string;
     time: string;
@@ -52,12 +56,14 @@ const RecentExperiences = (
   </Grid>
 );
 
-const TechnicalSkills = (items: { topic: string; description: string }[]) => (
+const TechnicalSkills = (
+  items: { id: string; topic: string; description: string; mention: string }[]
+) => (
   <Grid item xs={6} height="fit-content">
     <Title size="lg" text="Technical Skills" mention="(in order)" />
     {items.map((item) => (
       <React.Fragment key={item.topic}>
-        <Title size="md" pt={2} text={item.topic} />
+        <Title size="md" pt={2} text={item.topic} mention={item?.mention} />
         <Caption
           pt={1}
           color="var(--dark-grey-caption)"
@@ -70,6 +76,7 @@ const TechnicalSkills = (items: { topic: string; description: string }[]) => (
 
 const Education = (
   items: {
+    id: string;
     collegeName: string;
     level: string;
     time: string;
@@ -110,26 +117,26 @@ const Education = (
   </Grid>
 );
 
-const BooksAndCourses = (items: string[]) => (
+const BooksAndCourses = (items: { id: string; title: string }[]) => (
   <Grid item xs={6}>
     <Title size="lg" text="Books and Courses" />
     <UnorderedList items={items} />
   </Grid>
 );
 
-const SoftSkills = (items: string[]) => {
+const SoftSkills = (items: { id: string; title: string }[]) => {
   <Grid item xs={6}>
     <Title size="lg" text="Soft Skills" />
     <Badges badges={items} />
   </Grid>;
 };
 
-const Interests = (items: { name: keyof typeof interests }[]) => (
+const Interests = (items: { id: string; name: keyof typeof interests }[]) => (
   <Grid item xs={6}>
     <Title size="lg" text="Interests" />
     <Grid container spacing={2} px={0} py={0}>
       {items.map((item) => (
-        <Grid item display="flex" alignItems="center" xs={6}>
+        <Grid key={item.id} item display="flex" alignItems="center" xs={6}>
           {interests[item.name]}
           <Caption
             text={
@@ -150,17 +157,80 @@ const Interests = (items: { name: keyof typeof interests }[]) => (
   </Grid>
 );
 
-const Resume = () => {
+interface IResume {
+  isLoading: boolean;
+  error?: ApolloError;
+  booksAndCourses: { id: string; title: string }[];
+  softSkills: { id: string; title: string }[];
+  educations: {
+    id: string;
+    level: string;
+    location: string;
+    time: string;
+    collegeName: string;
+    description: string;
+  }[];
+  technicalSkills: {
+    id: string;
+    topic: string;
+    description: string;
+    mention: string;
+  }[];
+  interests: {
+    id: string;
+    name: "youtube" | "music" | "games" | "coding" | "default";
+  }[];
+  recentExperiences: {
+    id: string;
+    jobTitle: string;
+    jobCompany: string;
+    time: string;
+    location: string;
+    description: string;
+  }[];
+  storyBook: { id: string; text: string };
+  profile: IHeaderProps & IFooterProps;
+}
+
+const Resume: FC<IResume> = ({
+  isLoading,
+  error,
+  booksAndCourses,
+  softSkills,
+  educations,
+  technicalSkills,
+  interests,
+  recentExperiences,
+  storyBook,
+  profile,
+}) => {
+  if (isLoading)
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          height: "100vh",
+          justifyContent: "space-around",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress size={100} />
+      </Box>
+    );
+  if (error) return <h1>{error.toString()}</h1>;
+  
   return (
-    <Grid container spacing={2} px={1} py={2}>
-      {/* {StoryBook()}
-      {RecentExperiences()}
-      {Education()}
-      {TechnicalSkills()}
-      {SoftSkills()}
-      {BooksAndCourses()}
-      {Interests()} */}
-    </Grid>
+    <ResumeLayout {...profile}>
+      <Grid container spacing={2} px={1} py={2}>
+        {StoryBook(storyBook.text)}
+        {RecentExperiences(recentExperiences)}
+        {Education(educations)}
+        {TechnicalSkills(technicalSkills)}
+        {SoftSkills(softSkills)}
+        {BooksAndCourses(booksAndCourses)}
+        {Interests(interests)}
+      </Grid>
+    </ResumeLayout>
   );
 };
 
