@@ -11,7 +11,7 @@ import ResumeLayout, {
 import { capitalize } from "@/utils/capitalize";
 
 const StoryBook = (text: string) => (
-  <Grid item xs={6}>
+  <Grid item xs={6} sx={{px: 1.5}}>
     <Title size="lg" text="Story Book" />
     <Caption color="var(--dark-grey-caption)" text={text} />
   </Grid>
@@ -27,7 +27,7 @@ const RecentExperiences = (
     description: string;
   }[]
 ) => (
-  <Grid item xs={6}>
+  <Grid item xs={6} sx={{px: 1.5}}>
     <Title size="lg" text="Recent Experiences" />
     {items.map((item) => (
       <React.Fragment key={item.jobCompany}>
@@ -63,7 +63,7 @@ const RecentExperiences = (
 const TechnicalSkills = (
   items: { id: string; topic: string; description: string; mention: string }[]
 ) => (
-  <Grid item xs={6} height="fit-content">
+  <Grid item xs={6} sx={{px: 1.5}} height="fit-content">
     <Title size="lg" text="Technical Skills" mention="(in order)" />
     {items.map((item) => (
       <React.Fragment key={item.topic}>
@@ -93,7 +93,7 @@ const Education = (
     description: string;
   }[]
 ) => (
-  <Grid item xs={6}>
+  <Grid item xs={6} sx={{px: 1.5}}>
     <Title size="lg" text="Education" />
     {items.map((item) => (
       <React.Fragment key={item.collegeName}>
@@ -127,21 +127,21 @@ const Education = (
 );
 
 const BooksAndCourses = (items: { id: string; title: string }[]) => (
-  <Grid item xs={6}>
+  <Grid item xs={6} sx={{px: 1.5}}>
     <Title size="lg" text="Books and Courses" />
     <UnorderedList items={items} />
   </Grid>
 );
 
 const SoftSkills = (items: { id: string; title: string }[]) => {
-  <Grid item xs={6}>
+  <Grid item xs={6} sx={{px: 1.5}}>
     <Title size="lg" text="Soft Skills" />
     <Badges badges={items} />
   </Grid>;
 };
 
 const Interests = (items: { id: string; name: keyof typeof interests }[]) => (
-  <Grid item xs={6}>
+  <Grid item xs={6} sx={{px: 1.5}}>
     <Title size="lg" text="Interests" />
     <Grid container spacing={2} px={0} py={0}>
       {items.map((item) => (
@@ -221,7 +221,7 @@ const Resume: FC<IResume> = ({
 
   return (
     <ResumeLayout {...profile}>
-        <Grid container spacing={2} px={1} py={2}>
+        <Grid container spacing={1} px={1} py={2}>
           {StoryBook(storyBook.text)}
           {RecentExperiences(recentExperiences)}
           {Education(educations)}

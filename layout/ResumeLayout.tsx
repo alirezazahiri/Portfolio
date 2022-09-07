@@ -216,7 +216,7 @@ const Footer: FC<IFooterProps> = ({ caption }) => {
       <Button
         variant="outlined"
         onClick={printWindow()}
-        sx={{ width: "100%" }}
+        sx={{ width: "100%", borderRadius: 0 }}
         className="no-print"
       >
         print
@@ -243,7 +243,7 @@ function ResumeLayout({ children, ...rest }: Props) {
       >
         <Header {...rest} />
         <main
-          style={{ backgroundColor: "var(--light-grey-2)", padding: "0 16px" }}
+          style={{ backgroundColor: "var(--light-grey-2)", paddingLeft: "8px" }}
         >
           {children}
         </main>
