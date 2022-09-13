@@ -8,9 +8,6 @@ import {
   Container,
   Avatar,
   Grid,
-  createTheme,
-  ThemeProvider,
-  Button,
 } from "@mui/material";
 
 // icons
@@ -18,39 +15,14 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
+// utils
 import { getAge } from "@/utils/getAge";
-import { printWindow } from "../utils/print";
 
-const theme = createTheme({
-  typography: {
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-  },
-});
+// types
+import { THeaderProps } from "@/types/resume";
 
-export interface IHeaderProps {
-  name: string;
-  field: string;
-  birthdate: string;
-  email: string;
-  phoneNumber: string;
-  location: string;
-  linkedin: string;
-  profileImage: {
-    url: string;
-  };
-}
-const Header: FC<IHeaderProps> = ({
+const Header: FC<THeaderProps> = ({
   name,
   field,
   birthdate,
@@ -194,63 +166,4 @@ const Header: FC<IHeaderProps> = ({
   );
 };
 
-export interface IFooterProps {
-  caption: string;
-}
-const Footer: FC<IFooterProps> = ({ caption }) => {
-  return (
-    <footer>
-      <Typography
-        bgcolor="var(--midnight-blue)"
-        color="primary"
-        padding="24px 16px"
-        textAlign="center"
-        fontSize="14px"
-        fontWeight={300}
-        sx={{
-          borderTop: "1px solid var(--prog-bar-light-blue)",
-        }}
-      >
-        {caption}
-      </Typography>
-      <Button
-        variant="outlined"
-        onClick={printWindow()}
-        sx={{ width: "100%", borderRadius: 0 }}
-        className="no-print"
-      >
-        print
-      </Button>
-    </footer>
-  );
-};
-
-interface Props extends IHeaderProps, IFooterProps {
-  children: JSX.Element;
-}
-
-function ResumeLayout({ children, ...rest }: Props) {
-  return (
-    <ThemeProvider theme={theme}>
-      <Container
-        sx={{
-          bgcolor: "var(--background-alt)",
-          height: "100vh",
-          maxWidth: "900px",
-        }}
-        className="normalize scale-fix"
-        component="div"
-      >
-        <Header {...rest} />
-        <main
-          style={{ backgroundColor: "var(--light-grey-2)", paddingLeft: "8px" }}
-        >
-          {children}
-        </main>
-        <Footer caption={rest.caption} />
-      </Container>
-    </ThemeProvider>
-  );
-}
-
-export default ResumeLayout;
+export default Header;

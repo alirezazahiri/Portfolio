@@ -5,11 +5,11 @@ import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 
-type IDict = {
+type IInterestsDict = {
     [name in "youtube" | "music" | "games" | "coding" | "default"]: JSX.Element;
 };
 
-const interests: IDict = {
+const interests: IInterestsDict = {
   youtube: <YouTubeIcon fontSize="large" sx={{ pr: 1 }} />,
   music: <MusicNoteIcon fontSize="large" sx={{ pr: 1 }} />,
   games: <SportsEsportsIcon fontSize="large" sx={{ pr: 1 }} />,
