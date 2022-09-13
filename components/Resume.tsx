@@ -17,7 +17,7 @@ import {
   SoftSkills,
   StoryBook,
   TechnicalSkills,
-} from "./common/Resume.sections";
+} from "./common/resume/sections";
 
 const Resume: FC<TResume> = ({
   isLoading,
