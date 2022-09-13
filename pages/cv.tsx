@@ -6,7 +6,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import React from "react";
-import { GET_CV_DETAILS } from "../gql/queries";
+import { GET_CV_DETAILS } from "@/gql/queries";
 
 const MyResume: NextPage = (props) => {
   const { loading, data, error } = useQuery(GET_CV_DETAILS);

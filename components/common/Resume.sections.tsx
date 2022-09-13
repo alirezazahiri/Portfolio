@@ -7,7 +7,7 @@ import interests from "@/constants/Interests";
 import { capitalize } from "@/utils/capitalize";
 
 // components
-import { Badges, Caption, Title, UnorderedList } from "./Resume.common";
+import { Badges, Caption, Title, UnorderedList } from "@/components/common/Resume.common";
 
 // mui
 import { Grid } from "@mui/material";

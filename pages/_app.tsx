@@ -3,7 +3,6 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "@/layout/Layout";
 import "react-toastify/dist/ReactToastify.css";
-import ResumeLayout from "@/layout/ResumeLayout";
 
 const client = new ApolloClient({
   uri: process.env.NEXT_APP_HYGRAPH_URI,

@@ -2,7 +2,7 @@ import React from "react";
 import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 
-import ProjectCard from "./common/ProjectCard";
+import ProjectCard from "@/components/common/ProjectCard";
 
 // services
 import useProjectsEffect from "hooks/useProjectsEffect";

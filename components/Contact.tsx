@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 
-import ContactCard from "./common/ContactCard";
+import ContactCard from "@/components/common/ContactCard";
 
 interface IContacts {
   isLoading: boolean;

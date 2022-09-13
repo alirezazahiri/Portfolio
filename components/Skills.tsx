@@ -3,7 +3,7 @@ import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 
 // Common
-import SkillCard from "./common/SkillCard";
+import SkillCard from "@/components/common/SkillCard";
 import UpdateIcon from "@mui/icons-material/Update";
 import { SKILLS_SLICE } from "@/constants/common.constants";
 

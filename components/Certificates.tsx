@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import withMotion from "@/HOC/MotionHOC";
-import CertificateCard from "./common/CertificateCard";
+import CertificateCard from "@/components/common/CertificateCard";
 import styled from "styled-components";
 
 interface ICertificates {
