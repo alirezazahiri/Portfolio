@@ -21,50 +21,48 @@ interface IHome {
 
 const Home: FC<IHome> = ({ isLoading, profile, error }) => {
   return (
-    <>
-      <Container>
-        <Content>
-          <ImageContainer>
-            {isLoading && (
-              <>
-                <Skeleton
-                  animation="wave"
-                  variant="circular"
-                  width="100%"
-                  height="100%"
-                  sx={{ bgcolor: "rgba(0, 30, 60, 30%)" }}
-                />
-              </>
-            )}
-            {!isLoading && !error && (
-              <>
-                <Image
-                  src={profile.profileImage.url}
-                  layout="fill"
-                  alt="my photo"
-                />
-                <Status
-                  emojie={profile.emojie}
-                  statusText={profile.statusText}
-                ></Status>
-              </>
-            )}
-          </ImageContainer>
-          <Welcome>Hey There!</Welcome>
-          <NameContainer>
-            <h3>I&apos;M</h3>
-            <h1>ALIREZA ZAHIRI</h1>
-          </NameContainer>
-          <Description>
-            and I&apos;m a <code>Front-End Developer</code>
-          </Description>
-          <Resume onClick={() => window.open("/cv")}>
-            <MenuBookIcon />
-            <span>RESUME</span>
-          </Resume>
-        </Content>
-      </Container>
-    </>
+    <Container>
+      <Content>
+        <ImageContainer>
+          {isLoading && (
+            <>
+              <Skeleton
+                animation="wave"
+                variant="circular"
+                width="100%"
+                height="100%"
+                sx={{ bgcolor: "rgba(0, 30, 60, 30%)" }}
+              />
+            </>
+          )}
+          {!isLoading && !error && (
+            <>
+              <Image
+                src={profile.profileImage.url}
+                layout="fill"
+                alt="my photo"
+              />
+              <Status
+                emojie={profile.emojie}
+                statusText={profile.statusText}
+              ></Status>
+            </>
+          )}
+        </ImageContainer>
+        <Welcome>Hey There!</Welcome>
+        <NameContainer>
+          <h3>I&apos;M</h3>
+          <h1>ALIREZA ZAHIRI</h1>
+        </NameContainer>
+        <Description>
+          and I&apos;m a <code>Front-End Developer</code>
+        </Description>
+        <Resume onClick={() => window.open("/cv")}>
+          <MenuBookIcon />
+          <span>RESUME</span>
+        </Resume>
+      </Content>
+    </Container>
   );
 };
 
