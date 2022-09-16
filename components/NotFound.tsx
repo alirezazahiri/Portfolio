@@ -1,3 +1,4 @@
+import withMotion from "@/HOC/MotionHOC";
 import styled from "styled-components";
 
 const NotFound = () => {
@@ -33,4 +34,4 @@ const Content = styled.div`
   transform: translateY(-50%);
 `;
 
-export default NotFound;
+export default withMotion(NotFound);
