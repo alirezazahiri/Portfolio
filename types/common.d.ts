@@ -23,7 +23,7 @@ export type ContactItem = {
   description: string;
   color: string;
   type?: "mail" | null;
-  isLoading?: boolean
+  isLoading?: boolean;
 };
 
 export type SkillItem = {
@@ -31,13 +31,22 @@ export type SkillItem = {
   name: string;
   progress: number;
   gotBadge: boolean;
-}
+};
 
 export type ProjectItem = {
   id?: string;
   title: string;
   repoName: string;
   image: {
-    url: string
+    url: string;
   };
 };
+
+interface IProps {
+  meta: {
+    title: string;
+    desc: string;
+  };
+}
+
+export type TPageProps = IProps;

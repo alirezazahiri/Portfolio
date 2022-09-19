@@ -7,8 +7,9 @@ import Head from "next/head";
 import About from "@/components/About";
 import { useQuery } from "@apollo/client";
 import { GET_ABOUT } from "@/gql/queries";
+import { TPageProps } from "@/types/common";
 
-const Page: NextPage = () => {
+const Page: NextPage<TPageProps> = (props) => {
   const { loading, data, error } = useQuery(GET_ABOUT);
   const { about = {} } = { about: {}, ...data };
   return (
