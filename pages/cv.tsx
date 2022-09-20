@@ -7,8 +7,10 @@ import Head from "next/head";
 
 import React from "react";
 import { GET_CV_DETAILS } from "@/gql/queries";
+import SEO from "@/components/common/SEO";
+import { TPageProps } from "@/types/common";
 
-const MyResume: NextPage = (props) => {
+const MyResume: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error } = useQuery(GET_CV_DETAILS);
   const {
     booksAndCourses = [],
@@ -22,12 +24,8 @@ const MyResume: NextPage = (props) => {
   } = { ...data };
 
   return (
-    <div>
-      <Head>
-        <title>My Resume | Alireza Zahiri</title>
-        <meta name="description" content="Contact, Alireza Zahiri" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <SEO meta={meta} />
       <Resume
         isLoading={loading}
         error={error}
@@ -40,7 +38,7 @@ const MyResume: NextPage = (props) => {
         storyBook={storyBook}
         profile={profile}
       />
-    </div>
+    </>
   );
 };
 
@@ -48,6 +46,10 @@ export function getServerSideProps() {
   return {
     props: {
       resume: true,
+      meta: {
+        title: "My Resume | Alireza Zahiri",
+        desc: "alireza zahiri, cv, resume, alireza zahiri portfolio, vercel, nextjs, next, alireza, zahiri",
+      },
     },
   };
 }

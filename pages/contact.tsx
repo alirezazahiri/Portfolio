@@ -7,21 +7,30 @@ import Head from "next/head";
 import Contact from "@/components/Contact";
 import { useQuery } from "@apollo/client";
 import { GET_CONTACTS } from "@/gql/queries";
+import SEO from "@/components/common/SEO";
+import { TPageProps } from "@/types/common";
 
-const Page: NextPage = () => {
+const Page: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error } = useQuery(GET_CONTACTS);
   const { contacts = [] } = { contacts: [], ...data };
 
   return (
-    <div>
-      <Head>
-        <title>Contact Me | Alireza Zahiri</title>
-        <meta name="description" content="Contact, Alireza Zahiri" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <SEO meta={meta} />
       <Contact isLoading={loading} contacts={contacts} error={error} />
-    </div>
+    </>
   );
+};
+
+export const getServerSideProps = () => {
+  return {
+    props: {
+      meta: {
+        title: "Contact Me | Alireza Zahiri",
+        desc: "here are some links to my social media accounts, where you can message me directly.",
+      },
+    },
+  };
 };
 
 export default Page;

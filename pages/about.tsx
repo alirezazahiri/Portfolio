@@ -8,20 +8,28 @@ import About from "@/components/About";
 import { useQuery } from "@apollo/client";
 import { GET_ABOUT } from "@/gql/queries";
 import { TPageProps } from "@/types/common";
+import SEO from "@/components/common/SEO";
 
-const Page: NextPage<TPageProps> = (props) => {
+const Page: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error } = useQuery(GET_ABOUT);
   const { about = {} } = { about: {}, ...data };
   return (
-    <div>
-      <Head>
-        <title>About Me | Alireza Zahiri</title>
-        <meta name="description" content="About, Alireza Zahiri" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <SEO meta={meta} />
       <About isLoading={loading} content={about.text} error={error} />
-    </div>
+    </>
   );
+};
+
+export const getServerSideProps = () => {
+  return {
+    props: {
+      meta: {
+        title: "About Me | Alireza Zahiri",
+        desc: "this is about how i started my journey as a programmer and how it is going.",
+      },
+    },
+  };
 };
 
 export default Page;

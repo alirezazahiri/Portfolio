@@ -7,20 +7,35 @@ import Head from "next/head";
 import Projects from "@/components/Projects";
 import { useQuery } from "@apollo/client";
 import { GET_PROJECTS } from "@/gql/queries";
+import SEO from "@/components/common/SEO";
+import { TPageProps } from "@/types/common";
 
-const Page: NextPage = () => {
+const Page: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error, fetchMore } = useQuery(GET_PROJECTS);
   const { projects = [] } = { projects: [], ...data };
+
   return (
-    <div>
-      <Head>
-        <title>Projects | Alireza Zahiri</title>
-        <meta name="description" content="Projects, Alireza Zahiri" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Projects fetchMore={fetchMore} isLoading={loading} projects={projects} error={error} />
-    </div>
+    <>
+      <SEO meta={meta} />
+      <Projects
+        fetchMore={fetchMore}
+        isLoading={loading}
+        projects={projects}
+        error={error}
+      />
+    </>
   );
+};
+
+export const getServerSideProps = () => {
+  return {
+    props: {
+      meta: {
+        title: "My Projects | Alireza Zahiri",
+        desc: "here are some of my projects which I like them the most, feel free to see the deployments and their source code.",
+      },
+    },
+  };
 };
 
 export default Page;

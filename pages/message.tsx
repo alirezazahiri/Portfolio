@@ -3,18 +3,27 @@ import Head from "next/head";
 
 // component
 import Message from "@/components/Message";
+import { TPageProps } from "@/types/common";
+import SEO from "@/components/common/SEO";
 
-const Page: NextPage = () => {
+const Page: NextPage<TPageProps> = ({ meta }) => {
   return (
-    <div>
-      <Head>
-        <title>Message Me | Alireza Zahiri</title>
-        <meta name="description" content="Message, Alireza Zahiri" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <SEO meta={meta} />
       <Message />
-    </div>
+    </>
   );
+};
+
+export const getServerSideProps = () => {
+  return {
+    props: {
+      meta: {
+        title: "Message Me | Alireza Zahiri",
+        desc: "send your messages to me, so we can keep in touch, and mention your email for further communications",
+      },
+    },
+  };
 };
 
 export default Page;

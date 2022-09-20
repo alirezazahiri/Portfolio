@@ -7,16 +7,17 @@ import Head from "next/head";
 import Home from "@/components/Home";
 import { useQuery } from "@apollo/client";
 import { GET_PROFILE } from "@/gql/queries";
+import SEO from "@/components/common/SEO";
+import { TPageProps } from "@/types/common";
 
-const Page: NextPage = () => {
+const Page: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error } = useQuery(GET_PROFILE);
   const { profile = {} } = { profile: [], ...data };
 
   return (
-    <div>
+    <>
+      <SEO meta={meta} />
       <Head>
-        <title>Alireza Zahiri</title>
-        <meta name="description" content="Portfolio, Alireza Zahiri" />
         <meta name="viewport" content="width=device-width" />
         <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
         <meta name="google" content="notranslate" key="notranslate" />
@@ -28,8 +29,19 @@ const Page: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Home isLoading={loading} profile={profile} error={error} />
-    </div>
+    </>
   );
+};
+
+export const getServerSideProps = () => {
+  return {
+    props: {
+      meta: {
+        title: "Portfolio | Alireza Zahiri",
+        desc: "hey there, welcome to my portfolio, where i share my projects and all the essential information about who i am and what i do",
+      },
+    },
+  };
 };
 
 export default Page;
