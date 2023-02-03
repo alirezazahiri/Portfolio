@@ -45,7 +45,9 @@ export type ProjectItem = {
 interface IProps {
   meta: {
     title: string;
-    desc: string;
+    description: string;
+    keywords: string;
+    author: string;
   };
 }
 

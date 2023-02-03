@@ -42,15 +42,19 @@ const MyResume: NextPage<TPageProps> = ({ meta }) => {
   );
 };
 
-export function getServerSideProps() {
+export function getStaticProps() {
   return {
     props: {
       resume: true,
       meta: {
         title: "My Resume | Alireza Zahiri",
         desc: "alireza zahiri, cv, resume, alireza zahiri portfolio, vercel, nextjs, next, alireza, zahiri",
+        keywords:
+          "javascript, typescript, next, react, portfolio, علیرضا ظهیری, پورتفولیو, رابط کاربری, فرانت اند",
+        author: "Alireza Zahiri, علیرضا ظهیری",
       },
     },
+    revalidate: 60 * 60,
   };
 }
 

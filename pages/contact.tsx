@@ -22,14 +22,18 @@ const Page: NextPage<TPageProps> = ({ meta }) => {
   );
 };
 
-export const getServerSideProps = () => {
+export function getStaticProps() {
   return {
     props: {
       meta: {
         title: "Contact Me | Alireza Zahiri",
         desc: "here are some links to my social media accounts, where you can message me directly.",
+        keywords:
+          "javascript, typescript, next, react, portfolio, علیرضا ظهیری, پورتفولیو, رابط کاربری, فرانت اند",
+        author: "Alireza Zahiri, علیرضا ظهیری",
       },
     },
+    revalidate: 60 * 60,
   };
 };
 

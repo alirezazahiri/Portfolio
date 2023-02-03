@@ -27,15 +27,19 @@ const Page: NextPage<TPageProps> = ({ meta }) => {
   );
 };
 
-export const getServerSideProps = () => {
+export function getStaticProps() {
   return {
     props: {
       meta: {
         title: "My Projects | Alireza Zahiri",
         desc: "here are some of my projects which I like them the most, feel free to see the deployments and their source code.",
+        keywords:
+          "javascript, typescript, next, react, portfolio, علیرضا ظهیری, پورتفولیو, رابط کاربری, فرانت اند",
+        author: "Alireza Zahiri, علیرضا ظهیری",
       },
     },
+    revalidate: 60 * 60,
   };
-};
+}
 
 export default Page;

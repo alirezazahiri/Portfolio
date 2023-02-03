@@ -1,8 +1,5 @@
 import type { NextPage } from "next";
 
-// next deps
-import Head from "next/head";
-
 // component
 import About from "@/components/About";
 import { useQuery } from "@apollo/client";
@@ -21,15 +18,19 @@ const Page: NextPage<TPageProps> = ({ meta }) => {
   );
 };
 
-export const getServerSideProps = () => {
+export function getStaticProps() {
   return {
     props: {
       meta: {
         title: "About Me | Alireza Zahiri",
-        desc: "this is about how i started my journey as a programmer and how it is going.",
+        description: "hi my name is Alireza and I'm a front-end developer.",
+        keywords:
+          "javascript, typescript, next, react, portfolio, علیرضا ظهیری, پورتفولیو, رابط کاربری, فرانت اند",
+        author: "Alireza Zahiri, علیرضا ظهیری",
       },
     },
+    revalidate: 60 * 60,
   };
-};
+}
 
 export default Page;

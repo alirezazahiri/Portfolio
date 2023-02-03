@@ -6,7 +6,10 @@ const SEO: FC<TPageProps> = ({ meta }) => {
   return (
     <Head>
       <title>{meta.title}</title>
-      <meta name="description" content={meta.desc} />
+      <meta charSet="UTF-8"></meta>
+      <meta name="description" content={meta.description} />
+      <meta name="keywords" content={meta.keywords} />
+      <meta name="author" content={meta.author} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );
