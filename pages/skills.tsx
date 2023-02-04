@@ -9,6 +9,7 @@ import { useQuery } from "@apollo/client";
 import { GET_SKILLS } from "@/gql/queries";
 import { TPageProps } from "@/types/common";
 import SEO from "@/components/common/SEO";
+import { VARS } from "@/constants/seoVariables";
 
 const Page: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error, fetchMore } = useQuery(GET_SKILLS, {
@@ -36,10 +37,8 @@ export function getStaticProps() {
     props: {
       meta: {
         title: "My Skills | Alireza Zahiri",
-        desc: "here are some of my skills listed, and there are some projects available with all of them on my github page, hope you find it helpful!",
-        keywords:
-          "javascript, typescript, next, react, portfolio, علیرضا ظهیری, پورتفولیو, رابط کاربری, فرانت اند",
-        author: "Alireza Zahiri, علیرضا ظهیری",
+        description: "Here are some of my skills listed, and there are some projects available with all of them on my GitHub page; I hope you find it helpful!",
+        ...VARS,
       },
     },
     revalidate: 60 * 60,

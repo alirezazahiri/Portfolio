@@ -9,6 +9,7 @@ import React from "react";
 import { GET_CV_DETAILS } from "@/gql/queries";
 import SEO from "@/components/common/SEO";
 import { TPageProps } from "@/types/common";
+import { VARS } from "@/constants/seoVariables";
 
 const MyResume: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error } = useQuery(GET_CV_DETAILS);
@@ -48,10 +49,8 @@ export function getStaticProps() {
       resume: true,
       meta: {
         title: "My Resume | Alireza Zahiri",
-        desc: "alireza zahiri, cv, resume, alireza zahiri portfolio, vercel, nextjs, next, alireza, zahiri",
-        keywords:
-          "javascript, typescript, next, react, portfolio, علیرضا ظهیری, پورتفولیو, رابط کاربری, فرانت اند",
-        author: "Alireza Zahiri, علیرضا ظهیری",
+        description: "Innovative, hard-working, and ready to tackle any challenge - introducing Alireza, the Junior JavaScript Developer with a passion for coding and a drive to succeed.",
+        ...VARS,
       },
     },
     revalidate: 60 * 60,

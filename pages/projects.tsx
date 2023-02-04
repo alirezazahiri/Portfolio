@@ -1,14 +1,12 @@
 import type { NextPage } from "next";
 
-// next deps
-import Head from "next/head";
-
 // component
 import Projects from "@/components/Projects";
 import { useQuery } from "@apollo/client";
 import { GET_PROJECTS } from "@/gql/queries";
 import SEO from "@/components/common/SEO";
 import { TPageProps } from "@/types/common";
+import { VARS } from "@/constants/seoVariables";
 
 const Page: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error, fetchMore } = useQuery(GET_PROJECTS);
@@ -32,10 +30,8 @@ export function getStaticProps() {
     props: {
       meta: {
         title: "My Projects | Alireza Zahiri",
-        desc: "here are some of my projects which I like them the most, feel free to see the deployments and their source code.",
-        keywords:
-          "javascript, typescript, next, react, portfolio, علیرضا ظهیری, پورتفولیو, رابط کاربری, فرانت اند",
-        author: "Alireza Zahiri, علیرضا ظهیری",
+        description: "Here are some of the projects which I like the most. Feel free to see the deployments and their source code.",
+        ...VARS,
       },
     },
     revalidate: 60 * 60,

@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/client";
 import { GET_ABOUT } from "@/gql/queries";
 import { TPageProps } from "@/types/common";
 import SEO from "@/components/common/SEO";
+import { VARS } from "@/constants/seoVariables";
 
 const Page: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error } = useQuery(GET_ABOUT);
@@ -23,10 +24,8 @@ export function getStaticProps() {
     props: {
       meta: {
         title: "About Me | Alireza Zahiri",
-        description: "hi my name is Alireza and I'm a front-end developer.",
-        keywords:
-          "javascript, typescript, next, react, portfolio, علیرضا ظهیری, پورتفولیو, رابط کاربری, فرانت اند",
-        author: "Alireza Zahiri, علیرضا ظهیری",
+        description: "Hi, my name is Alireza, and I'm a front-end developer.",
+        ...VARS,
       },
     },
     revalidate: 60 * 60,

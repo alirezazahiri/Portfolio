@@ -9,6 +9,7 @@ import { useQuery } from "@apollo/client";
 import { GET_CERTIFICATES } from "@/gql/queries";
 import { TPageProps } from "@/types/common";
 import SEO from "@/components/common/SEO";
+import { VARS } from "@/constants/seoVariables";
 
 const Page: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error } = useQuery(GET_CERTIFICATES);
@@ -32,14 +33,12 @@ export function getStaticProps() {
     props: {
       meta: {
         title: "Certificates | Alireza Zahiri",
-        desc: "here are the certificates I earned as a result of a skill test or a course i've finished",
-        keywords:
-          "javascript, typescript, next, react, portfolio, علیرضا ظهیری, پورتفولیو, رابط کاربری, فرانت اند",
-        author: "Alireza Zahiri, علیرضا ظهیری",
+        description: "Here are the certificates I earned as a result of a skill test or a course I've finished",
+        ...VARS,
       },
     },
     revalidate: 60 * 60,
   };
-};
+}
 
 export default Page;
