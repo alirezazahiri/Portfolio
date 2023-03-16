@@ -7,6 +7,7 @@ import { GET_PROJECTS } from "@/gql/queries";
 import SEO from "@/components/common/SEO";
 import { TPageProps } from "@/types/common";
 import { VARS } from "@/constants/seoVariables";
+import { IncomingMessage } from "http";
 
 const Page: NextPage<TPageProps> = ({ meta }) => {
   const { loading, data, error, fetchMore } = useQuery(GET_PROJECTS);

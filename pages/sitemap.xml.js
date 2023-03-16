@@ -1,15 +1,14 @@
 import * as fs from "fs";
 
-const Sitemap = ({ sitemap }) => {
-  return sitemap;
+const Sitemap = () => {
+  return null;
 };
 
 export default Sitemap;
 
 export const getServerSideProps = async ({ req, res }) => {
-  let arr = req.headers.referer.split("/");
+  let arr = (req.headers.referer || "https://alirezazahiri.vercel.app").split("/");
   const BASE_URL = `${arr[0]}//${arr[2]}`;
-  console.log({ BASE_URL });
   const staticPaths = fs
     .readdirSync("pages")
     .filter((staticPage) => {
@@ -48,6 +47,6 @@ export const getServerSideProps = async ({ req, res }) => {
   res.end();
 
   return {
-    props: { sitemap },
+    props: { },
   };
 };
