@@ -15,6 +15,7 @@ const MyDocument: React.FC = () => {
         />
         <meta name="keywords" content={VARS.keywords} />
         <meta name="author" content={VARS.author} />
+        <meta name="google-site-verification" content="FDqY1e222kk3QSsd_Ls_mvXh5pGkiKktSR9fyDZ_vpY" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <body>
