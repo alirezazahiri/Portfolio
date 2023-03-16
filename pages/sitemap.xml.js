@@ -1,15 +1,15 @@
-import axios from "axios";
 import * as fs from "fs";
 
-const Sitemap = () => {
-  return null;
+const Sitemap = ({ sitemap }) => {
+  return sitemap;
 };
 
 export default Sitemap;
 
-export const getServerSideProps = async ({ res }) => {
-  const BASE_URL = window.location.protocol + "//" + window.location.host;
-
+export const getServerSideProps = async ({ req, res }) => {
+  let arr = req.headers.referer.split("/");
+  const BASE_URL = `${arr[0]}//${arr[2]}`;
+  console.log({ BASE_URL });
   const staticPaths = fs
     .readdirSync("pages")
     .filter((staticPage) => {
@@ -21,7 +21,7 @@ export const getServerSideProps = async ({ res }) => {
       ].includes(staticPage);
     })
     .map((staticPagePath) => {
-      return `${BASE_URL}/${staticPagePath}`;
+      return `${BASE_URL}/${staticPagePath.split(".tsx")[0]}`;
     });
 
   const allPaths = [...staticPaths];
@@ -48,6 +48,6 @@ export const getServerSideProps = async ({ res }) => {
   res.end();
 
   return {
-    props: {},
+    props: { sitemap },
   };
 };
