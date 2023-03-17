@@ -2,50 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://alirezazahiri.vercel.app/about</loc>
-        <lastmod>2023-03-16T11:36:44.475Z</lastmod>
+        <lastmod>2023-03-16T11:36:44+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>1.00</priority>
     </url>
     <url>
         <loc>https://alirezazahiri.vercel.app/certificates</loc>
-        <lastmod>2023-03-16T11:36:44.475Z</lastmod>
+        <lastmod>2023-03-16T11:36:44+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>1.00</priority>
     </url>
     <url>
         <loc>https://alirezazahiri.vercel.app/contact</loc>
-        <lastmod>2023-03-16T11:36:44.475Z</lastmod>
+        <lastmod>2023-03-16T11:36:44+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>1.00</priority>
     </url>
     <url>
         <loc>https://alirezazahiri.vercel.app/cv</loc>
-        <lastmod>2023-03-16T11:36:44.475Z</lastmod>
+        <lastmod>2023-03-16T11:36:44+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>1.00</priority>
     </url>
     <url>
         <loc>https://alirezazahiri.vercel.app/index</loc>
-        <lastmod>2023-03-16T11:36:44.475Z</lastmod>
+        <lastmod>2023-03-16T11:36:44+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>1.00</priority>
     </url>
     <url>
         <loc>https://alirezazahiri.vercel.app/message</loc>
-        <lastmod>2023-03-16T11:36:44.475Z</lastmod>
+        <lastmod>2023-03-16T11:36:44+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.90</priority>
     </url>
     <url>
         <loc>https://alirezazahiri.vercel.app/projects</loc>
-        <lastmod>2023-03-16T11:36:44.475Z</lastmod>
+        <lastmod>2023-03-16T11:36:44+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>1.00</priority>
     </url>
     <url>
         <loc>https://alirezazahiri.vercel.app/skills</loc>
-        <lastmod>2023-03-16T11:36:44.475Z</lastmod>
+        <lastmod>2023-03-16T11:36:44+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>1.00</priority>
     </url>
 </urlset>
