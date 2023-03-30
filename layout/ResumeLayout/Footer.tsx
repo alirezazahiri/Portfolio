@@ -7,7 +7,7 @@ import { printWindow } from "@/utils/print";
 
 const Footer: FC<TFooterProps> = ({ caption }) => {
   return (
-    <footer>
+    <footer className="no-print">
       <Typography
         bgcolor="var(--midnight-blue)"
         color="primary"
@@ -25,7 +25,6 @@ const Footer: FC<TFooterProps> = ({ caption }) => {
         variant="outlined"
         onClick={printWindow()}
         sx={{ width: "100%", borderRadius: 0 }}
-        className="no-print"
       >
         print
       </Button>
