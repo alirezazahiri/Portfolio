@@ -10,7 +10,7 @@ const MyDocument: React.FC = () => {
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta
           name="description"
-          content="A portfolio website for a front-end developer showcasing their skills and projects"
+          content="Welcome to my Portfolio Website, where I show my skills and projects"
         />
         <meta name="keywords" content={VARS.keywords} />
         <meta name="author" content={VARS.author} />

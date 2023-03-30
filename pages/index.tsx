@@ -42,7 +42,7 @@ export async function getStaticProps() {
       meta: {
         title: "Portfolio | Alireza Zahiri",
         description:
-          "Hey there, welcome to my portfolio, where I share my projects and all the essential information about who I am and what I do.",
+          "Hey there, welcome to my portfolio, where I share my projects and a brief information about who I am and what I do.",
         ...VARS,
       },
       data,

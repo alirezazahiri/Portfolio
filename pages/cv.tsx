@@ -44,8 +44,7 @@ export async function getStaticProps() {
       resume: true,
       meta: {
         title: "My Resume | Alireza Zahiri",
-        description:
-          "Innovative, hard-working, and ready to tackle any challenge - introducing Alireza, the Junior JavaScript Developer with a passion for coding and a drive to succeed.",
+        description: data.storyBook.text,
         ...VARS,
       },
       data,

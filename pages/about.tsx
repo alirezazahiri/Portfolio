@@ -23,11 +23,12 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: GET_ABOUT,
   });
+
   return {
     props: {
       meta: {
         title: "About Me | Alireza Zahiri",
-        description: "Hi, my name is Alireza, and I'm a front-end developer.",
+        description: data.about.text.text,
         ...VARS,
       },
       data,

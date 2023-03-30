@@ -31,7 +31,7 @@ export function getStaticProps() {
       meta: {
         title: "My Projects | Alireza Zahiri",
         description:
-          "Here are some of the projects which I like the most. Feel free to see the deployments and their source code.",
+          "Here are some of the projects which I like most. Feel free to see the deployments and their source code.",
         ...VARS,
       },
     },
