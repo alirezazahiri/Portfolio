@@ -1,43 +1,43 @@
 import type { NextPage } from "next";
 
-// next deps
-import Head from "next/head";
-
 // component
 import Certificates from "@/components/Certificates";
-import { useQuery } from "@apollo/client";
 import { GET_CERTIFICATES } from "@/gql/queries";
 import { TPageProps } from "@/types/common";
 import SEO from "@/components/common/SEO";
 import { VARS } from "@/constants/seoVariables";
+import { client } from "@/utils/apollo.client";
 
-const Page: NextPage<TPageProps> = ({ meta }) => {
-  const { loading, data, error } = useQuery(GET_CERTIFICATES);
-
+const Page: NextPage<TPageProps> = ({ meta, data }) => {
   const { certificates = [] } = { certificates: [], ...data };
 
   return (
     <>
       <SEO meta={meta} />
       <Certificates
-        isLoading={loading}
+        isLoading={false}
         certificates={certificates}
-        error={error}
+        error={false}
       />
     </>
   );
 };
 
-export function getStaticProps() {
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: GET_CERTIFICATES,
+  });
+  
   return {
     props: {
       meta: {
         title: "Certificates | Alireza Zahiri",
-        description: "Here are the certificates I earned as a result of a skill test or a course I've finished",
+        description:
+          "Here are the certificates I earned as a result of a skill test or a course I've finished",
         ...VARS,
       },
-    },
-    revalidate: 60 * 60,
+      data,
+    }
   };
 }
 

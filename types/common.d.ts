@@ -49,6 +49,7 @@ interface IProps {
     keywords: string;
     author: string;
   };
+  data?: any;
 }
 
 export type TPageProps = IProps;

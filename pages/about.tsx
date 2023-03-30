@@ -2,24 +2,27 @@ import type { NextPage } from "next";
 
 // component
 import About from "@/components/About";
-import { useQuery } from "@apollo/client";
 import { GET_ABOUT } from "@/gql/queries";
 import { TPageProps } from "@/types/common";
 import SEO from "@/components/common/SEO";
 import { VARS } from "@/constants/seoVariables";
+import { client } from "@/utils/apollo.client";
 
-const Page: NextPage<TPageProps> = ({ meta }) => {
-  const { loading, data, error } = useQuery(GET_ABOUT);
+const Page: NextPage<TPageProps> = ({ meta, data }) => {
   const { about = {} } = { about: {}, ...data };
+
   return (
     <>
       <SEO meta={meta} />
-      <About isLoading={loading} content={about.text} error={error} />
+      <About isLoading={false} content={about.text} error={false} />
     </>
   );
 };
 
-export function getStaticProps() {
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: GET_ABOUT,
+  });
   return {
     props: {
       meta: {
@@ -27,8 +30,8 @@ export function getStaticProps() {
         description: "Hi, my name is Alireza, and I'm a front-end developer.",
         ...VARS,
       },
+      data,
     },
-    revalidate: 60 * 60,
   };
 }
 

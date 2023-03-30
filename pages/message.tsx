@@ -23,8 +23,7 @@ export function getStaticProps() {
         description: "Send your messages to me, so we can keep in touch, and mention your email for further communications.",
         ...VARS
       },
-    },
-    revalidate: 60 * 60,
+    }
   };
 }
 

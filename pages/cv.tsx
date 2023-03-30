@@ -1,18 +1,13 @@
 import Resume from "@/components/Resume";
-import { useQuery } from "@apollo/client";
 import type { NextPage } from "next";
-
-// next deps
-import Head from "next/head";
-
 import React from "react";
 import { GET_CV_DETAILS } from "@/gql/queries";
 import SEO from "@/components/common/SEO";
 import { TPageProps } from "@/types/common";
 import { VARS } from "@/constants/seoVariables";
+import { client } from "@/utils/apollo.client";
 
-const MyResume: NextPage<TPageProps> = ({ meta }) => {
-  const { loading, data, error } = useQuery(GET_CV_DETAILS);
+const MyResume: NextPage<TPageProps> = ({ meta, data }) => {
   const {
     booksAndCourses = [],
     softSkills = [],
@@ -28,8 +23,7 @@ const MyResume: NextPage<TPageProps> = ({ meta }) => {
     <>
       <SEO meta={meta} />
       <Resume
-        isLoading={loading}
-        error={error}
+        isLoading={false}
         booksAndCourses={booksAndCourses}
         softSkills={softSkills}
         educations={educations}
@@ -43,17 +37,19 @@ const MyResume: NextPage<TPageProps> = ({ meta }) => {
   );
 };
 
-export function getStaticProps() {
+export async function getStaticProps() {
+  const { data } = await client.query({ query: GET_CV_DETAILS });
   return {
     props: {
       resume: true,
       meta: {
         title: "My Resume | Alireza Zahiri",
-        description: "Innovative, hard-working, and ready to tackle any challenge - introducing Alireza, the Junior JavaScript Developer with a passion for coding and a drive to succeed.",
+        description:
+          "Innovative, hard-working, and ready to tackle any challenge - introducing Alireza, the Junior JavaScript Developer with a passion for coding and a drive to succeed.",
         ...VARS,
       },
+      data,
     },
-    revalidate: 60 * 60,
   };
 }
 
