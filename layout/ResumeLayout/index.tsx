@@ -9,6 +9,7 @@ import { TResumeLayoutProps } from "@/types/resume";
 // components
 import Footer from "./Footer";
 import Header from "./Header";
+import Links from "./Links";
 
 const theme = createTheme({
   typography: {
@@ -45,6 +46,12 @@ function ResumeLayout({ children, ...rest }: TResumeLayoutProps) {
         >
           {children}
         </main>
+        <Links
+          github={rest.github}
+          linkedin={rest.linkedin}
+          leetcode={rest.leetcode}
+          website={rest.website}
+        />
         <Footer caption={rest.caption} />
       </Container>
     </ThemeProvider>

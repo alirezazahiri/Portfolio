@@ -138,6 +138,9 @@ query {
     name
     location
     linkedin
+    github
+    leetcode
+    website
     phoneNumber
     caption 
     profileImage {

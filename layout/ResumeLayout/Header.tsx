@@ -15,6 +15,7 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 // utils
 import { getAge } from "@/utils/getAge";
@@ -29,7 +30,6 @@ const Header: FC<THeaderProps> = ({
   email,
   phoneNumber,
   location,
-  linkedin,
   profileImage,
 }) => {
   return (
@@ -52,7 +52,9 @@ const Header: FC<THeaderProps> = ({
             <Avatar
               alt={name}
               src={profileImage.url}
-              sx={{ mr: 1, width: 90, height: 90 }}
+              sx={{ mr: 1, width: 120, height: 120 }}
+              about="Alireza Zahiri - Front-End Developer | علیرضا ظهیری - توسعه دهنده فرانت اند"
+              variant="rounded"
             />
             <Grid item xs={12} sm container ml={2}>
               <Grid item xs container direction="column" spacing={1}>
@@ -60,7 +62,6 @@ const Header: FC<THeaderProps> = ({
                   fontWeight={700}
                   fontSize="18px"
                   letterSpacing="2px"
-                  ml="-4px"
                   lineHeight={2}
                   className="lg-font-size-fix"
                 >
@@ -77,7 +78,6 @@ const Header: FC<THeaderProps> = ({
                 <Typography
                   fontWeight={400}
                   lineHeight={2}
-                  ml="-4px"
                   color="var(--light-grey)"
                   className="md-font-size-fix"
                 >
@@ -141,22 +141,7 @@ const Header: FC<THeaderProps> = ({
                     sx={{ color: "var(--light-grey-2)", ml: 1 }}
                   />
                 </Grid>
-                <Grid
-                  item
-                  display="flex"
-                  justifyContent="flex-end"
-                  alignItems="center"
-                >
-                  <Typography
-                    fontWeight={300}
-                    lineHeight={2}
-                    fontSize="14px"
-                    className="md-font-size-fix"
-                  >
-                    <a href={linkedin}>My Linkedin</a>
-                  </Typography>
-                  <LinkedInIcon sx={{ color: "var(--light-grey-2)", ml: 1 }} />
-                </Grid>
+                
               </Grid>
             </Grid>
           </Grid>

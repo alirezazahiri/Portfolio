@@ -8,10 +8,15 @@ interface IHeaderProps {
   email: string;
   phoneNumber: string;
   location: string;
-  linkedin: string;
   profileImage: {
     url: string;
   };
+}
+interface ILinksProps {
+  linkedin: string;
+  github: string;
+  leetcode: string;
+  website: string;
 }
 interface IFooterProps {
   caption: string;
@@ -48,10 +53,10 @@ interface IResume {
     description: string;
   }[];
   storyBook: { id: string; text: string };
-  profile: IHeaderProps & IFooterProps;
+  profile: IHeaderProps & IFooterProps & ILinksProps;
 }
 
-interface IResumeLayoutProps extends IHeaderProps, IFooterProps {
+interface IResumeLayoutProps extends IHeaderProps, ILinksProps, IFooterProps {
   children: JSX.Element;
 }
 
@@ -104,6 +109,7 @@ interface IInterests {
 
 export type TResume = IResume;
 export type THeaderProps = IHeaderProps;
+export type TLinksProps = ILinksProps;
 export type TFooterProps = IFooterProps;
 export type TResumeLayoutProps = IResumeLayoutProps;
 export type TRecentExperiences = IRecentExperiences;

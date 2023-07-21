@@ -8,19 +8,6 @@ import { printWindow } from "@/utils/print";
 const Footer: FC<TFooterProps> = ({ caption }) => {
   return (
     <footer className="no-print">
-      <Typography
-        bgcolor="var(--midnight-blue)"
-        color="primary"
-        padding="24px 16px"
-        textAlign="center"
-        fontSize="14px"
-        fontWeight={300}
-        sx={{
-          borderTop: "1px solid var(--prog-bar-light-blue)",
-        }}
-      >
-        {caption}
-      </Typography>
       <Button
         variant="outlined"
         onClick={printWindow()}
@@ -28,6 +15,16 @@ const Footer: FC<TFooterProps> = ({ caption }) => {
       >
         print
       </Button>
+      <Typography
+        bgcolor="var(--midnight-blue)"
+        color="primary"
+        padding="24px 16px"
+        textAlign="center"
+        fontSize="14px"
+        fontWeight={300}
+      >
+        {caption}
+      </Typography>
     </footer>
   );
 };
