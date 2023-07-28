@@ -151,7 +151,7 @@ const Resume = styled.div`
   border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   animation-name: width-change-reverse;
   animation-duration: 0.3s;
   animation-timing-function: linear;

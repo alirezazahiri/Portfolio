@@ -106,32 +106,14 @@ code {
   0% {
     width: fit-content;
   }
-  10% {
-    width: fit-content;
-  }
-  20% {
-    width: fit-content;
-  }
-  30% {
-    width: fit-content;
-  }
-  40% {
-    width: 40%;
+  25% {
+    width: 25%;
   }
   50% {
     width: 50%;
   }
-  60% {
-    width: 60%;
-  }
-  70% {
-    width: 70%;
-  }
-  80% {
-    width: 80%;
-  }
-  90% {
-    width: 90%;
+  75% {
+    width: 75%;
   }
   100% {
     width: 100%;
@@ -142,32 +124,14 @@ code {
   0% {
     width: 100%;
   }
-  10% {
-    width: 90%;
-  }
-  20% {
-    width: 80%;
-  }
-  30% {
-    width: 70%;
-  }
-  40% {
-    width: 60%;
+  25% {
+    width: 75%;
   }
   50% {
     width: 50%;
   }
-  60% {
-    width: 40%;
-  }
-  70% {
-    width: fit-content;
-  }
-  80% {
-    width: fit-content;
-  }
-  90% {
-    width: fit-content;
+  75% {
+    width: 25%;
   }
   100% {
     width: fit-content;
