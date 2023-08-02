@@ -67,7 +67,7 @@ export const GET_ABOUT = gql`
 `;
 
 export const GET_PROJECTS = gql`
-  query getProjects($after: String) {
+  query getProjects($after: String, orderBy: id_DESC) {
     projects(first: ${PROJECTS_SLICE}, after: $after) {
       id
       title

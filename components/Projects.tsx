@@ -29,7 +29,6 @@ const Projects: FC<IProjects> = ({ fetchMore, isLoading, projects, error }) => {
       <Content>
         {items &&
           items
-            .sort((a, b) => b.stars - a.stars)
             .map((item) => (
               <ProjectCard key={item.id} {...item} skeleton={false} />
             ))}
