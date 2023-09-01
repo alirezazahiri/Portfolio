@@ -1,5 +1,26 @@
 export const VARS = {
-  keywords:
-    "علیرضا ظهیری, پورتفولیو, نمونه کار, برنامه نویسی, وبسایت, وبسایت شخصی, وب, برنامه نویسی وب, برنامه نویس, گیتهاب, جاوااسکریپت, تایپ اسکریپت, پایتون, پروژه, پروژه ها, پروژه های , برنامه نویسی, پروژه های تحت وب, علیرضا, ظهیری, ارتباط, فضای مجازیes6, es2015, es7, js, ts, py, javascript, python, typescript, alireza zahiri, portfolio, programming, personal webiste, web, website, web programming, github, project, projects, programming projects, web-based projects, alireza, zahiri, contact, social media, react, redux, styled-components, sass, css, html, apollo client, react-query, mui, antd, react-hook-form, typescript, ecmascript, python, git, docker, babel, data structures, algorithms, oop, command, shell, mvc, dry, solid, nodejs, graphql, apollo server, mongodb, postgressql, mongoose, grpc, microservices, problem-solving, self-motivated, responsibility, confidence, communication, hard-working, teamwork, passionate to learn, sharif university of technology, babol noshirvani university of technology, sut, bnut, next, react, nextjs, reactjs, react developer, mei li bo si, shanghai, china, mazandaran, iran, tehran, software engineer, youtube, music, coding, games, cv, resume, vercel, remote, foreign", 
-  author: "alireza zahiri | علیرضا ظهیری", 
+  keywords: "portfolio, javascript, typescript, developer, front-end",
+  author: "alireza zahiri, itsalireza.zr@gmail.com",
+  copyright: "علیرضا ظهیری",
+  owner: "علیرضا ظهیری",
+  robots: "index, follow",
+  abstract: "سلام، علیرضا ظهیری هستم، توسعه دهنده فرانت اند",
+  summary: "Hello, I am Alireza Zahiri and I am a Front-End Developer",
+  Classification: "Business",
+  subtitle: "پورتفولیو علیرضا ظهیری",
+  target: "all",
+  coverage: "Worldwide",
+  distribution: "Global",
+  rating: "General",
+  url: "https://alirezazahiri.vercel.app",
+  designer: "alireza zahiri",
+};
+
+export const PROPS = {
+  "og:title": "Alireza Zahiri | Front End Web Developer",
+  "og:description": "Javasript developer, proficient, programming enthusiast",
+  "og:image":
+    "https://alirezazahiri.vercel.app/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FYMEKS7Tas2ixUKNiKlQB&w=1920&q=75",
+  "og:url": "https://alirezazahiri.vercel.app",
+  "og:type": "website",
 };

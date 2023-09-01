@@ -8,8 +8,7 @@ const SEO: FC<TPageProps> = ({ meta }) => {
       <title>{meta.title}</title>
       <meta charSet="UTF-8"></meta>
       <meta name="description" content={meta.description} />
-      <meta name="keywords" content={meta.keywords} />
-      <meta name="author" content={meta.author} />
+      <meta name="pagename" content={meta.pagename} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );

@@ -4,7 +4,6 @@ import React from "react";
 import { GET_CV_DETAILS } from "@/gql/queries";
 import SEO from "@/components/common/SEO";
 import { TPageProps } from "@/types/common";
-import { VARS } from "@/constants/seoVariables";
 import { client } from "@/utils/apollo.client";
 
 const MyResume: NextPage<TPageProps> = ({ meta, data }) => {
@@ -45,7 +44,7 @@ export async function getStaticProps() {
       meta: {
         title: "My Resume | Alireza Zahiri",
         description: data.storyBook.text,
-        ...VARS,
+        pagename: "رزومه",
       },
       data,
     },

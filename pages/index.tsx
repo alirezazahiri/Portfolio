@@ -8,7 +8,6 @@ import Home from "@/components/Home";
 import { GET_PROFILE } from "@/gql/queries";
 import SEO from "@/components/common/SEO";
 import { TPageProps } from "@/types/common";
-import { VARS } from "@/constants/seoVariables";
 import { client } from "@/utils/apollo.client";
 
 const Page: NextPage<TPageProps> = ({ meta, data }) => {
@@ -42,8 +41,8 @@ export async function getStaticProps() {
       meta: {
         title: "Portfolio | Alireza Zahiri",
         description:
-          "Hey there, welcome to my portfolio, where I share my projects and a brief information about who I am and what I do.",
-        ...VARS,
+          "Hi, My name is Alireza Zahiri, and I am an enthusiastic web developer with proficiency in client-side web application development and a fundamental knowledge of server-side concepts.",
+        pagename: "صفحه اصلی",
       },
       data,
     },

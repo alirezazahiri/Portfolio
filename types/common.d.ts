@@ -46,8 +46,7 @@ interface IProps {
   meta: {
     title: string;
     description: string;
-    keywords: string;
-    author: string;
+    pagename: string;
   };
   data?: any;
 }
