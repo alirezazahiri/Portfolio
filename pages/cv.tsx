@@ -5,6 +5,7 @@ import { GET_CV_DETAILS } from "@/gql/queries";
 import SEO from "@/components/common/SEO";
 import { TPageProps } from "@/types/common";
 import { client } from "@/utils/apollo.client";
+import { useRouter } from "next/router";
 
 const MyResume: NextPage<TPageProps> = ({ meta, data }) => {
   const {
@@ -36,8 +37,13 @@ const MyResume: NextPage<TPageProps> = ({ meta, data }) => {
   );
 };
 
-export async function getServerSideProps() {
-  const { data } = await client.query({ query: GET_CV_DETAILS });
+const getData = async () => {
+  return await client.query({ query: GET_CV_DETAILS, fetchPolicy: "no-cache" });
+};
+
+export async function getStaticProps() {
+  const { data } = await getData();
+
   return {
     props: {
       resume: true,
@@ -48,6 +54,7 @@ export async function getServerSideProps() {
       },
       data,
     },
+    revalidate: 1,
   };
 }
 
