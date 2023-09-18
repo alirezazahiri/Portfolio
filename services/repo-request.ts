@@ -1,7 +1,10 @@
 import { RepoDetailsType } from "@/types/common";
 
-const requestOptions = {
+const requestOptions: RequestInit = {
   method: "GET",
+  headers: {
+    "Authorization": "token " + process.env.NEXT_APP_GITHUB_ACCESS_TOKEN
+  }
 };
 
 const REPO_URI = "https://api.github.com/repos/alirezazahiri";
