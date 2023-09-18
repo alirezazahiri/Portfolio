@@ -23,7 +23,7 @@ const Page: NextPage<TPageProps> = ({ meta, data }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { data } = await client.query({
     query: GET_CERTIFICATES,
   });
@@ -42,6 +42,7 @@ export async function getServerSideProps() {
       },
       data,
     },
+    revalidate: 60 * 60 * 24 * 7, // each week 
   };
 }
 

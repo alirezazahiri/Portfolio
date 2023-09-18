@@ -54,7 +54,7 @@ export async function getStaticProps() {
       },
       data,
     },
-    revalidate: 1,
+    revalidate: 1, // each second 
   };
 }
 
