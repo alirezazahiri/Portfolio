@@ -21,7 +21,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <ThemeProvider theme={darkTheme}>
       {/* <Header /> */}
       <SideBar />
-      <AnimatePresence exitBeforeEnter>{children}</AnimatePresence>
+      <AnimatePresence exitBeforeEnter={true}>{children}</AnimatePresence>
     </ThemeProvider>
   );
 };
