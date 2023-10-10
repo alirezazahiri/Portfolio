@@ -168,7 +168,7 @@ const ImageContainer = styled.div`
       .top {
         display: flex;
         align-items: center;
-        letter-spacing: 10px;
+        letter-spacing: 2px;
         transition: all 0.5s;
         &:hover {
           color: var(--grayish-blue);
