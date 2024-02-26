@@ -5,7 +5,6 @@ import { GET_CV_DETAILS } from "@/gql/queries";
 import SEO from "@/components/common/SEO";
 import { TPageProps } from "@/types/common";
 import { client } from "@/utils/apollo.client";
-import { useRouter } from "next/router";
 
 const MyResume: NextPage<TPageProps> = ({ meta, data }) => {
   const {
@@ -37,24 +36,31 @@ const MyResume: NextPage<TPageProps> = ({ meta, data }) => {
   );
 };
 
-const getData = async () => {
-  return await client.query({ query: GET_CV_DETAILS, fetchPolicy: "no-cache" });
-};
+// const getData = async () => {
+//   return await client.query({ query: GET_CV_DETAILS, fetchPolicy: "no-cache" });
+// };
 
-export async function getStaticProps() {
-  const { data } = await getData();
+// export async function getStaticProps() {
+export async function getServerSideProps() {
+  // const { data } = await getData();
 
+  // return {
+  //   props: {
+  //     resume: true,
+  //     meta: {
+  //       title: "My Resume | Alireza Zahiri",
+  //       description: data.storyBook.text,
+  //       pagename: "رزومه",
+  //     },
+  //     data,
+  //   },
+  //   revalidate: 1, // each second
+  // };
   return {
-    props: {
-      resume: true,
-      meta: {
-        title: "My Resume | Alireza Zahiri",
-        description: data.storyBook.text,
-        pagename: "رزومه",
-      },
-      data,
+    redirect: {
+      destination: "/",
+      permanent: true,
     },
-    revalidate: 1, // each second 
   };
 }
 

@@ -57,7 +57,7 @@ const Home: FC<IHome> = ({ isLoading, profile, error }) => {
         <Description>
           and I&apos;m a <code>Front-End Developer</code>
         </Description>
-        <Resume onClick={() => window.open("/cv")}>
+        <Resume onClick={/* () => window.open("/cv") */ () => {}}>
           <MenuBookIcon />
           <span>RESUME</span>
         </Resume>
