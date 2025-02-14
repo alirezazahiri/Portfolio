@@ -1,0 +1,30 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+	--background: #000000;
+	--text: #ffffff;
+}
+
+body {
+	background-color: var(--background);
+	color: var(--text);
+	font-family: 'Ubuntu', sans-serif;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.content-wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+/* Improve contrast for text */
+.text-white\/60 {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.text-white\/80 {
+	color: rgba(255, 255, 255, 0.9);
+}
