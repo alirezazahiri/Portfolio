@@ -11,7 +11,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col items-center border-t border-dashed">
-          <p className="bg-background/40 backdrop-blur-md w-full max-w-[1400px] min-[1800px]:max-w-[1536px] mx-auto border-x border-dashed px-4 py-2 text-center">
+          <p className="bg-background/50 w-full max-w-[1400px] min-[1800px]:max-w-[1536px] mx-auto border-x border-dashed px-4 py-2 text-center">
             Alireza Zahiri - All rights reserved &copy; 2025
           </p>
         </div>
