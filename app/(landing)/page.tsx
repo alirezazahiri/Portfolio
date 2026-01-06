@@ -1,3 +1,5 @@
+import { LandingFeature } from "@/features/landing";
+
 export default function Page() {
-  return <div>Alireza Zahiri | Portfolio</div>;
+  return <LandingFeature />;
 }

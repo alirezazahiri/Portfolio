@@ -1,13 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui";
-import { useThemeToggle } from "@/hooks";
+import { useIsMounted, useThemeToggle } from "@/hooks";
 import { MoonIcon, SunIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export const Header = () => {
-  const { mounted, toggleTheme, theme } = useThemeToggle();
+  const { toggleTheme, theme } = useThemeToggle();
+  const mounted = useIsMounted();
 
   return (
     <header className="sticky top-0 z-(--header-z-index) flex min-h-(--header-height) w-full shrink-0 justify-center border-b border-dashed backdrop-blur-sm bg-background/60 line-pattern">
