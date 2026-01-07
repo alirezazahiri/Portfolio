@@ -17,47 +17,56 @@ export type TechStackItem = {
   name: string;
   icon: ElementType;
   size: number;
+  description: string;
 };
 
 export const TECH_STACK_ITEMS: TechStackItem[] = [
   {
-    name: "nodejs",
+    name: "Node.js",
     icon: NodeJsLogo,
     size: 3.3,
+    description: "Backend Runtime",
   },
   {
-    name: "next",
+    name: "Next.js",
     icon: NextLogo,
     size: 3.5,
+    description: "Full Stack Framework",
   },
   {
-    name: "react",
+    name: "React",
     icon: ReactLogo,
     size: 3.8,
+    description: "Frontend Framework",
   },
   {
-    name: "javascript",
+    name: "JavaScript",
     icon: JavaScriptLogo,
     size: 4.3,
+    description: "Programming language",
   },
   {
-    name: "typescript",
+    name: "TypeScript",
     icon: TypeScriptLogo,
     size: 4.3,
+    description: "Programming language",
   },
   {
-    name: "angular",
+    name: "Angular",
     icon: AngularLogo,
     size: 3.8,
+    description: "Frontend Framework",
   },
   {
-    name: "golang",
+    name: "Golang",
     icon: GolangLogo,
     size: 3.5,
+    description: "Programming language",
   },
   {
-    name: "nestjs",
+    name: "NestJS",
     icon: NestJsLogo,
     size: 3.3,
+    description: "Backend framework",
   },
 ];

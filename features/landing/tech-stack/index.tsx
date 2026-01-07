@@ -7,8 +7,9 @@ import { CardSkeletonContainer } from "@/components/ui";
 import { Sparkles } from "@/components/shared/sparkles";
 import { useIsMounted } from "@/hooks";
 import { TECH_STACK_ITEMS } from "./constants";
+import { AnimatedTooltip } from "@/components/shared";
 
-export const TechStack = () => {
+export const TechStackSection = () => {
   const mounted = useIsMounted();
 
   const sequence = Array.from({ length: TECH_STACK_ITEMS.length }).map(
@@ -35,21 +36,27 @@ export const TechStack = () => {
 
   return (
     <CardSkeletonContainer className="max-w-2xl mx-auto relative top-5">
-      <div className="p-8 overflow-hidden md:h-30 relative flex items-center justify-center">
+      <div className="p-8 md:h-30 relative flex items-center justify-center">
         <div className="flex flex-row justify-center items-center gap-2 flex-wrap">
           {TECH_STACK_ITEMS.map((item, index) => (
-            <div
+            <AnimatedTooltip
+              name={item.name}
+              designation={item.description}
               key={item.name}
-              className={cn(
-                `rounded-full flex items-center justify-center bg-primary/20
+              className="rounded-full w-fit"
+            >
+              <div
+                className={cn(
+                  `rounded-full flex items-center justify-center bg-primary/20
       shadow-[0px_0px_8px_0px_primary/20_inset,0px_32px_24px_-16px_primary/40]
       `,
-                `circle-${index + 1}`
-              )}
-              style={{ width: `${item.size}rem`, height: `${item.size}rem` }}
-            >
-              <item.icon className="size-7/12 dark:text-white text-black" />
-            </div>
+                  `circle-${index + 1}`
+                )}
+                style={{ width: `${item.size}rem`, height: `${item.size}rem` }}
+              >
+                <item.icon className="size-7/12 dark:text-white text-black pointer-events-none" />
+              </div>
+            </AnimatedTooltip>
           ))}
         </div>
 

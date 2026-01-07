@@ -2,7 +2,7 @@ import { TypewriterEffect, WavyBackground } from "@/components/shared";
 import { HERO_WORDS } from "./constants";
 import { HeroCaption } from "./caption";
 
-export const Hero = () => {
+export const HeroSection = () => {
   return (
     <div className="relative overflow-hidden flex items-center justify-center h-120">
       <WavyBackground blur={6} canvasClassName="size-full">

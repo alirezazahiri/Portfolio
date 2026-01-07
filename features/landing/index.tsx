@@ -1,13 +1,14 @@
-import { Hero } from "./hero";
-import { TimelineDemo } from "./timeline";
-import { TechStack } from "./tech-stack";
+import { HeroSection } from "./hero";
+import { TimelineSection } from "./timeline";
+import { TechStackSection } from "./tech-stack";
 
 export const LandingFeature = () => {
   return (
     <>
-      <Hero />
-      <TechStack />
-      <TimelineDemo />
+      <HeroSection />
+      <TechStackSection />
+      <div className="mt-10" />
+      <TimelineSection />
     </>
   );
 };

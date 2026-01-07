@@ -37,6 +37,7 @@ export const Header = () => {
               size="icon"
               onClick={toggleTheme}
               aria-label="Toggle theme"
+              className="cursor-pointer"
             >
               {mounted &&
                 (theme === "dark" ? (
