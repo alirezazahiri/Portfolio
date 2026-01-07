@@ -60,7 +60,7 @@ export const TechStackSection = () => {
           ))}
         </div>
 
-        <div className="hidden md:block h-25 w-px absolute m-auto z-40 bg-linear-to-b from-transparent via-cyan-500 to-transparent animate-move">
+        <div className="hidden md:block h-25 w-px absolute m-auto z-1 bg-linear-to-b from-transparent via-cyan-500 to-transparent animate-move">
           <div className="h-30 w-10 top-1/2 -translate-y-1/2 absolute -left-10">
             {mounted && <Sparkles />}
           </div>

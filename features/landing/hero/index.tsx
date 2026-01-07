@@ -1,6 +1,14 @@
-import { TypewriterEffect, WavyBackground } from "@/components/shared";
+import {
+  AnimatedModal,
+  AnimatedModalBody,
+  AnimatedModalContent,
+  AnimatedModalTrigger,
+  TypewriterEffect,
+  WavyBackground,
+} from "@/components/shared";
 import { HERO_WORDS } from "./constants";
 import { HeroCaption } from "./caption";
+import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
   return (
@@ -11,7 +19,6 @@ export const HeroSection = () => {
             words={HERO_WORDS}
             className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl"
           />
-
           <HeroCaption />
         </div>
       </WavyBackground>

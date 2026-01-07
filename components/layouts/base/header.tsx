@@ -11,8 +11,8 @@ export const Header = () => {
   const mounted = useIsMounted();
 
   return (
-    <header className="sticky top-0 z-(--header-z-index) flex min-h-(--header-height) w-full shrink-0 justify-center border-b border-dashed backdrop-blur-sm bg-background/60 line-pattern">
-      <div className="bg-background absolute inset-0 mx-auto flex min-h-full w-full max-w-[1400px] items-center border-dashed min-[1400px]:border-x min-[1800px]:max-w-[1536px]">
+    <header className="sticky top-0 z-(--header-z-index) flex min-h-(--header-height) w-full shrink-0 justify-center border-b border-dashed backdrop-blur-sm bg-background/20">
+      <div className="bg-background/20 absolute inset-0 mx-auto flex min-h-full w-full max-w-[1400px] items-center border-dashed min-[1400px]:border-x min-[1800px]:max-w-[1536px]">
         <div className="flex w-full items-center justify-between px-4 max-lg:gap-4 sm:px-6 lg:px-8">
           <Link
             href="/"

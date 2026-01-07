@@ -46,8 +46,14 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
+  --color-linkedin: var(--linkedin);
+  --color-github: var(--github);
+  --color-instagram: var(--instagram);
+  --color-gmail: var(--gmail);
+  
   --animate-move: move 5s linear infinite;
- 
+  --z-index-modal: 9999; 
+  
 }
 
 :root {
@@ -83,6 +89,10 @@
   --sidebar-accent-foreground: oklch(0.96 0.02 272);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --linkedin: #0077B5;
+  --github: #181717;
+  --instagram: #E1306C;
+  --gmail: #D14836;
 }
 
 .dark {
@@ -117,6 +127,10 @@
   --sidebar-accent-foreground: oklch(0.96 0.02 272);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+  --linkedin: #0077B5;
+  --github: #FFFFFF;
+  --instagram: #E1306C;
+  --gmail: #D14836;
 }
 
 @layer base {

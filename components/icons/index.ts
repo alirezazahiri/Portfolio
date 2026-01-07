@@ -10,3 +10,7 @@ export * from "./angular";
 export * from "./golang";
 export * from "./nodejs";
 export * from "./nestjs";
+export * from "./close";
+export * from "./github";
+export * from "./instagram";
+export * from "./linkedin";

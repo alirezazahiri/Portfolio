@@ -102,7 +102,7 @@ function CardSkeletonContainer({
   showGradient?: boolean;
 }) {
   return (
-    <div className={cn("rounded-xl z-40 relative", className)}>
+    <div className={cn("rounded-xl relative", className)}>
       {showGradient && (
         <div className="absolute inset-0 rounded-xl bg-primary/20 mask-[radial-gradient(50%_50%_at_50%_50%,var(--primary)_0%,transparent_100%)] pointer-events-none" />
       )}

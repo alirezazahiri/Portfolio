@@ -110,7 +110,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 {item.content}
               </div>
             </motion.div>
-            <div className="sticky flex flex-col md:flex-row z-40 items-center top-30 self-start max-w-xs lg:max-w-sm md:w-full md:mx-auto">
+            <div className="sticky flex flex-col md:flex-row z-10 items-center top-30 self-start max-w-xs lg:max-w-sm md:w-full md:mx-auto">
               <div className="absolute left-3 md:left-1/2 md:-translate-x-1/2 rounded-full bg-background flex items-center justify-center">
                 {mounted && <TimelineDot itemRef={itemRefs.current[index]} />}
               </div>
