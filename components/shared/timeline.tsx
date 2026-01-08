@@ -89,7 +89,7 @@ const TimelineItem = React.memo(
           viewport={{ once: true, amount: 0.5 }}
           className={cn(
             "flex md:flex-col justify-start pt-10 md:pt-40 md:gap-10 w-full pr-10 sm:pr-0 md:max-w-[calc(50%-var(--spacing)*8)] xl:max-w-lg will-change-[transform,opacity]",
-            item.placement === "end" ? "md:ms-auto" : "md:ms-0"
+            item.placement === "end" ? "lg:ms-auto" : "lg:ms-0"
           )}
         >
           <h3 className="hidden md:block text-xl md:text-5xl font-bold text-neutral-500">
@@ -103,8 +103,8 @@ const TimelineItem = React.memo(
             {item.content}
           </div>
         </motion.div>
-        <div className="sticky flex flex-col md:flex-row z-10 items-center top-30 self-start max-w-xs lg:max-w-sm md:w-full md:mx-auto">
-          <div className="absolute left-3 md:left-1/2 md:-translate-x-1/2 rounded-full bg-background flex items-center justify-center">
+        <div className="sticky flex flex-col md:flex-row z-10 items-center top-30 self-start lg:w-full lg:mx-auto">
+          <div className="absolute left-3 md:-left-7 lg:left-1/2 lg:-translate-x-1/2 rounded-full bg-background flex items-center justify-center">
             {mounted && <TimelineDot scrollYProgress={scrollYProgress} />}
           </div>
         </div>
@@ -126,8 +126,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   );
 
   return (
-    <div className="w-full bg-background font-sans md:px-10" ref={containerRef}>
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+    <div className="w-full bg-background font-sans" ref={containerRef}>
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 md:px-10">
         {data.map((item, index) => (
           <TimelineItem
             key={item.key}
@@ -136,9 +136,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             mounted={mounted}
           />
         ))}
-        <div className="bg-linear-to-b from-transparent via-muted to-transparent from-8% via-97% absolute lg:left-1/2 lg:-translate-x-1/2 left-8 -top-1 w-3 h-full rounded-b-md" />
-        <div className="absolute top-32 size-full rounded-md">
-          <div className="sticky left-1/2 -translate-x-1/2 bg-linear-to-t from-primary via-blue-500 to-transparent from-0% via-10% top-0 h-[300px] w-3 rounded-b-md" />
+        <div className="bg-linear-to-b from-transparent via-muted to-transparent from-8% via-97% absolute lg:left-1/2 lg:-translate-x-1/2 left-3 -top-1 w-3 h-full rounded-b-md" />
+        <div className="absolute top-32 inset-x-0 size-full rounded-md">
+          <div className="sticky lg:left-1/2 lg:-translate-x-1/2 left-3 bg-linear-to-t from-primary via-blue-500 to-transparent from-0% via-10% top-0 h-[300px] w-3 rounded-b-md" />
         </div>
       </div>
     </div>
