@@ -6,9 +6,9 @@ export const Footer = () => {
   return (
     <footer className="flex w-full flex-col">
       <div className="mx-auto w-full border-y border-dashed">
-        <div className="flex bg-background max-w-[1400px] min-[1800px]:max-w-[1536px] mx-auto justify-center items-center gap-6 border-x border-dashed px-4 py-8 sm:px-6 sm:py-16 lg:px-8">
-          <div className="relative flex items-center justify-center w-full">
-          <div className="ms-0 flex items-center justify-center w-1/3">
+        <div className="flex bg-background max-w-[1400px] min-[1800px]:max-w-[1536px] mx-auto justify-center items-center gap-6 border-x border-dashed p-4 sm:px-6 lg:px-8">
+          <div className="relative flex flex-col lg:flex-row items-center justify-center w-full">
+          <div className="ms-0 flex flex-col lg:flex-row items-center justify-center w-full lg:w-5/12">
             <p>Send me an email via</p>
             <Link
               href="mailto:itsalireza.zr@gmail.com"
@@ -18,13 +18,13 @@ export const Footer = () => {
               <MailIcon className="size-4" />
             </Link>
           </div>
-          <div className="relative  ">
-            <div className="bg-foreground/50 h-10 w-px"></div>
+          <div className="relative">
+            <div className="bg-foreground/50 h-10 w-px rotate-90 lg:rotate-0"></div>
             <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background">
               OR
             </p>
           </div>
-          <div className="flex items-center justify-center w-1/3">
+          <div className="flex flex-col lg:flex-row items-center justify-center w-full lg:w-5/12">
             <p>Reach me through:</p>
             <div className="flex items-center gap-1">
               <Link

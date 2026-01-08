@@ -1,11 +1,29 @@
 import { TimelineEntry } from "@/components/shared";
+import { CompanyLogo } from "@/components/shared/company-logo";
 
 export const TIMELINE_DATA: TimelineEntry[] = [
   {
-    key: "2024",
-    title: "2024",
+    key: "present",
+    title: "Oct 2025 - Present",
     content: (
-      <div key="2024">
+      <div key="present">
+        <CompanyLogo name="systemgroup" />
+
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
+        </p>
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
+        </p>
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
+        </p>
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
+        </p>
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
+        </p>
         <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
           Built and launched Aceternity UI and Aceternity UI Pro from scratch
         </p>
@@ -13,47 +31,48 @@ export const TIMELINE_DATA: TimelineEntry[] = [
     ),
   },
   {
-    key: "early-2023",
-    title: "Early 2023",
+    key: "may-2025-oct-2025",
+    title: "May 2025 - Oct 2025",
     placement: "end",
     content: (
-      <div key="2023">
+      <div key="may-2025-oct-2025">
+        <CompanyLogo name="pindo" />
+
         <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          I usually run out of copy, but when I see content this big, I try to
-          integrate lorem ipsum.
-        </p>
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          Lorem ipsum is for people who are too lazy to write copy. But we are
-          not. Here are some more example of beautiful designs I built.
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
         </p>
       </div>
     ),
   },
   {
-    key: "changelog",
-    title: "Changelog",
+    key: "dec-2023-may-2025",
+    title: "Dec 2023 - May 2025",
     content: (
-      <div key="changelog">
-        <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          Deployed 5 new components on Aceternity today
+      <div key="dec-2023-may-2025">
+        <CompanyLogo name="rsimu" />
+
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
         </p>
-        <div className="mb-8">
-          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-            ✅ Card grid component
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-            ✅ Startup template Aceternity
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-            ✅ Random file upload lol
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-            ✅ Himesh Reshammiya Music CD
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-            ✅ Salman Bhai Fan Club registrations open
-          </div>
+      </div>
+    ),
+  },
+  {
+    key: "before-2023",
+    title: "Before 2023",
+    placement: "end",
+    content: (
+      <div key="before-2023">
+        <div className="flex gap-2">
+          <CompanyLogo name="tapsi" />
+          <CompanyLogo name="bnut" />
+          <CompanyLogo name="maqin" />
         </div>
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
+        
+        </p>
       </div>
     ),
   },
