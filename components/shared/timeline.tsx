@@ -2,7 +2,7 @@
 import { useIsMounted } from "@/hooks";
 import { cn } from "@/lib/utils";
 import { useScroll, useTransform, motion, MotionValue } from "motion/react";
-import React, { useEffect, useRef, useState, useMemo } from "react";
+import React, { useRef, useMemo } from "react";
 
 export interface TimelineEntry {
   key: string;
