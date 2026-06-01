@@ -1,0 +1,13 @@
+:root {
+  --header-height: 64px;
+  --header-z-index: 50;
+  --pattern-fg: color-mix(
+    in oklab,
+    var(--clb-c-gray-blue-400) 10%,
+    transparent
+  );
+}
+
+.line-pattern {
+  @apply row-span-full row-start-1 border-x border-x-(--pattern-fg) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed  col-start-3 block [--pattern-fg:var(--primary)]/10;
+}
