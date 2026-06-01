@@ -1,8 +1,4 @@
 import {
-  AnimatedModal,
-  AnimatedModalBody,
-  AnimatedModalContent,
-  AnimatedModalTrigger,
   TypewriterEffect,
   WavyBackground,
 } from "@/components/shared";

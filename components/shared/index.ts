@@ -5,3 +5,5 @@ export * from "./layout-text-flip";
 export * from "./animated-tooltip";
 export * from "./sparkles";
 export * from "./animated-modal";
+export * from "./animated-testimonials";
+export * from "./spotlight";
